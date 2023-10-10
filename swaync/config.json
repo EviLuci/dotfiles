@@ -1,0 +1,142 @@
+{
+    "$schema": "/etc/xdg/swaync/configSchema.json",
+    "positionX": "right",
+    "positionY": "bottom",
+    "control-center-margin-top": 10,
+    "control-center-margin-bottom": 10,
+    "control-center-margin-right": 10,
+    "control-center-margin-left": 0,
+    "notification-icon-size": 64,
+    "notification-body-image-height": 100,
+    "notification-body-image-width": 200,
+    "timeout": 6,
+    "timeout-low": 4,
+    "timeout-critical": 0,
+    "fit-to-screen": true,
+	"layer": "top",
+	"cssPriority": "user",
+    "control-center-width": 400,
+    "control-center-height": 600,
+    "notification-window-width": 500,
+    "keyboard-shortcuts": true,
+    "image-visibility": "when-available",
+    "transition-time": 200,
+    "hide-on-clear": false,
+    "hide-on-action": true,
+    "script-fail-notify": true,
+    "scripts": {
+      "example-script": {
+        "exec": "echo 'Do something...'",
+        "urgency": "Normal"
+      }
+    },
+    "notification-visibility": {
+      "example-name": {
+        "state": "muted",
+        "urgency": "Low",
+        "app-name": "Spotify"
+      }
+    },
+    "widgets": [
+      "menubar",
+      "buttons-grid",
+      "backlight",
+      "volume",
+      "mpris",
+      "title",
+      "dnd",
+      "notifications"
+    ],
+    "widget-config": {
+      "title": {
+        "text": "Notifications",
+        "clear-all-button": true,
+        "button-text": "Clear All"
+      },
+      "dnd": {
+        "text": "Do Not Disturb"
+      },
+      "mpris": {
+        "image-size": 96,
+        "image-radius": 6
+      },
+      "backlight": {
+        "label": "🔆",
+        "device": "intel_backlight",
+        "min": 1
+      },
+      "volume": {
+        "label": "🔊"
+      },
+      "menubar": {
+        "menu#power-buttons": {
+          "label": "",
+          "position": "right",
+          "actions": [
+            {
+              "label": "   Reboot",
+              "command": "systemctl reboot"
+            },
+            {
+              "label": "   Lock",
+              "command": "swaylock.sh"
+            },
+            {
+              "label": "   Logout",
+              "command": "hyprctl dispatch exit"
+            },
+            {
+                "label": " Suspend",
+                "command": "systemctl suspend"
+              },
+            {
+              "label": "   Shut down",
+              "command": "systemctl poweroff"
+            }
+          ]
+        },
+        "menu#screenshot-buttons": {
+          "label": "󰹑 ",
+          "position": "left",
+          "actions": [
+            {
+              "label": "󰹑  Entire screen",
+              "command": "swaync-client -cp && sleep 1 && hyprshot -m output"
+            },
+            {
+              "label": "󰹑  Select a region",
+              "command": "swaync-client -cp && sleep 1 && hyprshot -m region"
+            }
+          ]
+        }
+      },
+      "buttons-grid": {
+        "actions": [
+          {
+            "label": "",
+            "command": "nm-connection-editor"
+          },
+          {
+            "label": "",
+            "command": "blueman"
+          },
+          {
+            "label": "",
+            "command": "nemo"
+          },
+          {
+            "label": "󰎆",
+            "command": "kitty -e cmus"
+          },
+          {
+            "label": "",
+            "command": "kitty -e paru"
+          },
+          {
+            "label": "",
+            "command": "firefox"
+          }
+        ]
+      }
+    }
+  }

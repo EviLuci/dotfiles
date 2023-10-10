@@ -1,0 +1,308 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: FiraCode Nerd Font;
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+
+window#waybar {
+    /* background: rgba(21, 18, 27, 0); */
+    background-color : transparent;
+    color: black;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+
+#custom-pacman,
+#custom-updates,
+#custom-weather,
+#custom-media,
+#custom-cmus,
+#custom-spotify,
+#custom-notification,
+#custom-vpn,
+#mpris,
+#mpd,
+#clock,
+#cpu,
+#temperature,
+#memory,
+#backlight,
+#taskbar,
+#window,
+#battery,
+#bluetooth,
+#wireplumber,
+#network,
+#workspaces,
+#tray,
+#submap,
+#keyboard-state,
+#workspaces {
+    background: #000000;
+    padding: 0px 10px 0px 10px;
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0px;
+}
+
+#workspaces button {
+    color: rgb(229, 255, 0);
+    background: transparent;
+    font-weight: bolder;
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    margin-right: 5px;
+    border-radius: 20px;
+}
+
+/*
+#workspaces button.active {
+    color: #a6adc8;
+} */
+
+#workspaces button.active{
+    /* padding-right: 5px; */
+    color:rgb(3, 3, 3);
+    /* padding-left: 5px;
+    padding-bottom: 3px; */
+    background-color: #2BD2FF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+}
+
+#workspaces button.focused {
+    background: #1f1f1f;
+}
+
+#workspaces button.urgent {
+    background: #eb4d4b;
+}
+
+#workspaces button:hover {
+    background: rgb(43, 250, 1);
+    color: black;
+}
+
+#backlight {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#tray {
+    background-color: #000000;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+    background-color: #2BD2FF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    border-radius: 20px;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #2BD2FF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    border-radius: 20px;
+}
+
+
+
+#cpu {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#memory {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#temperature {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#custom-updates {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#custom-pacman {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#window {
+    background-color: #2BD2FF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+}
+
+#clock {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+
+#network {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#network.disconnected {
+    background-color: #000000;
+    color: red;
+}
+
+#wireplumber {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#wireplumber.muted {
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #2BD2FF 0%, #2BD2FF 52%, #2BD2FF 90%);
+    color: red;
+}
+
+#battery {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#battery.charging, #battery.plugged {
+    background-color: rgb(0, 238, 255);
+    color: black;
+}
+
+@keyframes blink {
+    to {
+        background-color: black;
+        color: #000000;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background-color: #ff0000;
+    color: black;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ff0000;
+    color: black;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#taskbar {
+    background-color: #2BD2FF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+}
+
+#custom-weather {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#custom-cmus {
+    background-color: #2BD2FF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    color: black;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#mpris {
+    background-color: #2BD2FF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    color: black;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#mpd {
+    background-color: #2BD2FF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    color: black;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#custom-media {
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    color: black;
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#custom-spotify {
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    color: black;
+    border-radius: 20px;
+    margin-right: 5px;
+
+}
+
+#custom-media.custom-vlc {
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    color: black;
+    border-radius: 20px;
+    margin-right: 5px;
+}
+
+#custom-notification {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#keyboard-state {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#keyboard-state > label {
+    padding: 0px 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
