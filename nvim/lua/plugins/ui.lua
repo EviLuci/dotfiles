@@ -6,7 +6,8 @@ return {
         dependencies = {
             "SmiteshP/nvim-navic",
             "nvim-tree/nvim-web-devicons"
-        }
+        },
+        config = true
     },
     {
         "folke/tokyonight.nvim",

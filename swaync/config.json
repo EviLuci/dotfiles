@@ -126,11 +126,11 @@
           },
           {
             "label": "󰎆",
-            "command": "kitty -e cmus"
+            "command": "wezterm -e cmus"
           },
           {
             "label": "",
-            "command": "kitty -e paru"
+            "command": "wezterm -e paru"
           },
           {
             "label": "",

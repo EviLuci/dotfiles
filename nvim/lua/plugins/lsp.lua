@@ -43,7 +43,7 @@ return {
         }
     },
     opts = {
-        mason = true,
+        ts_fold = true,
         lsp = {
             servers = {
                 "ruff_lsp"

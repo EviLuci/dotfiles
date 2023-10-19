@@ -28,11 +28,14 @@ return {
             ["<leader>e"] = {
                 name = "+Explorer"
             },
+            ["<leader>l"] = {
+                name = "+Lazy"
+            },
             ["<leader>t"] = {
-                name = "+Terminal"
+                name = "+Trouble"
             },
             ["<leader>o"] = {
-                name = "+Open"
+                name = "+Open/Toggle"
             },
             ["<leader>c"] = {
                 name = "+Code",
@@ -59,10 +62,13 @@ return {
                 name = "+Harpoon"
             },
             ["<leader>gh"] = {
-                name = "+hunks"
+                name = "+Hunks"
+            },
+            ["<leader>r"] = {
+                name = "+Restore/Session"
             },
             ["<leader>q"] = {
-                name = "+Quit/Session"
+                name = "+Quickfix"
             },
             ["<leader>s"] = {
                 name = "+Search/Replace"

@@ -10,6 +10,7 @@ opt.softtabstop = indent
 opt.expandtab = true
 opt.smartindent = true
 opt.autoindent = true
+opt.copyindent = true
 opt.cindent = true
 opt.smarttab = true
 opt.breakindent = true
@@ -18,6 +19,7 @@ opt.ignorecase = true
 opt.infercase = true
 opt.shiftround = true
 opt.joinspaces = false
+opt.backspace = "indent,eol,start"
 
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 opt.foldenable = true
@@ -78,7 +80,7 @@ opt.shortmess:append({
     c = true,
     C = true
 })
-opt.clipboard = "unnamed,unnamedplus"
+-- opt.clipboard = "unnamed,unnamedplus"
 opt.completeopt = "menu,menuone,noselect"
 opt.inccommand = "nosplit"
 opt.magic = true

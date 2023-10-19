@@ -36,7 +36,7 @@ return {
             signs = {
                 add = {
                     hl = "GitSignsAdd",
-                    text = "▍",
+                    text = "+",
                     numhl = "GitSignsAddNr",
                     linehl = "GitSignsAddLn"
                 },
@@ -60,12 +60,12 @@ return {
                 },
                 changedelete = {
                     hl = "GitSignsChange",
-                    text = "▍",
+                    text = "~",
                     numhl = "GitSignsChangeNr",
                     linehl = "GitSignsChangeLn"
                 },
                 untracked = {
-                    text = "▎"
+                    text = "┆"
                 }
             },
             on_attach = function(buffer)

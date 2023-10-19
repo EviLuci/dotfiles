@@ -26,8 +26,15 @@ map({
     desc = "Force Save file and quit"
 })
 
+-- ctrl a to selected all text in file
+map({
+    "n",
+    "i",
+    "v"
+}, "<C-a>", "<esc>ggVG")
+
 -- quit
-map("n", "<leader>qq", "<cmd>wqa<cr>", {
+map("n", "<A-q>", "<cmd>wqa<cr>", {
     desc = "Quit all"
 })
 
@@ -100,6 +107,27 @@ map("n", "<leader>p", "o<Esc>p", {
 map("n", "<leader>P", "O<Esc>p", {
     desc = "Paste above"
 })
+map("i", "<C-v>", '<ESC>"+p<ESC>a', {
+    desc = "Paste"
+})
+map({
+    "n",
+    "x"
+}, "<C-c>", '"+y<ESC>', {
+    desc = "Copy to clipboard"
+})
+map({
+    "n",
+    "x"
+}, "<C-v>", '"+p<ESC>', {
+    desc = "Paste from clipboard"
+})
+map({
+    "n",
+    "x"
+}, "<C-x>", '"+y<ESC>dd', {
+    desc = "Cut to clipboard"
+})
 
 -- Paste over currently selected text without yanking it
 -- map("v", "p", '"_dp', {
@@ -113,15 +141,6 @@ map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', {
 map("i", "jk", "<ESC>")
 map("i", "kj", "<ESC>")
 map("i", "jj", "<ESC>")
-
--- Undo
-map("i", "<C-z>", "<C-O>u")
-
--- Add undo break-points
-map("i", ",", ",<c-g>u")
-map("i", ".", ".<c-g>u")
-map("i", ";", ";<c-g>u")
-map("i", "?", "?<c-g>u")
 
 -- Terminal Mappings
 map("t", "jk", "<C-\\><C-n>")
@@ -154,22 +173,6 @@ map("n", "<C-k>", "<C-w>k", {
 })
 map("n", "<C-l>", "<C-w>l", {
     desc = "Go to right window"
-})
-
--- better up/down
-map({
-    "n",
-    "x"
-}, "j", "v:count || mode(1)[0:1] == 'no' ? 'j' : 'gj'", {
-    expr = true,
-    silent = true
-})
-map({
-    "n",
-    "x"
-}, "k", "v:count || mode(1)[0:1] == 'no' ? 'k' : 'gk'", {
-    expr = true,
-    silent = true
 })
 
 -- Move Lines
@@ -218,32 +221,6 @@ map({
     desc = "Increase window width"
 })
 
--- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-map("n", "n", "'Nn'[v:searchforward]", {
-    expr = true,
-    desc = "Next search result"
-})
-map("x", "n", "'Nn'[v:searchforward]", {
-    expr = true,
-    desc = "Next search result"
-})
-map("o", "n", "'Nn'[v:searchforward]", {
-    expr = true,
-    desc = "Next search result"
-})
-map("n", "N", "'nN'[v:searchforward]", {
-    expr = true,
-    desc = "Prev search result"
-})
-map("x", "N", "'nN'[v:searchforward]", {
-    expr = true,
-    desc = "Prev search result"
-})
-map("o", "N", "'nN'[v:searchforward]", {
-    expr = true,
-    desc = "Prev search result"
-})
-
 -- Search
 map({
     "n",
@@ -252,17 +229,32 @@ map({
     desc = "Search word under cursor"
 })
 
--- Clear search, diff update and redraw
-map("n", "<esc>", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>", {
-    desc = "Redraw / clear hlsearch / diff update"
-})
-
--- Fast searching text under cursor with Goole with Ctrl+q Ctrl+g
+-- Fast searching text under cursor with Google with Ctrl+q Ctrl+g
 -- I am using ArchLinux so I use the xdg-open command
--- For other file system it can be opEn
+-- For other file system it can be open
 local searching_google_in_normal =
     [[:lua vim.fn.system({'xdg-open', 'https://google.com/search?q=' .. vim.fn.expand("<cword>")})<CR>]]
 map("n", "<C-q><C-g>", searching_google_in_normal)
+
+-- Quickfix mappings
+map('n', '<leader>qk', ':cexpr []<cr>', {
+    desc = 'Clear list'
+})
+map('n', '<leader>qc', ':cclose <cr>', {
+    desc = 'Close list'
+})
+map('n', '<leader>qo', ':copen <cr>', {
+    desc = 'Open list'
+})
+map('n', '<leader>qf', ':cfdo %s/', {
+    desc = 'Search & Replace'
+})
+map('n', '<leader>qp', ':cprev<cr>zz', {
+    desc = 'Prev Item'
+})
+map('n', '<leader>qn', ':cnext<cr>zz', {
+    desc = 'Next Item'
+})
 
 -- windows
 map("n", "<leader>ww", "<C-W>p", {
@@ -272,16 +264,22 @@ map("n", "<leader>wd", "<C-W>c", {
     desc = "Delete window"
 })
 map("n", "<leader>w-", "<C-W>s", {
-    desc = "Split window below"
+    desc = "Split window horizontally"
 })
 map("n", "<leader>w|", "<C-W>v", {
-    desc = "Split window right"
+    desc = "Split window vertically"
+})
+map("n", "<leader>ws", "<C-W>s", {
+    desc = "Split window horizontally"
+})
+map("n", "<leader>wv", "<C-W>v", {
+    desc = "Split window vertically"
 })
 map("n", "<leader>-", "<C-W>s", {
-    desc = "Split window below"
+    desc = "Split window horizontally"
 })
 map("n", "<leader>|", "<C-W>v", {
-    desc = "Split window right"
+    desc = "Split window vertically"
 })
 
 -- buffers
@@ -289,6 +287,12 @@ map("n", "[b", "<cmd>bprevious<cr>", {
     desc = "Prev buffer"
 })
 map("n", "]b", "<cmd>bnext<cr>", {
+    desc = "Next buffer"
+})
+map("n", "<Tab>", "<cmd>bprevious<cr>", {
+    desc = "Prev buffer"
+})
+map("n", "<A-Tab>", "<cmd>bnext<cr>", {
     desc = "Next buffer"
 })
 map("n", "<leader>bd", "<cmd>bdelete<cr>", {
@@ -318,6 +322,84 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", {
     desc = "Previous Tab"
 })
 
--- Alt/Meta + c to invert the case
+-- Alt/Meta + c to invert the caseu
 map('n', '<A-c>', 'guiw~iw')
 
+-- better up/down
+map({
+    "n",
+    "x"
+}, "j", "v:count || mode(1)[0:1] == 'no' ? 'j' : 'gj'", {
+    expr = true,
+    silent = true
+})
+map({
+    "n",
+    "x"
+}, "k", "v:count || mode(1)[0:1] == 'no' ? 'k' : 'gk'", {
+    expr = true,
+    silent = true
+})
+
+-- Clear search, diff update and redraw
+map("n", "<esc>", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>", {
+    desc = "Redraw / clear hlsearch / diff update"
+})
+
+-- Make 'c' key not copy to clipboard when changing a character.
+map({
+    "n",
+    "x"
+}, "c", '"_c', {
+    desc = "Change without yanking"
+})
+map({
+    "n",
+    "x"
+}, "C", '"_C', {
+    desc = "Change without yanking"
+})
+
+-- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-N
+map("n", "n", "'Nn'[v:searchforward]", {
+    expr = true,
+    desc = "Next search result"
+})
+map("x", "n", "'Nn'[v:searchforward]", {
+    expr = true,
+    desc = "Next search result"
+})
+map("o", "n", "'Nn'[v:searchforward]", {
+    expr = true,
+    desc = "Next search result"
+})
+map("n", "N", "'nN'[v:searchforward]", {
+    expr = true,
+    desc = "Prev search result"
+})
+map("x", "N", "'nN'[v:searchforward]", {
+    expr = true,
+    desc = "Prev search result"
+})
+map("o", "N", "'nN'[v:searchforward]", {
+    expr = true,
+    desc = "Prev search result"
+})
+
+-- Some cool remaps
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+map("n", "J", "mzJ`z")
+map("n", "g,", "g,zvzz")
+map("n", "g;", "g;zvzz")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+
+-- Undo
+map("i", "<C-z>", "<C-O>u")
+
+-- Add undo break-points
+map("i", ",", ",<c-g>u")
+map("i", ".", ".<c-g>u")
+map("i", ";", ";<c-g>u")
+map("i", "?", "?<c-g>u")

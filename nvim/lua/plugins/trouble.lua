@@ -9,27 +9,27 @@ return {
     },
     keys = {
         {
-            "<leader>ot",
+            "<leader>tt",
             "<cmd>TroubleToggle<cr>",
             desc = "Toggle Trouble"
         },
         {
-            "<leader>od",
+            "<leader>td",
             "<cmd>TroubleToggle document_diagnostics<cr>",
             desc = "Document Diagnostics (Trouble)"
         },
         {
-            "<leader>ow",
+            "<leader>tw",
             "<cmd>TroubleToggle workspace_diagnostics<cr>",
             desc = "Workspace Diagnostics (Trouble)"
         },
         {
-            "<leader>ol",
+            "<leader>tl",
             "<cmd>TroubleToggle loclist<cr>",
             desc = "Location List (Trouble)"
         },
         {
-            "<leader>oq",
+            "<leader>tq",
             "<cmd>TroubleToggle quickfix<cr>",
             desc = "Quickfix List (Trouble)"
         },
