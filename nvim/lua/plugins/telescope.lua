@@ -46,6 +46,11 @@ return {
             "<cmd>Telescope buffers<cr>",
             desc = "Buffers"
         },
+        {
+            "<leader>fe",
+            "<cmd>Telescope file_browser<cr>",
+            desc = "File Explorer/browser"
+        },
 
         -- git
         {
@@ -151,44 +156,53 @@ return {
             desc = "Colorschemes"
         }
     },
-    opts = {
-        defaults = {
-            prompt_prefix = " ",
-            selection_caret = " ",
-            mappings = {
-                i = {
-                    ["<c-t>"] = function(...)
-                        return require("trouble.providers.telescope").open_with_trouble(...)
-                    end,
-                    ["<a-t>"] = function(...)
-                        return require("trouble.providers.telescope").open_selected_with_trouble(...)
-                    end,
-                    ["<C-Down>"] = function(...)
-                        return require("telescope.actions").cycle_history_next(...)
-                    end,
-                    ["<C-Up>"] = function(...)
-                        return require("telescope.actions").cycle_history_prev(...)
-                    end,
-                    ["<C-f>"] = function(...)
-                        return require("telescope.actions").preview_scrolling_down(...)
-                    end,
-                    ["<C-b>"] = function(...)
-                        return require("telescope.actions").preview_scrolling_up(...)
-                    end
-                },
-                n = {
-                    ["q"] = function(...) return require("telescope.actions").close(...) end
-                },
-                color_devicons = true
-            },
-            extensions = {
-                file_browser = {
-                    hijack_netrw = true
-                }
+    opts = function()
+        local actions = require("telescope.actions")
+        local telescope = require("telescope")
 
+        local open_with_trouble = function(...)
+            return require("trouble.providers.telescope").open_with_trouble(...)
+        end
+        local open_selected_with_trouble = function(...)
+            return require("trouble.providers.telescope").open_selected_with_trouble(...)
+        end
+        return {
+            defaults = {
+                prompt_prefix = " ",
+                selection_caret = " ",
+                -- open files in the first window that is an actual file.
+                -- use the current window if no other window is available.
+                get_selection_window = function()
+                    local wins = vim.api.nvim_list_wins()
+                    table.insert(wins, 1, vim.api.nvim_get_current_win())
+                    for _, win in ipairs(wins) do
+                        local buf = vim.api.nvim_win_get_buf(win)
+                        if vim.bo[buf].buftype == "" then return win end
+                    end
+                    return 0
+                end,
+                mappings = {
+                    i = {
+                        ["<c-t>"] = open_with_trouble,
+                        ["<a-t>"] = open_selected_with_trouble,
+                        ["<C-Down>"] = actions.cycle_history_next,
+                        ["<C-Up>"] = actions.cycle_history_prev,
+                        ["<C-f>"] = actions.preview_scrolling_down,
+                        ["<C-b>"] = actions.preview_scrolling_up
+                    },
+                    n = {
+                        ["q"] = actions.close
+                    }
+                },
+                extensions = {
+                    file_browser = {
+                        hijack_netrw = true
+                    }
+
+                }
             }
         }
-    },
+    end,
     config = function()
         require("telescope").load_extension("file_browser")
         require("telescope").load_extension("luasnip")

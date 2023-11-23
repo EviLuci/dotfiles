@@ -336,7 +336,21 @@ map({
 map({
     "n",
     "x"
+}, "<Down>", "v:count == 0 ? 'gj' : 'j'", {
+    expr = true,
+    silent = true
+})
+map({
+    "n",
+    "x"
 }, "k", "v:count || mode(1)[0:1] == 'no' ? 'k' : 'gk'", {
+    expr = true,
+    silent = true
+})
+map({
+    "n",
+    "x"
+}, "<Up>", "v:count == 0 ? 'gk' : 'k'", {
     expr = true,
     silent = true
 })

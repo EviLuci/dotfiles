@@ -4,6 +4,7 @@ vim.g.maplocalleader = ","
 local indent = 2
 
 local opt = vim.opt
+
 opt.shiftwidth = indent
 opt.tabstop = indent
 opt.softtabstop = indent
@@ -21,7 +22,15 @@ opt.shiftround = true
 opt.joinspaces = false
 opt.backspace = "indent,eol,start"
 
-opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+opt.fillchars = {
+    foldopen = "",
+    foldclose = "",
+    -- fold = "⸱",
+    fold = " ",
+    foldsep = " ",
+    diff = "╱",
+    eob = " "
+}
 opt.foldenable = true
 opt.foldlevel = 99
 opt.foldlevelstart = 99
@@ -37,7 +46,11 @@ opt.sessionoptions = {
     "buffers",
     "curdir",
     "tabpages",
-    "winsize"
+    "winsize",
+    "help",
+    "globals",
+    "skiprtp",
+    "folds"
 }
 opt.backup = false
 opt.swapfile = false
@@ -52,11 +65,13 @@ opt.autowrite = true
 opt.hlsearch = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
+opt.smoothscroll = true
 
 opt.winminwidth = 5
-opt.showmode = true
+opt.showmode = false
 opt.splitbelow = true
 opt.splitright = true
+opt.splitkeep = "screen"
 opt.cmdheight = 1
 opt.emoji = true
 opt.virtualedit = "block"
