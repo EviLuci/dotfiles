@@ -19,27 +19,79 @@ return {
     build = ":TSUpdate",
     event = {
         "BufReadPost",
-        "BufNewFile"
+        "BufNewFile",
+        "BufWritePost",
+        "VeryLazy"
     },
     dependencies = {
         {
-            "nvim-treesitter/playground",
-            cmd = "TSPlaygroundToggle"
-        },
-        {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            event = "BufRead"
+            config = function()
+                -- When in diff mode, we want to use the default
+                -- vim text objects c & C instead of the treesitter ones.
+                local move = require("nvim-treesitter.textobjects.move") ---@type table<string,fun(...)>
+                local configs = require("nvim-treesitter.configs")
+                for name, fn in pairs(move) do
+                    if name:find("goto") == 1 then
+                        move[name] = function(q, ...)
+                            if vim.wo.diff then
+                                local config = configs.get_module("textobjects.move")[name] ---@type table<string,string>
+                                for key, query in pairs(config or {}) do
+                                    if q == query and key:find("[%]%[][cC]") then
+                                        vim.cmd("normal! " .. key)
+                                        return
+                                    end
+                                end
+                            end
+                            return fn(q, ...)
+                        end
+                    end
+                end
+            end
+        },
+        -- Show context of the current function
+        {
+            "nvim-treesitter/nvim-treesitter-context",
+            event = {
+                "BufReadPost",
+                "BufNewFile",
+                "BufWritePost"
+            },
+            enabled = true,
+            opts = {
+                mode = "cursor",
+                max_lines = 3
+            }
         },
         {
             "JoosepAlviste/nvim-ts-context-commentstring",
-            lazy = true
+            event = {
+                "BufReadPost",
+                "BufNewFile",
+                "BufWritePost"
+            },
+            opts = {
+                enable_autocmd = false
+            }
         },
         {
             "RRethy/nvim-treesitter-endwise"
         },
+        -- Automatically add closing tags for HTML and JSX
         {
-            "windwp/nvim-ts-autotag"
+            "windwp/nvim-ts-autotag",
+            event = {
+                "BufReadPost",
+                "BufNewFile",
+                "BufWritePost"
+            },
+            opts = {}
         }
+    },
+    cmd = {
+        "TSUpdateSync",
+        "TSUpdate",
+        "TSInstall"
     },
     opts = {
         ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -59,26 +111,6 @@ return {
                 node_incremental = "C-space", -- increment to the upper named parent
                 scope_incremental = "A-space", -- increment to the upper scope (as defined in locals.scm)
                 node_decremental = "<bs>" -- decrement to the previous node
-            }
-        },
-        playground = {
-            enable = true,
-            disable = {},
-            updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-            persist_queries = false, -- Whether the query persists across vim sessions
-            keybindings = {
-                toggle_query_editor = "o",
-                toggle_hl_groups = "i",
-                toggle_injected_languages = "t",
-
-                -- This shows stuff like literal strings, commas, etc.
-                toggle_anonymous_nodes = "a",
-                toggle_language_display = "I",
-                focus_language = "f",
-                unfocus_language = "F",
-                update = "R",
-                goto_node = "<cr>",
-                show_help = "?"
             }
         },
         textobjects = {
@@ -111,20 +143,20 @@ return {
                 enable = true,
                 set_jumps = true, -- whether to set jumps in the jumplist
                 goto_next_start = {
-                    ["]m"] = "@function.outer",
-                    ["]]"] = "@class.outer"
+                    ["]f"] = "@function.outer",
+                    ["]c"] = "@class.outer"
                 },
                 goto_next_end = {
-                    ["]M"] = "@function.outer",
-                    ["]["] = "@class.outer"
+                    ["]F"] = "@function.outer",
+                    ["]C"] = "@class.outer"
                 },
                 goto_previous_start = {
-                    ["[m"] = "@function.outer",
-                    ["[["] = "@class.outer"
+                    ["[f"] = "@function.outer",
+                    ["[c"] = "@class.outer"
                 },
                 goto_previous_end = {
-                    ["[M"] = "@function.outer",
-                    ["[]"] = "@class.outer"
+                    ["[F"] = "@function.outer",
+                    ["[C"] = "@class.outer"
                 }
             },
             swap = {

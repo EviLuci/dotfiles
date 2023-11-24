@@ -5,6 +5,11 @@ return {
             "<leader>ot",
             "<Cmd>ToggleTerm<Cr>",
             desc = "Terminal"
+        },
+        {
+            "<leader>oT",
+            "<Cmd>2ToggleTerm<Cr>",
+            desc = "Terminal #2"
         }
     },
     cmd = {

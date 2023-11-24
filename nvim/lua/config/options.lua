@@ -65,7 +65,7 @@ opt.autowrite = true
 opt.hlsearch = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
-opt.smoothscroll = true
+-- opt.smoothscroll = true
 
 opt.winminwidth = 5
 opt.showmode = false

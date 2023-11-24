@@ -34,6 +34,21 @@ return {
             "<leader>bc",
             "<Cmd>BufferLineGroupClose ungrouped<CR>",
             desc = "Delete non-pinned buffers"
+        },
+        {
+            "<leader>bo",
+            "<Cmd>BufferLineCloseOthers<CR>",
+            desc = "Delete other buffers"
+        },
+        {
+            "<leader>br",
+            "<Cmd>BufferLineCloseRight<CR>",
+            desc = "Delete buffers to the right"
+        },
+        {
+            "<leader>bl",
+            "<Cmd>BufferLineCloseLeft<CR>",
+            desc = "Delete buffers to the left"
         }
     },
     opts = {
@@ -49,5 +64,12 @@ return {
                 }
             }
         }
-    }
+    },
+    config = function(_, opts)
+        require("bufferline").setup(opts)
+        -- Fix bufferline when restoring a session
+        vim.api.nvim_create_autocmd("BufAdd", {
+            callback = function() vim.schedule(function() pcall(nvim_bufferline) end) end
+        })
+    end
 }

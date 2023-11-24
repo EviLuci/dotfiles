@@ -137,6 +137,20 @@ map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', {
     desc = "Paste over currently selected text without yanking it"
 })
 
+-- Make 'c' key not copy to clipboard when changing a character.
+map({
+    "n",
+    "x"
+}, "c", '"_c', {
+    desc = "Change without yanking"
+})
+map({
+    "n",
+    "x"
+}, "C", '"_C', {
+    desc = "Change without yanking"
+})
+
 -- Better escape using jk in insert and terminal mode
 map("i", "jk", "<ESC>")
 map("i", "kj", "<ESC>")
@@ -235,6 +249,38 @@ map({
 local searching_google_in_normal =
     [[:lua vim.fn.system({'xdg-open', 'https://google.com/search?q=' .. vim.fn.expand("<cword>")})<CR>]]
 map("n", "<C-q><C-g>", searching_google_in_normal)
+
+-- diagnostic
+local diagnostic_goto = function(next, severity)
+    local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+    severity = severity and vim.diagnostic.severity[severity] or nil
+    return function()
+        go({
+            severity = severity
+        })
+    end
+end
+map("n", "<leader>cd", vim.diagnostic.open_float, {
+    desc = "Line Diagnostics"
+})
+map("n", "]d", diagnostic_goto(true), {
+    desc = "Next Diagnostic"
+})
+map("n", "[d", diagnostic_goto(false), {
+    desc = "Prev Diagnostic"
+})
+map("n", "]e", diagnostic_goto(true, "ERROR"), {
+    desc = "Next Error"
+})
+map("n", "[e", diagnostic_goto(false, "ERROR"), {
+    desc = "Prev Error"
+})
+map("n", "]w", diagnostic_goto(true, "WARN"), {
+    desc = "Next Warning"
+})
+map("n", "[w", diagnostic_goto(false, "WARN"), {
+    desc = "Prev Warning"
+})
 
 -- Quickfix mappings
 map('n', '<leader>qk', ':cexpr []<cr>', {
@@ -358,20 +404,6 @@ map({
 -- Clear search, diff update and redraw
 map("n", "<esc>", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>", {
     desc = "Redraw / clear hlsearch / diff update"
-})
-
--- Make 'c' key not copy to clipboard when changing a character.
-map({
-    "n",
-    "x"
-}, "c", '"_c', {
-    desc = "Change without yanking"
-})
-map({
-    "n",
-    "x"
-}, "C", '"_C', {
-    desc = "Change without yanking"
 })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-N

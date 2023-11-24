@@ -21,11 +21,6 @@ return {
     },
     keys = {
         {
-            "<leader>,",
-            "<cmd>Telescope buffers show_all_buffers=true<cr>",
-            desc = "Switch Buffer"
-        },
-        {
             "<leader>:",
             "<cmd>Telescope command_history<cr>",
             desc = "Command History"
@@ -43,7 +38,7 @@ return {
         },
         {
             "<leader>fb",
-            "<cmd>Telescope buffers<cr>",
+            "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
             desc = "Buffers"
         },
         {
@@ -97,11 +92,6 @@ return {
         },
         {
             "<leader>sc",
-            "<cmd>Telescope command_history<cr>",
-            desc = "Command History"
-        },
-        {
-            "<leader>sC",
             "<cmd>Telescope commands<cr>",
             desc = "Commands"
         },

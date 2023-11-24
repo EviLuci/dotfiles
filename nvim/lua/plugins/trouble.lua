@@ -42,7 +42,8 @@ return {
                         jump = true
                     })
                 else
-                    vim.cmd.cprev()
+                    local ok, err = pcall(vim.cmd.cprev)
+                    if not ok then vim.notify(err, vim.log.levels.ERROR) end
                 end
             end,
             desc = "Previous trouble/quickfix item"
@@ -56,7 +57,8 @@ return {
                         jump = true
                     })
                 else
-                    vim.cmd.cnext()
+                    local ok, err = pcall(vim.cmd.cnext)
+                    if not ok then vim.notify(err, vim.log.levels.ERROR) end
                 end
             end,
             desc = "Next trouble/quickfix item"

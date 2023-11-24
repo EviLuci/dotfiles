@@ -6,6 +6,26 @@ return {
             "<leader>e",
             "<cmd>:Neotree toggle<cr>",
             desc = "NeoTree"
+        },
+        {
+            "<leader>ge",
+            function()
+                require("neo-tree.command").execute({
+                    source = "git_status",
+                    toggle = true
+                })
+            end,
+            desc = "Git explorer"
+        },
+        {
+            "<leader>be",
+            function()
+                require("neo-tree.command").execute({
+                    source = "buffers",
+                    toggle = true
+                })
+            end,
+            desc = "Buffer explorer"
         }
     },
     opts = {
@@ -18,6 +38,7 @@ return {
         open_files_do_not_replace_types = {
             "terminal",
             "Trouble",
+            "trouble",
             "qf",
             "Outline"
         },
