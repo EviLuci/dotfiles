@@ -137,7 +137,7 @@ map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', {
     desc = "Paste over currently selected text without yanking it"
 })
 
--- Make 'c' key not copy to clipboard when changing a character.
+-- Change the default Copy to clipboard behaviour
 map({
     "n",
     "x"
@@ -149,6 +149,12 @@ map({
     "x"
 }, "C", '"_C', {
     desc = "Change without yanking"
+})
+map({
+    "n",
+    "x"
+}, "x", '"_x', {
+    desc = "delete without yanking"
 })
 
 -- Better escape using jk in insert and terminal mode
