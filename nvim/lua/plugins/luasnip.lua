@@ -6,7 +6,6 @@ return {
     },
     opts = function()
         local types = require "luasnip.util.types"
-
         return {
             history = true,
             delete_check_events = "TextChanged",

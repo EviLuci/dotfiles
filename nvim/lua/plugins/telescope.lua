@@ -194,9 +194,9 @@ return {
         }
     end,
     config = function()
-        require("telescope").load_extension("file_browser")
-        require("telescope").load_extension("luasnip")
-        require("telescope").load_extension("fzf")
+        pcall(require("telescope").load_extension("file_browser"))
+        pcall(require("telescope").load_extension("luasnip"))
+        pcall(require("telescope").load_extension("fzf"))
     end
 
 }

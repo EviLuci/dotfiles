@@ -1,10 +1,11 @@
-require("config.options")
+if vim.g.vscode then
+    -- VSCode Settings
+    require("config.keymaps")
 
--- if vim.g.vscode then
---     -- VSCode Settings
--- else
--- ordinary Neovim
-require("config.lazy")
-require("config.keymaps")
-require("config.autocmds")
--- end
+else
+    -- ordinary Neovim
+    require("config.options")
+    require("config.lazy")
+    require("config.keymaps")
+    require("config.autocmds")
+end

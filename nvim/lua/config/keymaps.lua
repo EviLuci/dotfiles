@@ -22,6 +22,14 @@ map({
     "v",
     "n",
     "s"
+}, "<A-s>", "<cmd>wa<cr><esc>", {
+    desc = "Save all file"
+})
+map({
+    "i",
+    "v",
+    "n",
+    "s"
 }, "<C-q>", "<cmd>wq!<cr><esc>", {
     desc = "Force Save file and quit"
 })
@@ -39,10 +47,10 @@ map("n", "<A-q>", "<cmd>wqa<cr>", {
 })
 
 -- go to beginning and end in insert mode
-map("i", "<C-b>", "<ESC>^i", {
+map("i", "<A-b>", "<ESC>^i", {
     desc = "Go to beginning of line"
 })
-map("i", "<C-e>", "<End>", {
+map("i", "<A-e>", "<End>", {
     desc = "Go to end of line"
 })
 
@@ -71,12 +79,20 @@ map("n", "<leader>l", "<cmd>:Lazy<cr>", {
 })
 
 -- Insert empty line without entering insert mode
-map('n', '[o', ':<C-u>call append(line("."), repeat([""], v:count1))<CR>')
-map('n', ']o', ':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>')
+map('n', '[o', ':<C-u>call append(line("."), repeat([""], v:count1))<CR>', {
+    desc = "Insert empty line below"
+})
+map('n', ']o', ':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>', {
+    desc = "Insert empty line above"
+})
 
 -- Insert empty line in insert mode
-map("i", "<A-o>", "<C-O>o")
-map("i", "<A-O>", "<C-O>O")
+map("i", "<A-o>", "<C-O>o", {
+    desc = "Insert empty line below"
+})
+map("i", "<A-O>", "<C-O>O", {
+    desc = "Insert empty line above"
+})
 
 -- Insert blank line
 -- keymap("n", "]<Space>", "o<Esc>")
@@ -92,6 +108,14 @@ map("n", "<C-y>", "<cmd>%y+<CR>", {
     desc = "Copy whole file"
 })
 
+-- Remap _ and $
+map("n", "H", "_", {
+    desc = "Go to beginning of line"
+})
+map("n", "L", "$", {
+    desc = "Go to end of line"
+})
+
 -- better indenting
 map("v", "<", "<gv", {
     desc = "Decrease Indent"
@@ -101,14 +125,14 @@ map("v", ">", ">gv", {
 })
 
 -- Paste
-map("n", "<leader>p", "o<Esc>p", {
+map("n", "]p", "o<Esc>p", {
     desc = "Paste below"
 })
-map("n", "<leader>P", "O<Esc>p", {
+map("n", "[P", "O<Esc>p", {
     desc = "Paste above"
 })
 map("i", "<C-v>", '<ESC>"+p<ESC>a', {
-    desc = "Paste"
+    desc = "Paste from clipboard"
 })
 map({
     "n",
@@ -183,16 +207,34 @@ map("t", "<C-l>", "<C-\\><C-n><C-w>l", {
 
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", {
-    desc = "Go to left window"
+    desc = "Go to left window",
+    remap = true
 })
 map("n", "<C-j>", "<C-w>j", {
-    desc = "Go to lower window"
+    desc = "Go to lower window",
+    remap = true
 })
 map("n", "<C-k>", "<C-w>k", {
-    desc = "Go to upper window"
+    desc = "Go to upper window",
+    remap = true
 })
 map("n", "<C-l>", "<C-w>l", {
-    desc = "Go to right window"
+    desc = "Go to right window",
+    remap = true
+})
+
+-- Move with shift-arrows
+map("n", "<S-Left>", "<C-w><S-h>", {
+    desc = "Move window to the left"
+})
+map("n", "<S-Down>", "<C-w><S-j>", {
+    desc = "Move window down"
+})
+map("n", "<S-Up>", "<C-w><S-k>", {
+    desc = "Move window up"
+})
+map("n", "<S-Right>", "<C-w><S-l>", {
+    desc = "Move window to the right"
 })
 
 -- Move Lines
@@ -288,7 +330,31 @@ map("n", "[w", diagnostic_goto(false, "WARN"), {
     desc = "Prev Warning"
 })
 
--- Quickfix mappings
+-- Quickfix and Location list mappings
+map("n", "[q", ":cprevious<CR>", {
+    desc = "Next quickfix"
+})
+map("n", "]q", ":cnext<CR>", {
+    desc = "Previous quickfix"
+})
+map("n", "[Q", ":cfirst<CR>", {
+    desc = "First quickfix"
+})
+map("n", "]Q", ":clast<CR>", {
+    desc = "Last quickfix"
+})
+map("n", "[l", ":lprevious<CR>", {
+    desc = "Previous location"
+})
+map("n", "]l", ":lnext<CR>", {
+    desc = "Next location"
+})
+map("n", "[L", ":lfirst<CR>", {
+    desc = "First location"
+})
+map("n", "]L", ":llast<CR>", {
+    desc = "Last location"
+})
 map('n', '<leader>qk', ':cexpr []<cr>', {
     desc = 'Clear list'
 })
@@ -302,36 +368,36 @@ map('n', '<leader>qf', ':cfdo %s/', {
     desc = 'Search & Replace'
 })
 map('n', '<leader>qp', ':cprev<cr>zz', {
-    desc = 'Prev Item'
+    desc = 'Prev Quickfix Item'
 })
 map('n', '<leader>qn', ':cnext<cr>zz', {
-    desc = 'Next Item'
+    desc = 'Next Quickfix Item'
 })
 
 -- windows
 map("n", "<leader>ww", "<C-W>p", {
-    desc = "Other window"
+    desc = "Other window",
+    remap = true
 })
 map("n", "<leader>wd", "<C-W>c", {
-    desc = "Delete window"
+    desc = "Delete window",
+    remap = true
 })
 map("n", "<leader>w-", "<C-W>s", {
-    desc = "Split window horizontally"
+    desc = "Split window below",
+    remap = true
 })
 map("n", "<leader>w|", "<C-W>v", {
-    desc = "Split window vertically"
-})
-map("n", "<leader>ws", "<C-W>s", {
-    desc = "Split window horizontally"
-})
-map("n", "<leader>wv", "<C-W>v", {
-    desc = "Split window vertically"
+    desc = "Split window right",
+    remap = true
 })
 map("n", "<leader>-", "<C-W>s", {
-    desc = "Split window horizontally"
+    desc = "Split window below",
+    remap = true
 })
 map("n", "<leader>|", "<C-W>v", {
-    desc = "Split window vertically"
+    desc = "Split window right",
+    remap = true
 })
 
 -- buffers

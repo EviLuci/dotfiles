@@ -58,6 +58,12 @@ return {
                     "prettier"
                 }
             },
+            scss = {
+                {
+                    "prettierd",
+                    "prettier"
+                }
+            },
             html = {
                 {
                     "prettierd",

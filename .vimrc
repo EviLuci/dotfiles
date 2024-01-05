@@ -221,7 +221,7 @@ inoremap <A-j> <esc><cmd>m .+1<cr>==gi
 inoremap <A-k> <esc><cmd>m .-2<cr>==gi
 
 
-" Use alt + hjkl to resize windows
+" Use ctrl + arrows to resize windows
 nnoremap <C-Up>    :resize -2<CR>
 nnoremap <C-Down>    :resize +2<CR>
 nnoremap <C-Left>    :vertical resize -2<CR>

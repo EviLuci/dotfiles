@@ -31,6 +31,16 @@ opt.fillchars = {
     diff = "╱",
     eob = " "
 }
+opt.listchars = {
+    tab = "→ ",
+    eol = "↲",
+    nbsp = "␣",
+    lead = "␣",
+    space = "␣",
+    trail = "•",
+    extends = "⟩",
+    precedes = "⟨"
+}
 opt.foldenable = true
 opt.foldlevel = 99
 opt.foldlevelstart = 99
@@ -106,7 +116,17 @@ opt.scrolloff = 8
 opt.pumblend = 20
 opt.pumheight = 10
 opt.wildmode = "longest:full,full"
-opt.formatoptions = "jcroqlnt" -- tcqj
+-- opt.formatoptions = "jcroqlnt" -- tcqj
+opt.formatoptions = opt.formatoptions - "a" -- Auto formatting is BAD.
+- "t" -- Don't auto format my code. I got linters for that.
++ "c" -- In general, I like it when comments respect textwidth
++ "q" -- Allow formatting comments w/ gq
+- "o" -- O and o, don't continue comments
++ "r" -- But do continue when pressing enter.
++ "n" -- Indent past the formatlistpat, not underneath it.
++ "j" -- Auto-remove comments if possible.
+- "2" -- I'm not in gradeschool anymore
+
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
 
@@ -125,3 +145,26 @@ opt.whichwrap:append "<>[]hl"
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
+-- Fix common typos
+vim.cmd([[
+    cnoreabbrev W! w!
+    cnoreabbrev W1 w!
+    cnoreabbrev w1 w!
+    cnoreabbrev Q! q!
+    cnoreabbrev Q1 q!
+    cnoreabbrev q1 q!
+    cnoreabbrev Qa! qa!
+    cnoreabbrev Qall! qall!
+    cnoreabbrev Wa wa
+    cnoreabbrev Wq wq
+    cnoreabbrev wQ wq
+    cnoreabbrev WQ wq
+    cnoreabbrev wq1 wq!
+    cnoreabbrev Wq1 wq!
+    cnoreabbrev wQ1 wq!
+    cnoreabbrev WQ1 wq!
+    cnoreabbrev W w
+    cnoreabbrev Q q
+    cnoreabbrev Qa qa
+    cnoreabbrev Qall qall
+]])
