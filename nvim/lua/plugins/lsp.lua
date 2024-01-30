@@ -9,25 +9,6 @@ return {
             'neovim/nvim-lspconfig'
         },
         {
-            'simrat39/rust-tools.nvim',
-            event = "VeryLazy",
-            config = function()
-                require('rust-tools').setup({
-                    server = {
-                        on_attach = function(client, bufnr)
-                            require('navigator.lspclient.mapping').setup({
-                                client = client,
-                                bufnr = bufnr
-                            }) -- setup navigator keymaps here,
-                            require("navigator.dochighlight").documentHighlight(bufnr)
-                            require('navigator.codeAction').code_action_prompt(bufnr)
-                            -- otherwise, you can define your own commands to call navigator functions
-                        end
-                    }
-                })
-            end
-        },
-        {
             'akinsho/flutter-tools.nvim',
             event = "VeryLazy",
             dependencVies = {
