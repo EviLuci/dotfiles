@@ -6,11 +6,11 @@ Dotfiles for my linux setup on Arch
 
 # Desktop
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/desktop.jpg)
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/desktop.png)
 
 # Neovim
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi.png)
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/neovim.png)
 
 # Rofi
 
