@@ -6,12 +6,20 @@ Dotfiles for my linux setup on Arch
 
 # Desktop
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/Screenshots/desktop.jpg)
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/desktop.jpg)
 
-# Sway Notification Daemon
+# Neovim
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/Screenshots/swaync.png)
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi.png)
 
 # Rofi
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/Screenshots/rofi.png)
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi.png)
+
+# Waybar
+
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/waybar.png)
+
+# Sway Notification Daemon
+
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync.png)
