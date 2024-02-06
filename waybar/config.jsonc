@@ -275,18 +275,20 @@
 
     // Custom
     "custom/pacman": {
-        "format": "{}",
-        "interval": 3600,                     // every hour
-        "exec": "(paru -Qua) | wc -l",       // # of updates
-        "exec-if": "exit 0",                  // always run; consider advanced run conditions
-        "on-click": "kitty -e 'paru'; pkill -SIGRTMIN+8 waybar", // update system
-        "signal": 8
+        "format": "{icon}{}",
+        "return-type": "json",
+        "format-icons": {
+            "pending-updates": " ",
+            "updated": ""
+        },
+        "exec-if": "which waybar-updates",
+        "exec": "waybar-updates"
     },
     "custom/updates": {
         "format": "{} {icon}",
         "return-type": "json",
         "format-icons": {
-            "has-updates": "",
+            "has-updates": " ",//"
             "updated": ""
         },
         "exec-if": "which waybar-module-pacman-updates",
