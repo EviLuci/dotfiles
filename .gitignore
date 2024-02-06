@@ -1,19 +1,19 @@
-# exclude everything
-*
+# Blocklist files/folders in same directory as the .gitignore file
+/*
 
 # except these
 !.gitignore
 !.bashrc
 !.vimrc
 !README.md
-!/fish
-!/hypr
-!/kitty
-!/nvim
-!/rofi
-!/pics
-!/swaync
-!/waybar
-!/wezterm
-!/wlogout
+!fish
+!hypr
+!kitty
+!nvim
+!rofi
+!Screenshots
+!swaync
+!waybar
+!wezterm
+!wlogout
 
