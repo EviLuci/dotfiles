@@ -209,8 +209,6 @@ map 0 ^
 nnoremap <C-s> :w<CR>
 " Alternate way to quit
 nnoremap <C-q> :wq!<CR>
-" Use control-c instead of escape
-nnoremap <C-c> <Esc>
 " Select all
 nnoremap <C-a> ggVG
 " Undo

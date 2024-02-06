@@ -8,3 +8,4 @@ else
     require("config.keymaps")
     require("config.autocmds")
 end
+

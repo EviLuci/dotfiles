@@ -1,17 +1,19 @@
 # exclude everything
 *
+
 # except these
 !.gitignore
-!fish/
-!hypr/
-!kitty/
-!nvim/
-!rofi/
-!Screenshots/
-!swaync/
-!waybar/
-!wezterm/
-!wlogout/
 !.bashrc
 !.vimrc
 !README.md
+!/fish
+!/hypr
+!/kitty
+!/nvim
+!/rofi
+!/pics
+!/swaync
+!/waybar
+!/wezterm
+!/wlogout
+
