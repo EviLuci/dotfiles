@@ -205,12 +205,46 @@ let g:mapleader = "\<Space>"
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-" Nitpicky stuff
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ'z"
-nnoremap g, g,zvzz
-nnoremap g; g;zvzz
+" Alternate way to save
+nnoremap <C-s> :w<CR>
+" Alternate way to quit
+nnoremap <C-q> :wq!<CR>
+" Use control-c instead of escape
+nnoremap <C-c> <Esc>
+" Select all
+nnoremap <C-a> ggVG
+" Undo
+inoremap <C-z> <C-O>u
+
+" I hate escape more than anything else
+inoremap jk <Esc>
+inoremap kj <Esc>
+inoremap jj <Esc>
+
+" go to the beginning and end in insert mode
+inoremap <A-b> <ESC>^i
+inoremap <A-e> <End>
+
+" navigate within insert mode
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+
+" new file
+nnoremap <leader>of <cmd>enew<cr>
+
+" Insert empty line in insert mode
+inoremap <A-o> <C-O>o
+inoremap <A-O> <C-O>O
+
+" Paste without yanking
+vnoremap p "_dp
+
+" Copy and Paste
+nnoremap ]p o<esc>p
+nnoremap [P o<esc>P
+inoremap <C-v> <esc>po
 
 " Move a line of text using ALT+[jk]
 nnoremap <A-j> <cmd>m .+1<cr>==
@@ -220,42 +254,8 @@ vnoremap <A-k> :m '<-2<cr>gv=gv
 inoremap <A-j> <esc><cmd>m .+1<cr>==gi
 inoremap <A-k> <esc><cmd>m .-2<cr>==gi
 
-
-" Use ctrl + arrows to resize windows
-nnoremap <C-Up>    :resize -2<CR>
-nnoremap <C-Down>    :resize +2<CR>
-nnoremap <C-Left>    :vertical resize -2<CR>
-nnoremap <C-Right>    :vertical resize +2<CR>
-
-" I hate escape more than anything else
-inoremap jk <Esc>
-inoremap kj <Esc>
-inoremap jj <Esc>
-
-" Alternate way to save
-nnoremap <C-s> :w<CR>
-" Alternate way to quit
-nnoremap <C-q> :wq!<CR>
-" Use control-c instead of escape
-nnoremap <C-c> <Esc>
-" Select all
-nnoremap <C-a> ggVG
-
-" Scrolling
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
-
-" Better tabbing
-vnoremap < <gv
-vnoremap > >gv
-
-" Paste without yanking
-vnoremap p "_dp
-
-" Paste
-nnoremap <leader>p o<esc>p
-nnoremap <leader>P o<esc>P
-inoremap <C-v> <esc>po
+" Search word under cursor
+nnoremap gw *N
 
 " Better window navigation
 nnoremap <C-h> <C-w>h
@@ -263,12 +263,30 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Move windows with shift-arrows
+nnoremap <S-Left> <C-w><S-h>
+nnoremap <S-Right> <C-w><S-j>
+nnoremap <S-Up> <C-w><S-k>
+nnoremap <S-Down> <C-w><S-l>
+
 "Close the current buffer
-map <leader>ba :bufdo bd<cr>
+nnoremap <leader>bd :bdelete<cr>
+
+" Switch to other buffer
+nnoremap <leader>bb :e #<cr>
 
 " Switch buffer
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
+nnoremap ]b :bnext<cr>
+nnoremap [b :bprevious<cr>
+nnoremap <Tab> :bprevious<cr>
+nnoremap <A-Tab> :bnext<cr>
+
+
+" Use ctrl + arrows to resize windows
+nnoremap <C-Up>    :resize -2<CR>
+nnoremap <C-Down>    :resize +2<CR>
+nnoremap <C-Left>    :vertical resize -2<CR>
+nnoremap <C-Right>    :vertical resize +2<CR>
 
 " useful mappings for managing tabs
 map <leader><tab><tab> :tabnew<cr>
@@ -277,11 +295,33 @@ map <leader><tab>c :tabclose<cr>
 map <leader><tab>m :tabmove<cr>
 map <leader><tab>p :tabprevious<cr>
 map <leader><tab>n :tabnext<cr>
+
 " Open a new tab with the current buffer path
 map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 
 "Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Nitpicky stuff
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ'z"
+nnoremap g, g,zvzz
+nnoremap g; g;zvzz
+
+" Scrolling
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+" add undo break-points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ; ;<c-g>u
+inoremap ? ?<c-g>u
+
+" Better tabbing
+vnoremap < <gv
+vnoremap > >gv
 
 " For moving quickly up and down,
 " Goes to the first line above/below that isn't whitespace
@@ -310,7 +350,6 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "
 
 " Wayland Support for copy paste
 autocmd TextYankPost * if (v:event.operator == 'y' || v:event.operator == 'd') | silent! execute 'call system("wl-copy", @")' | endif
-nnoremap <leader>p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', '', 'g')<cr>p
 nnoremap p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
 
 
