@@ -91,7 +91,7 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
+
     spacing:                     0px;
     margin:                      0px;
     padding:                     0px;
@@ -120,7 +120,7 @@ element {
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
-    orientation:                 horizontal;
+    orientation:                 vertical;
     cursor:                      pointer;
 }
 element normal.normal {
