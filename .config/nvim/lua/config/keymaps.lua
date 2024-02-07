@@ -507,6 +507,8 @@ map("o", "N", "'nN'[v:searchforward]", {
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 map("n", "J", "mzJ`z")
+map("n", "}", "}zzzv")
+map("n", "{", "{zzzv")
 map("n", "g,", "g,zvzz")
 map("n", "g;", "g;zvzz")
 map("n", "<C-d>", "<C-d>zz")
