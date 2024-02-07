@@ -55,7 +55,7 @@ git clone https://github.com/EviLuci/dotfiles.git
 
 It is recommended to review the script and understand its actions before executing it.
 
-### Necessary dependencies for the hyprland setup
+### Necessary dependencies for my hyprland setup
 - [Hyprland](https://github.com/vaxerski/Hyprland/) (Hyprland is a dynamic tiling Wayland compositor that doesn't sacrifice on its looks.)
 - [waybar](https://github.com/Alexays/Waybar/)  (Like polybar, but for wlroots, very customizable)
 - [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter) (GNOME like notification daemon, with GUI and all)
