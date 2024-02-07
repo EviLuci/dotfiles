@@ -59,14 +59,14 @@ It is recommended to review the script and understand its actions before executi
 - [Hyprland](https://github.com/vaxerski/Hyprland/) (Hyprland is a dynamic tiling Wayland compositor that doesn't sacrifice on its looks.)
 - [waybar](https://github.com/Alexays/Waybar/)  (Like polybar, but for wlroots, very customizable)
 - [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter) (GNOME like notification daemon, with GUI and all)
-- [rofi-wayland](https://github.com/lbonn/rofi) (Rofi fork with support for wlroots)
+- [Rofi-wayland](https://github.com/lbonn/rofi) (Rofi fork with support for wlroots)
 - [Hyprshot](https://github.com/Gustash/Hyprshot) (utility to easily take screenshot in Hyprland using your mouse)
 - [Wlogout](https://github.com/ArtsyMacaw/wlogout) (Logout menu)
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (Command-line copy/paste utilities for Wayland)
 - [copyq](https://hluk.github.io/CopyQ/) (CopyQ is an advanced clipboard manager with editing and scripting features.)
 - [Pipewire](https://github.com/PipeWire/pipewire) (server and user space API to deal with multimedia pipelines)
 - [Kitty](https://github.com/kovidgoyal/kitty) (A cross-platform, fast, feature-full, GPU-based terminal emulator)
-- [wezterm](https://wezfurlong.org/wezterm/) (A GPU-accelerated cross-platform terminal emulator and multiplexer)
+- [Wezterm](https://wezfurlong.org/wezterm/) (A GPU-accelerated cross-platform terminal emulator and multiplexer)
 - [Azote](https://github.com/nwg-piotr/azote) (GTK3 based wallpaper setter using swaybg)
 - [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
@@ -78,7 +78,7 @@ It is recommended to review the script and understand its actions before executi
 
 ### Arch Base Installation
 
-The `arch_base_install.sh` script is used for configure and set up everything during Arch Linux installation. It includes system configurations, package installations, bootloader setup, user creation, and initial dotfiles setup.
+The `arch_base_install.sh` script is used to configure and set up everything during Arch Linux installation. It includes system configurations, package installations, bootloader setup, user creation, and initial dotfiles setup.
 
 ⚠️ **Warning**: Please use the `arch_base_install.sh` script at your own risk. This script is experimental at the moment and makes system-level changes and is only advisable to be used during fresh arch installation after going through arch installation wiki and entering arch-chroot environment.
 
