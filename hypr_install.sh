@@ -32,7 +32,7 @@ install_packages() {
     qpwgraph \
     nemo \
     tor \
-    torbrowser-launcher \
+    torbrowser-launcheru \
     copyq \
     telegram-desktop \
     gimp \
@@ -51,8 +51,8 @@ install_packages() {
     noto-fonts-emoji \
     starship \
     snapper
-    
-    
+
+
     # Install AUR helper if not installed
     if ! command -v paru &> /dev/null; then
         echo "Installing paru AUR helper..."
@@ -60,7 +60,7 @@ install_packages() {
         (cd /tmp/paru && makepkg -si --noconfirm)
         rm -rf /paru
     fi
-    
+
     # Install AUR packages using paru
     echo "Installing AUR packages..."
     paru -S "${AUR_PACKAGES[@]}"

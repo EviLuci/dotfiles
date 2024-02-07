@@ -1,6 +1,6 @@
 # Dotfiles (WIP)
 
-This repository contains my personal dotfiles and installation scripts for setting up my Arch Linux system.
+This repository contains my personal dotfiles and installation scripts for setting up my Arch Linux system and Hyprland setup.
 
 ## Contents
 
@@ -54,6 +54,27 @@ git clone https://github.com/EviLuci/dotfiles.git
 ```
 
 It is recommended to review the script and understand its actions before executing it.
+
+### Necessary dependencies for the hyprland setup
+- [Hyprland](https://github.com/vaxerski/Hyprland/) (Hyprland is a dynamic tiling Wayland compositor that doesn't sacrifice on its looks.)
+- [waybar](https://github.com/Alexays/Waybar/)  (Like polybar, but for wlroots, very customizable)
+- [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter) (GNOME like notification daemon, with GUI and all)
+- [rofi-wayland](https://github.com/lbonn/rofi) (Rofi fork with support for wlroots)
+- [Hyprshot](https://github.com/Gustash/Hyprshot) (utility to easily take screenshot in Hyprland using your mouse)
+- [Wlogout](https://github.com/ArtsyMacaw/wlogout) (Logout menu)
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (Command-line copy/paste utilities for Wayland)
+- [copyq](https://hluk.github.io/CopyQ/) (CopyQ is an advanced clipboard manager with editing and scripting features.)
+- [Pipewire](https://github.com/PipeWire/pipewire) (server and user space API to deal with multimedia pipelines)
+- [Kitty](https://github.com/kovidgoyal/kitty) (A cross-platform, fast, feature-full, GPU-based terminal emulator)
+- [wezterm](https://wezfurlong.org/wezterm/) (A GPU-accelerated cross-platform terminal emulator and multiplexer)
+- [Azote](https://github.com/nwg-piotr/azote) (GTK3 based wallpaper setter using swaybg)
+- [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
+- [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
+- [Fish](https://github.com/fish-shell/fish-shell) (smart and user-friendly command line shell)
+- [Starship](https://github.com/starship/starship) (cross-shell prompt)
+- FiraCode Nerd Font, Font Awesome (fonts with icons)
+- sweet-gtk-theme-dark, beautyline (system and icon themes)
+
 
 ### Arch Base Installation
 
