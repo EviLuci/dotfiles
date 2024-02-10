@@ -63,13 +63,15 @@ It is recommended to review the script and understand its actions before executi
 - [Hyprshot](https://github.com/Gustash/Hyprshot) (utility to easily take screenshot in Hyprland using your mouse)
 - [Wlogout](https://github.com/ArtsyMacaw/wlogout) (Logout menu)
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (Command-line copy/paste utilities for Wayland)
+- [Azote](https://github.com/nwg-piotr/azote) (GTK3 based wallpaper setter using swaybg)
+- [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
+- [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
+
+### Optional packages
 - [copyq](https://hluk.github.io/CopyQ/) (CopyQ is an advanced clipboard manager with editing and scripting features.)
 - [Pipewire](https://github.com/PipeWire/pipewire) (server and user space API to deal with multimedia pipelines)
 - [Kitty](https://github.com/kovidgoyal/kitty) (A cross-platform, fast, feature-full, GPU-based terminal emulator)
 - [Wezterm](https://wezfurlong.org/wezterm/) (A GPU-accelerated cross-platform terminal emulator and multiplexer)
-- [Azote](https://github.com/nwg-piotr/azote) (GTK3 based wallpaper setter using swaybg)
-- [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
-- [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
 - [Fish](https://github.com/fish-shell/fish-shell) (smart and user-friendly command line shell)
 - [Starship](https://github.com/starship/starship) (cross-shell prompt)
 - FiraCode Nerd Font, Font Awesome (fonts with icons)
