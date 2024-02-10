@@ -45,16 +45,6 @@ lol 😂😂😂
 
 ## Installation
 
-### Cloning the Repository
-
-Before running the installation scripts, clone this repository to your local machine:
-
-```bash
-git clone https://github.com/EviLuci/dotfiles.git
-```
-
-It is recommended to review the script and understand its actions before executing it.
-
 ### Necessary dependencies for my hyprland setup
 - [Hyprland](https://github.com/vaxerski/Hyprland/) (Hyprland is a dynamic tiling Wayland compositor that doesn't sacrifice on its looks.)
 - [waybar](https://github.com/Alexays/Waybar/)  (Like polybar, but for wlroots, very customizable)
@@ -77,6 +67,15 @@ It is recommended to review the script and understand its actions before executi
 - FiraCode Nerd Font, Font Awesome (fonts with icons)
 - sweet-gtk-theme-dark, beautyline (system and icon themes)
 
+### Cloning the Repository
+
+Before running the installation scripts, clone this repository to your local machine:
+
+```bash
+git clone https://github.com/EviLuci/dotfiles.git
+```
+
+It is recommended to review the script and understand its actions before executing it.
 
 ### Arch Base Installation
 
