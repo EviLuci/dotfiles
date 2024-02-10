@@ -57,7 +57,7 @@ install_packages() {
     if ! command -v paru &> /dev/null; then
         echo "Installing paru AUR helper..."
         git clone https://aur.archlinux.org/paru.git /paru
-        (cd /tmp/paru && makepkg -si --noconfirm)
+        (cd /paru && makepkg -si --noconfirm)
         rm -rf /paru
     fi
 
@@ -106,7 +106,7 @@ for dir in "${CONFIG_DIRS[@]}"; do
     backup_directory "$HOME/.config/$dir"
 done
 
-# Backup existing individual files
+# Backup existing individual config files
 for file in "${CONFIG_FILES[@]}"; do
     if [ -f "$HOME/$file" ] || [ -d "$HOME/$file" ]; then
         echo "Backing up existing $file to $HOME/${file}.bak"
@@ -121,7 +121,7 @@ for dir in "${CONFIG_DIRS[@]}"; do
     ln -s "$DOTFILES_DIR/.config/$dir" "$HOME/.config/$dir"
 done
 
-# Install individual files
+# Install individual config files
 for file in "${CONFIG_FILES[@]}"; do
     # Create symlink to file
     echo "Creating symlink for $file"
