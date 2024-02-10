@@ -36,6 +36,21 @@ echo "Please enter the root password:"
 root_password=$(get_password "Root password")
 echo "root:$root_password" | chpasswd
 
+# Ask for new user details
+echo "Please enter the details for the new user:"
+new_username=""
+while [ -z "$new_username" ]; do
+    read -r -p "Username: " new_username
+done
+new_password=$(get_password "Password")
+
+# Create a new user
+useradd -m "$new_username"
+echo "$new_username:$new_password" | chpasswd
+
+# Grant sudo privileges to the new user
+echo "$new_username ALL=(ALL) ALL" >> /etc/sudoers.d/"$new_username"
+
 # Update pacman.conf
 # Uncomment the Color line and add "ILoveCandy" under it
 sed -i 's/^#Color/Color\nILoveCandy/' /etc/pacman.conf
@@ -55,23 +70,21 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 # Configure Grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
-# Ask for new user details
-echo "Please enter the details for the new user:"
-new_username=""
-while [ -z "$new_username" ]; do
-    read -r -p "Username: " new_username
-done
-new_password=$(get_password "Password")
-
-# Create a new user
-useradd -m "$new_username"
-echo "$new_username:$new_password" | chpasswd
-
-# Grant sudo privileges to the new user
-echo "$new_username ALL=(ALL) ALL" >> /etc/sudoers.d/"$new_username"
-
 # Enable necessary services
 systemctl enable --now NetworkManager bluetooth reflector.timer reflector.service avahi-daemon
+
+# Update reflector configuration
+# Define the list of countries
+countries="Bangladesh,India,China,  "
+
+# Check if reflector.conf already contains the countries line
+if grep -q "^--country" /etc/xdg/reflector/reflector.conf; then
+    # Modify existing line
+    sed -i "s/^--country .*/--country '$countries'/" /etc/xdg/reflector/reflector.conf
+else
+    # Append new line
+    echo "--country '$countries'" | sudo tee -a /etc/xdg/reflector/reflector.conf >/dev/null
+fi
 
 # Define AUR packages to be installed
 AUR_PACKAGES=(
@@ -124,8 +137,8 @@ install_packages() {
     noto-fonts-emoji \
     starship \
     snapper
-    
-    
+
+
     # Install AUR helper if not installed
     if ! command -v paru &> /dev/null; then
         echo "Installing paru AUR helper..."
@@ -133,7 +146,7 @@ install_packages() {
         (cd /tmp/paru && makepkg -si --noconfirm)
         rm -rf /paru
     fi
-    
+
     # Install AUR packages using paru
     echo "Installing AUR packages..."
     paru -S "${AUR_PACKAGES[@]}"
