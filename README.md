@@ -18,7 +18,7 @@ This repository contains my personal dotfiles and installation scripts for setti
 ## Introduction
 In this repository, you'll find my dotfiles and installation scripts that I use to configure and set up my Arch Linux system. These dotfiles include configurations for various applications such as Neovim, Fish shell, Wezterm, Kitty, and more. Additionally, I've included installation scripts that automate the setup process for my system, making it easier to replicate my environment on new machines or after system reinstallation.
 
-⚠️ **Disclaimer**: The repositories and scripts provided here are experimental and are intended for my personal use only. If you choose to use them, please be aware that you do so at your own risk. I make no guarantees about the reliability or suitability of these scripts and the configs for any purpose other than my own personal setup. It's completely a newbie setup as it is my first attempt and most of the configs are copied and adjusted to match my taste. So, don't expect everything to work
+⚠️ **Disclaimer**: The dotfiles and scripts provided in this repository are experimental and are intended for my personal use only. If you choose to use them, please be aware that you do so at your own risk. I make no guarantees about the reliability or suitability of these scripts and the configs for any purpose other than my own personal setup. It's completely a newbie setup as it is my first attempt and most of the configs are copied and adjusted to match my taste. So, don't expect everything to work
 lol 😂😂😂
 
 ## Preview
