@@ -93,7 +93,7 @@ cd
 ```
 ### Hypr Install
 
-The hypr_install.sh script installs only necessary user-preferred packages and sets up dotfiles. This script is useful for installing additional packages and configuring dotfiles after a fresh base Arch Linux installation.
+The `hypr_install.sh` script installs only necessary user-preferred packages and sets up dotfiles. This script is useful for installing additional packages and configuring dotfiles after a fresh base Arch Linux installation.
 
 To run the Hypr installation script, `cd` into the cloned `dotfiles` directory and then run:
 
@@ -101,7 +101,7 @@ To run the Hypr installation script, `cd` into the cloned `dotfiles` directory a
 ./hypr_install.sh
 ```
 ### Dotfiles Setup
-The dotfiles_setup.sh script is used solely for setting up dotfiles. It can be used independently of the Arch Linux installation scripts to quickly set up dotfiles on existing systems.
+The `dotfiles_setup.sh` script is used solely for setting up dotfiles. It can be used independently of the Arch Linux installation scripts to quickly set up dotfiles on existing systems.
 
 To run the dotfiles setup script, `cd` into the cloned `dotfiles` directory and then run:
 
