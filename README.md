@@ -56,10 +56,10 @@ lol 😂😂😂
 - [Azote](https://github.com/nwg-piotr/azote) (GTK3 based wallpaper setter using swaybg)
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
 - [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
+- [Pipewire](https://github.com/PipeWire/pipewire) (server and user space API to deal with multimedia pipelines)
 
 ### Optional packages
 - [copyq](https://hluk.github.io/CopyQ/) (CopyQ is an advanced clipboard manager with editing and scripting features.)
-- [Pipewire](https://github.com/PipeWire/pipewire) (server and user space API to deal with multimedia pipelines)
 - [Kitty](https://github.com/kovidgoyal/kitty) (A cross-platform, fast, feature-full, GPU-based terminal emulator)
 - [Wezterm](https://wezfurlong.org/wezterm/) (A GPU-accelerated cross-platform terminal emulator and multiplexer)
 - [Fish](https://github.com/fish-shell/fish-shell) (smart and user-friendly command line shell)
