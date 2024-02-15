@@ -40,6 +40,7 @@ install_packages() {
     exa \
     fzf \
     ripgrep \
+    lazygit \
     qt6-base \
     qt6-wayland \
     qt6ct \
