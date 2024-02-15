@@ -13,6 +13,7 @@ AUR_PACKAGES=(
     "beautyline"
     "sweet-gtk-theme-dark"
     "azote"
+    "visual-studio-code-bin"
     # Add more AUR packages as necessary
 )
 
