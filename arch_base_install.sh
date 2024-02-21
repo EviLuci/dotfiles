@@ -90,6 +90,8 @@ fi
 AUR_PACKAGES=(
     "swaync-git"
     "hyprshot-git"
+    "hypridle-git"
+    "hyprlock-git"
     "microsoft-edge-stable-bin"
     "rofi-lbonn-wayland"
     "waybar-module-pacman-updates-git"
@@ -139,8 +141,8 @@ install_packages() {
     noto-fonts-emoji \
     starship \
     snapper
-
-
+    
+    
     # Install AUR helper if not installed
     if ! command -v paru &> /dev/null; then
         echo "Installing paru AUR helper..."
@@ -148,7 +150,7 @@ install_packages() {
         (cd /tmp/paru && makepkg -si --noconfirm)
         rm -rf /paru
     fi
-
+    
     # Install AUR packages using paru
     echo "Installing AUR packages..."
     paru -S "${AUR_PACKAGES[@]}"
