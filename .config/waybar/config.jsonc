@@ -29,7 +29,7 @@
         "temperature",
         "cpu",
         "memory",
-        "bluetooth",
+        // "bluetooth",
         "tray",
         "custom/notification"
     ],

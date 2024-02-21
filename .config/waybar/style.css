@@ -22,7 +22,6 @@ window#waybar.hidden {
   opacity: 0.2;
 }
 
-
 #custom-updates,
 #custom-weather,
 #custom-cmus,
@@ -128,6 +127,11 @@ window#waybar.hidden {
 }
 
 #cpu {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#bluetooth {
     background-color: #000000;
     color: rgb(0, 238, 255);
 }
