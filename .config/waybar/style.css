@@ -23,10 +23,8 @@ window#waybar.hidden {
 }
 
 
-#custom-pacman,
 #custom-updates,
 #custom-weather,
-#custom-media,
 #custom-cmus,
 #custom-spotify,
 #custom-notification,
@@ -36,6 +34,7 @@ window#waybar.hidden {
 #clock,
 #cpu,
 #temperature,
+#privacy,
 #memory,
 #backlight,
 #taskbar,
@@ -128,8 +127,6 @@ window#waybar.hidden {
     border-radius: 20px;
 }
 
-
-
 #cpu {
     background-color: #000000;
     color: rgb(0, 238, 255);
@@ -154,11 +151,6 @@ window#waybar.hidden {
     color: rgb(0, 238, 255);
 }
 
-#custom-pacman {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
 #window {
     background-color: #2BD2FF;
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
@@ -169,12 +161,15 @@ window#waybar.hidden {
     color: rgb(0, 238, 255);
 }
 
+#privacy {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
 
 #network {
     background-color: #000000;
     color: rgb(0, 238, 255);
 }
-
 #network.disconnected {
     background-color: #000000;
     color: red;
@@ -261,15 +256,6 @@ label:focus {
     margin-right: 5px;
     margin-left: 5px;
 }
-#custom-media {
-    background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-    color: black;
-    border-radius: 20px;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
 #custom-spotify {
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
@@ -277,14 +263,6 @@ label:focus {
     border-radius: 20px;
     margin-right: 5px;
 
-}
-
-#custom-media.custom-vlc {
-    background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-    color: black;
-    border-radius: 20px;
-    margin-right: 5px;
 }
 
 #custom-notification {

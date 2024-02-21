@@ -7,30 +7,31 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "modules-left": [
-        //"custom/pacman",
         "custom/updates",
+        "idle_inhibitor",
+        "keyboard-state",
         "clock",
         "network",
         "hyprland/workspaces",
         "wlr/taskbar",
+        "privacy",
         "hyprland/submap"
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
         "mpris",
         "custom/cmus",
-        //"custom/spotify",
-        //"mpd",
+        "custom/spotify",
+        "mpd",
         "battery",
         "backlight",
         "wireplumber",
         "temperature",
         "cpu",
         "memory",
-        //"bluetooth",
+        "bluetooth",
         "tray",
         "custom/notification"
-        //"keyboard-state"
     ],
 
     // Modules configuration
@@ -43,7 +44,7 @@
     "memory": {
         "interval": 30,
         "format": " {}%",
-        "format-alt":" {used}G",
+        "format-alt": " {used}G",
         "tooltip": true,
         "tooltip-format": "{used:0.1f}G/{total:0.1f}G"
     },
@@ -70,6 +71,9 @@
     "hyprland/window": {
         "format": "{}",
         "max-length": 50,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "🌎 $1"
+        },
         "separate-outputs": true
     },
     "hyprland/submap": {
@@ -83,18 +87,18 @@
         "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
         "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
         "format-icons": {
-//            "1": "",
-//            "2": "",
-//            "3": "",
-//            "4": "",
-//            "5": "",
-//            "6": "",
-//            "7": "",
-//            "8": "",
-//            "9": "",
-//            "0": "",
-//            "6": "",
-//            "7": "",
+            //            "1": "",
+            //            "2": "",
+            //            "3": "",
+            //            "4": "",
+            //            "5": "",
+            //            "6": "",
+            //            "7": "",
+            //            "8": "",
+            //            "9": "",
+            //            "0": "",
+            //            "6": "",
+            //            "7": "",
             "1": "1",
             "2": "2",
             "3": "3",
@@ -104,7 +108,7 @@
             "7": "7",
             "8": "8",
             "9": "9",
-            "10": "10",
+            "10": "10"
             //"special": "󰮯",
             //"urgent": "",
             //"focused": "",
@@ -129,6 +133,28 @@
             "locked": "",
             "unlocked": ""
         }
+    },
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
     },
     "network": {
         //"interface": "wlp2s0",
@@ -155,26 +181,26 @@
         // "format": "{: %R   %d/%m}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
-                    "mode"          : "year",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "right",
-                    "on-scroll"     : 1,
-                    "on-click-right": "mode",
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                    },
-        "actions":  {
-                    "on-click-right": "mode",
-                    "on-click-forward": "tz_up",
-                    "on-click-backward": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
-                    }
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
     "backlight": {
         "device": "intel_backlight",
@@ -274,21 +300,11 @@
     },
 
     // Custom
-    "custom/pacman": {
-        "format": "{icon}{}",
-        "return-type": "json",
-        "format-icons": {
-            "pending-updates": " ",
-            "updated": ""
-        },
-        "exec-if": "which waybar-updates",
-        "exec": "waybar-updates"
-    },
     "custom/updates": {
         "format": "{} {icon}",
         "return-type": "json",
         "format-icons": {
-            "has-updates": " ",//"
+            "has-updates": " ", //"
             "updated": ""
         },
         "exec-if": "which waybar-module-pacman-updates",
@@ -303,8 +319,8 @@
         "on-click": "playerctl -p spotify play-pause",
         "on-click-right": "killall spotify",
         "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-        "on-scroll-up" : "playerctl -p spotify next",
-        "on-scroll-down" : "playerctl -p spotify previous",
+        "on-scroll-up": "playerctl -p spotify next",
+        "on-scroll-down": "playerctl -p spotify previous",
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
         "exec-if": "pgrep spotify"
     },
@@ -314,8 +330,8 @@
         "interval": 10,
         "exec": "cmus-remote -C \"format_print '%a - %t'\"", // artist - title
         "exec-if": "pgrep cmus",
-        "on-click": "cmus-remote -u",                        //toggle pause
-        "escape": true                                       //handle markup entities
+        "on-click": "cmus-remote -u", //toggle pause
+        "escape": true //handle markup entities
     },
     "custom/notification": {
         "tooltip": false,
@@ -336,5 +352,5 @@
         //"on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
-    },
+    }
 }
