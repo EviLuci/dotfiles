@@ -5,12 +5,12 @@
     "positionY": "top",
     "control-center-positionX": "none",
     "control-center-positionY": "none",
-    "control-center-margin-top": 10,
-    "control-center-margin-bottom": 10,
-    "control-center-margin-right": 10,
-    "control-center-margin-left": 10,
+    "control-center-margin-top": 8,
+    "control-center-margin-bottom": 8,
+    "control-center-margin-right": 8,
+    "control-center-margin-left": 8,
     "control-center-width": 400,
-    "control-center-height": 1000,
+    "control-center-height": 600,
     "fit-to-screen": true,
     "layer": "overlay",
     "control-center-layer": "overlay",
@@ -37,11 +37,17 @@
       "backlight",
       "volume",
       "mpris",
+      "inhibitors",
       "title",
       "dnd",
       "notifications"
     ],
     "widget-config": {
+      "inhibitors": {
+        "text": "Inhibitors",
+        "button-text": "Clear All",
+        "clear-all-button": true
+      },
       "title": {
         "text": "Notifications",
         "clear-all-button": true,
@@ -73,14 +79,14 @@
             },
             {
               "label": "   Lock",
-              "command": "swaylock.sh"
+              "command": "hyprlock"
             },
             {
               "label": "   Logout",
               "command": "hyprctl dispatch exit"
             },
             {
-                "label": " Suspend",
+                "label": "   Suspend",
                 "command": "systemctl suspend"
               },
             {
@@ -107,7 +113,7 @@
       "buttons-grid": {
         "actions": [
           {
-            "label": "",
+            "label": " ",
             "command": "nm-connection-editor"
           },
           {

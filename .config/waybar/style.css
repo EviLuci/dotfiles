@@ -1,3 +1,4 @@
+/* Global styles */
 * {
     border: none;
     border-radius: 0;
@@ -9,21 +10,19 @@
     padding: 0;
 }
 
-
+/* Window styling */
 window#waybar {
-    /* background: rgba(21, 18, 27, 0); */
-    background-color : transparent;
+    background-color: transparent;
     color: black;
     transition-property: background-color;
     transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
-  opacity: 0.2;
+    opacity: 0.2;
 }
 
 #custom-updates,
-#custom-weather,
 #custom-cmus,
 #custom-spotify,
 #custom-notification,
@@ -31,6 +30,7 @@ window#waybar.hidden {
 #mpris,
 #mpd,
 #clock,
+#idle_inhibitor,
 #cpu,
 #temperature,
 #privacy,
@@ -57,15 +57,16 @@ window#waybar.hidden {
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
+.modules-left>widget:first-child>#workspaces {
     margin-left: 0px;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
+.modules-right>widget:last-child>#workspaces {
     margin-right: 0px;
 }
 
+/* Workspaces button */
 #workspaces button {
     color: rgb(229, 255, 0);
     background: transparent;
@@ -81,11 +82,8 @@ window#waybar.hidden {
     color: #a6adc8;
 } */
 
-#workspaces button.active{
-    /* padding-right: 5px; */
-    color:rgb(3, 3, 3);
-    /* padding-left: 5px;
-    padding-bottom: 3px; */
+#workspaces button.active {
+    color: rgb(3, 3, 3);
     background-color: #2BD2FF;
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
 }
@@ -112,14 +110,14 @@ window#waybar.hidden {
     background-color: #000000;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
     background-color: #2BD2FF;
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
     border-radius: 20px;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #2BD2FF;
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
@@ -127,6 +125,11 @@ window#waybar.hidden {
 }
 
 #cpu {
+    background-color: #000000;
+    color: rgb(0, 238, 255);
+}
+
+#idle_inhibitor {
     background-color: #000000;
     color: rgb(0, 238, 255);
 }
@@ -174,6 +177,7 @@ window#waybar.hidden {
     background-color: #000000;
     color: rgb(0, 238, 255);
 }
+
 #network.disconnected {
     background-color: #000000;
     color: red;
@@ -195,7 +199,8 @@ window#waybar.hidden {
     color: rgb(0, 238, 255);
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
     background-color: rgb(0, 238, 255);
     color: black;
 }
@@ -231,11 +236,6 @@ label:focus {
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
 }
 
-#custom-weather {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
 #custom-cmus {
     background-color: #2BD2FF;
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
@@ -244,6 +244,7 @@ label:focus {
     margin-right: 5px;
     margin-left: 5px;
 }
+
 #mpris {
     background-color: #2BD2FF;
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
@@ -252,6 +253,7 @@ label:focus {
     margin-right: 5px;
     margin-left: 5px;
 }
+
 #mpd {
     background-color: #2BD2FF;
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
@@ -260,6 +262,7 @@ label:focus {
     margin-right: 5px;
     margin-left: 5px;
 }
+
 #custom-spotify {
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
@@ -279,11 +282,10 @@ label:focus {
     color: rgb(0, 238, 255);
 }
 
-#keyboard-state > label {
+#keyboard-state>label {
     padding: 0px 5px;
 }
 
-#keyboard-state > label.locked {
+#keyboard-state>label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
-

@@ -8,7 +8,6 @@
     "gtk-layer-shell": true,
     "modules-left": [
         "custom/updates",
-        "idle_inhibitor",
         "keyboard-state",
         "clock",
         "network",
@@ -29,6 +28,7 @@
         "temperature",
         "cpu",
         "memory",
+        "idle_inhibitor",
         // "bluetooth",
         "tray",
         "custom/notification"
@@ -256,8 +256,7 @@
         "max-length": 50,
         "player-icons": {
             "default": "󰎆 ",
-            "spotify": " ",
-            //"cmus": "🎵",
+            "mpv": "🎵",
             "vlc": "▶ "
         },
         "status-icons": {
