@@ -248,9 +248,10 @@
     background: transparent;
 }
 
-.topbar-buttons>button {
-    color: rgb(0, 238, 255);
-    background: transparent;
+.widget-menubar>box>.menu-button-bar>button:hover {
+    background: rgb(0, 238, 255);
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    color: black;
 }
 
 /** Buttons Grid **/
