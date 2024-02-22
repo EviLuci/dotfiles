@@ -57,3 +57,5 @@ for file in "${CONFIG_FILES[@]}"; do
     echo "Creating symlink for $file"
     ln -s "$DOTFILES_DIR/$file" "$HOME/$file"
 done
+
+echo "Dotfiles setup complete!"
