@@ -184,27 +184,18 @@
 }
 
 /* Mpris widget */
-.widget-mpris {
+.widget-mpris,
+.widget-mpris-player,
+.widget-mpris-title,
+.widget-mpris-subtitle,
+.widget-mpris-player>box>button {
     color: rgb(0, 238, 255);
-    background: black;
 }
 
-.widget-mpris-player {
-    color: rgb(0, 238, 255);
-}
 .widget-mpris-player>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
     color: black;
-}
-.widget-mpris-title {
-    color: rgb(0, 238, 255);
-}
-.widget-mpris-subtitle {
-    color: rgb(0, 238, 255);
-}
-.widget-mpris-player>box>button {
-    color: rgb(0, 238, 255);
 }
 .widget-mpris-player>box>button:hover {
     background: rgb(0, 238, 255);
@@ -264,7 +255,7 @@
 
 /** Buttons Grid **/
 .widget-buttons-grid {
-    background-color: black;
+    background-color: transparent;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
