@@ -95,17 +95,13 @@
             }
           ]
         },
-        "menu#screenshot-buttons": {
-          "label": "󰹑 ",
+        "menu#dotfiles-buttons": {
+          "label": " ",
           "position": "left",
           "actions": [
             {
-              "label": "󰹑  Entire screen",
-              "command": "swaync-client -cp && sleep 1 && hyprshot -m output"
-            },
-            {
-              "label": "󰹑  Select a region",
-              "command": "swaync-client -cp && sleep 1 && hyprshot -m region"
+              "label": "  Dotfiles",
+              "command": "code $HOME/dotfiles/"
             }
           ]
         }
@@ -121,8 +117,8 @@
             "command": "blueman-manager"
           },
           {
-            "label": "",
-            "command": "nemo"
+            "label": "󰸉",
+            "command": "azote"
           },
           {
             "label": "󰎆",
