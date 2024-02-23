@@ -29,6 +29,7 @@ CONFIG_DIRS=(
 )
 CONFIG_FILES=(
     ".vimrc"
+    ".bashrc"
 )
 
 # Backup existing configuration directories

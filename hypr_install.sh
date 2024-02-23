@@ -26,6 +26,7 @@ install_packages() {
     ripgrep \
     lazygit \
     btop \
+    cmus \
     qt6-base \
     qt6-wayland \
     qt6ct \
