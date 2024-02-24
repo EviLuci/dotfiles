@@ -121,7 +121,7 @@
             "command": "azote"
           },
           {
-            "label": "󰎆",
+            "label": " ",
             "command": "wezterm -e cmus"
           },
           {
