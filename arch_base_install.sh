@@ -62,7 +62,7 @@ sed -i 's/^#ParallelDownloads = 0/ParallelDownloads = 10/' /etc/pacman.conf
 sed -i 's/^#VerbosePkgLists/VerbosePkgLists/' /etc/pacman.conf
 
 # Install necessary packages
-pacman -S --needed --noconfirm grub efibootmgr networkmanager mesa network-manager-applet wpa_supplicant base-devel linux-headers xdg-user-dirs xdg-utils mtools gvfs bluez bluez-utils pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack rsync reflector sof-firmware os-prober ntfs-3g
+pacman -S --needed --noconfirm grub efibootmgr networkmanager mesa network-manager-applet wpa_supplicant base-devel linux-headers xdg-user-dirs xdg-utils mtools gvfs bluez bluez-utils pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack rsync reflector sof-firmware os-prober ntfs-3g gvfs-mtp
 
 # Install Grub bootloader
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
