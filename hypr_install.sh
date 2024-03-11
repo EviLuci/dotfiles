@@ -15,6 +15,8 @@ install_packages() {
     wireplumber \
     qpwgraph \
     nemo \
+    nemo-fileroller \
+    nemo-terminal \
     tor \
     torbrowser-launcher \
     copyq \
@@ -23,6 +25,7 @@ install_packages() {
     feh \
     exa \
     fzf \
+    vlc \
     ripgrep \
     lazygit \
     btop \
@@ -37,7 +40,7 @@ install_packages() {
     otf-font-awesome \
     noto-fonts-emoji \
     starship \
-    snapper
+    snapper \
     
 }
 
