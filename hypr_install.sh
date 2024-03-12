@@ -41,6 +41,10 @@ install_packages() {
     noto-fonts-emoji \
     starship \
     snapper \
+    dart \
+    jdk-openjdk \
+    clang \
+    android-tools \
     
 }
 
@@ -70,6 +74,8 @@ install_aur_packages() {
         "sweet-gtk-theme-dark"
         "azote"
         "visual-studio-code-bin"
+        "flutter"
+        "android-studio"
         # Add more AUR packages as necessary
     )
     
