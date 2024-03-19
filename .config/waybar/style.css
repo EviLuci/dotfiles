@@ -18,10 +18,7 @@ window#waybar {
     transition-duration: 0.5s;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
+/* Modules */
 #custom-updates,
 #custom-cmus,
 #custom-spotify,
@@ -47,7 +44,7 @@ window#waybar.hidden {
 #submap,
 #keyboard-state,
 #workspaces {
-    background: #000000;
+    background: black;
     padding: 0px 10px 0px 10px;
     border-radius: 20px;
     margin-top: 5px;
@@ -68,12 +65,10 @@ window#waybar.hidden {
 
 /* Workspaces button */
 #workspaces button {
-    color: rgb(229, 255, 0);
     background: transparent;
     font-weight: bolder;
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
-    margin-right: 5px;
     border-radius: 20px;
 }
 
@@ -83,17 +78,17 @@ window#waybar.hidden {
 } */
 
 #workspaces button.active {
-    color: rgb(3, 3, 3);
+    color: black;
     background-color: #2BD2FF;
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
 }
 
 #workspaces button.focused {
-    background: #1f1f1f;
+    background: black;
 }
 
 #workspaces button.urgent {
-    background: #eb4d4b;
+    background: red;
 }
 
 #workspaces button:hover {
@@ -101,102 +96,39 @@ window#waybar.hidden {
     color: black;
 }
 
-#backlight {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
-#tray {
-    background-color: #000000;
-}
-
-#tray>.passive {
-    -gtk-icon-effect: dim;
-    background-color: #2BD2FF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    border-radius: 20px;
-}
-
-#tray>.needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #2BD2FF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    border-radius: 20px;
-}
-
-#cpu {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
-#idle_inhibitor {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
-#bluetooth {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
-#memory {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
-#temperature {
-    background-color: #000000;
+/* Specific module styles */
+#backlight,
+#cpu,
+#idle_inhibitor,
+#bluetooth,
+#memory,
+#battery,
+#temperature,
+#custom-updates,
+#clock,
+#privacy,
+#network,
+#wireplumber,
+#keyboard-state,
+#custom-vpn,
+#custom-notification,
+#taskbar {
+    background-color: black;
     color: rgb(0, 238, 255);
 }
 
 #temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#custom-updates {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
-#window {
-    background-color: #2BD2FF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-}
-
-#clock {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
-#privacy {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
-#network {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
+    background-color: red;
 }
 
 #network.disconnected {
-    background-color: #000000;
+    background-color: black;
     color: red;
-}
-
-#wireplumber {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
 }
 
 #wireplumber.muted {
-    background-color: #FA8BFF;
-    background-image: linear-gradient(45deg, #2BD2FF 0%, #2BD2FF 52%, #2BD2FF 90%);
+    background-color: black;
     color: red;
-}
-
-#battery {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
 }
 
 #battery.charging,
@@ -214,12 +146,12 @@ window#waybar.hidden {
 }
 
 #battery.warning:not(.charging) {
-    background-color: #ff0000;
+    background-color: red;
     color: black;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #ff0000;
+    background-color: red;
     color: black;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -232,61 +164,56 @@ label:focus {
     background-color: #000000;
 }
 
-#taskbar {
-    background-color: #2BD2FF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-}
-
-#custom-cmus {
-    background-color: #2BD2FF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-    border-radius: 20px;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-#mpris {
-    background-color: #2BD2FF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-    border-radius: 20px;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-#mpd {
-    background-color: #2BD2FF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-    border-radius: 20px;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-#custom-spotify {
-    background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-    color: black;
-    border-radius: 20px;
-    margin-right: 5px;
-
-}
-
-#custom-notification {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
-#keyboard-state {
-    background-color: #000000;
-    color: rgb(0, 238, 255);
-}
-
 #keyboard-state>label {
     padding: 0px 5px;
 }
 
 #keyboard-state>label.locked {
     background: rgba(0, 0, 0, 0.2);
+}
+
+#tray {
+    background-color: #000000;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+    border-radius: 20px;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    border-radius: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: red;
+}
+
+/* Gradient module style */
+#custom-cmus,
+#mpd,
+#custom-spotify,
+#mpris,
+#window {
+    background-color: #2BD2FF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+}
+
+#taskbar button {
+    border-radius: 20px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+#taskbar button:hover {
+    background-color: #2BD2FF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* make module transparent when empty */
+#taskbar.empty,
+window#waybar.empty {
+    background-color: transparent;
 }
