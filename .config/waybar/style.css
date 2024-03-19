@@ -72,11 +72,6 @@ window#waybar {
     border-radius: 20px;
 }
 
-/*
-#workspaces button.active {
-    color: #a6adc8;
-} */
-
 #workspaces button.active {
     color: black;
     background-color: #2BD2FF;
