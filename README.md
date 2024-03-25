@@ -4,15 +4,15 @@ This repository contains my personal dotfiles and installation scripts for setti
 
 ## Contents
 
--   [Introduction](#introduction)
--   [Preview](#preview)
--   [Installation](#installation)
-    -   [Arch Base Installation](#arch-base-installation)
-    -   [Hypr Install](#hypr-install)
-    -   [Dotfiles Setup](#dotfiles-setup)
--   [Usage](#usage)
--   [Customization](#customization)
--   [Contributing](#contributing)
+- [Introduction](#introduction)
+- [Preview](#preview)
+- [Installation](#installation)
+  - [Arch Base Installation](#arch-base-installation)
+  - [Hypr Install](#hypr-install)
+  - [Dotfiles Setup](#dotfiles-setup)
+- [Usage](#usage)
+- [Customization](#customization)
+- [Contributing](#contributing)
 
 ## Introduction
 
@@ -22,51 +22,51 @@ In this repository, you'll find my dotfiles and installation scripts to make it 
 
 ## Preview
 
-#### Desktop
+### Desktop
 
 ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/desktop.png)
 
-#### Neovim
+### Neovim
 
 ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/neovim.png)
 
-#### Rofi
+### Rofi
 
 ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi.png)
 
-#### Waybar
+### Waybar
 
 ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/waybar.png)
 
-#### Sway Notification Daemon
+### Sway Notification Daemon
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync.png)
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync1.png) | ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync2.png) | ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync3.png)
 
 ## Installation
 
 ### Necessary dependencies for my hyprland setup
 
--   [Hyprland](https://github.com/vaxerski/Hyprland/) (Hyprland is a dynamic tiling Wayland compositor that doesn't sacrifice on its looks.)
--   [waybar](https://github.com/Alexays/Waybar/) (Like polybar, but for wlroots, very customizable)
--   [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter) (GNOME like notification daemon, with GUI and all)
--   [Rofi-wayland](https://github.com/lbonn/rofi) (Rofi fork with support for wlroots)
--   [Hyprshot](https://github.com/Gustash/Hyprshot) (utility to easily take screenshot in Hyprland using your mouse)
--   [Wlogout](https://github.com/ArtsyMacaw/wlogout) (Logout menu)
--   [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (Command-line copy/paste utilities for Wayland)
--   [Azote](https://github.com/nwg-piotr/azote) (GTK3 based wallpaper setter using swaybg)
--   [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
--   [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
--   [Pipewire](https://github.com/PipeWire/pipewire) (server and user space API to deal with multimedia pipelines)
+- [Hyprland](https://github.com/vaxerski/Hyprland/) (Hyprland is a dynamic tiling Wayland compositor that doesn't sacrifice on its looks.)
+- [waybar](https://github.com/Alexays/Waybar/) (Like polybar, but for wlroots, very customizable)
+- [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter) (GNOME like notification daemon, with GUI and all)
+- [Rofi-wayland](https://github.com/lbonn/rofi) (Rofi fork with support for wlroots)
+- [Hyprshot](https://github.com/Gustash/Hyprshot) (utility to easily take screenshot in Hyprland using your mouse)
+- [Wlogout](https://github.com/ArtsyMacaw/wlogout) (Logout menu)
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (Command-line copy/paste utilities for Wayland)
+- [Azote](https://github.com/nwg-piotr/azote) (GTK3 based wallpaper setter using swaybg)
+- [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
+- [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
+- [Pipewire](https://github.com/PipeWire/pipewire) (server and user space API to deal with multimedia pipelines)
 
 ### Optional packages
 
--   [copyq](https://hluk.github.io/CopyQ/) (CopyQ is an advanced clipboard manager with editing and scripting features.)
--   [Kitty](https://github.com/kovidgoyal/kitty) (A cross-platform, fast, feature-full, GPU-based terminal emulator)
--   [Wezterm](https://wezfurlong.org/wezterm/) (A GPU-accelerated cross-platform terminal emulator and multiplexer)
--   [Fish](https://github.com/fish-shell/fish-shell) (smart and user-friendly command line shell)
--   [Starship](https://github.com/starship/starship) (cross-shell prompt)
--   FiraCode Nerd Font, Font Awesome (fonts with icons)
--   sweet-gtk-theme-dark, beautyline (system and icon themes)
+- [copyq](https://hluk.github.io/CopyQ/) (CopyQ is an advanced clipboard manager with editing and scripting features.)
+- [Kitty](https://github.com/kovidgoyal/kitty) (A cross-platform, fast, feature-full, GPU-based terminal emulator)
+- [Wezterm](https://wezfurlong.org/wezterm/) (A GPU-accelerated cross-platform terminal emulator and multiplexer)
+- [Fish](https://github.com/fish-shell/fish-shell) (smart and user-friendly command line shell)
+- [Starship](https://github.com/starship/starship) (cross-shell prompt)
+- FiraCode Nerd Font, Font Awesome (fonts with icons)
+- sweet-gtk-theme-dark, beautyline (system and icon themes)
 
 ### Cloning the Repository
 
