@@ -1,6 +1,5 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
-local mux = wezterm.mux
 local act = wezterm.action
 
 -- In newer versions of wezterm, use the config_builder which will
@@ -35,136 +34,19 @@ local config = {
 
     leader = {
         key = 'Space',
-        mods = 'CTRL',
+        mods = 'CTRL|SHIFT',
         timeout_milliseconds = 2000
     }
 }
 
--- Keybindings
--- Disable default key assignment
-config.keys = {
-    {
-        key = 'c',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = 'v',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = 'm',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = 'n',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '-',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '=',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '0',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = 't',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = 'w',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '1',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '2',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '3',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '4',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '5',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '6',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '7',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '8',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '9',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = '[',
-        mods = 'SUPER|SHIFT',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = ']',
-        mods = 'SUPER|SHIFT',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = 'r',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = 'h',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = 'k',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    },
-    {
-        key = 'f',
-        mods = 'SUPER',
-        action = act.DisableDefaultAssignment
-    }
+-- Show which key table is active in the status area
+wezterm.on('update-right-status', function(window, pane)
+    local name = window:active_key_table()
+    if name then name = 'TABLE: ' .. name end
+    window:set_right_status(name or '')
+end)
 
-}
+-- Keybindings
 
 -- Personal key assignment
 config.keys = {
@@ -237,7 +119,20 @@ config.keys = {
             ScrollByPage = 1
         })
     },
-
+    {
+        key = "PageUp",
+        mods = "ALT",
+        action = act({
+            ScrollByPage = -1
+        })
+    },
+    {
+        key = "PageDown",
+        mods = "ALT",
+        action = act({
+            ScrollByPage = 1
+        })
+    },
     {
         key = "1",
         mods = "ALT",
@@ -324,7 +219,6 @@ config.keys = {
             confirm = true
         }
     },
-
     {
         key = "t",
         mods = "ALT",
@@ -333,30 +227,14 @@ config.keys = {
         })
     },
     {
-        key = "n",
-        mods = "ALT",
-        action = act.PromptInputLine({
-            description = "Enter new name for tab",
-            -- selene: allow(unused_variable)
-            ---@diagnostic disable-next-line: unused-local
-            action = wezterm.action_callback(function(window, pane, line)
-                -- line will be `nil` if they hit escape without entering anything
-                -- An empty string if they just hit enter
-                -- Or the actual line of text they wrote
-                if line then window:active_tab():set_title(line) end
-            end)
-        })
-    },
-
-    {
-        key = 'v',
+        key = '|',
         mods = 'ALT',
         action = act.SplitVertical {
             domain = 'CurrentPaneDomain'
         }
     },
     {
-        key = 's',
+        key = '-',
         mods = 'ALT',
         action = act.SplitHorizontal {
             domain = 'CurrentPaneDomain'
@@ -406,6 +284,21 @@ config.keys = {
 
     -- Actions
     {
+        key = "=",
+        mods = "CTRL",
+        action = "ResetFontSize"
+    },
+    {
+        key = "+",
+        mods = "CTRL|SHIFT",
+        action = "IncreaseFontSize"
+    },
+    {
+        key = "-",
+        mods = "CTRL",
+        action = "DecreaseFontSize"
+    },
+    {
         key = 'Enter',
         mods = 'ALT',
         action = "QuickSelect"
@@ -454,6 +347,12 @@ config.keys = {
 
 -- Key tables
 config.key_tables = {
+    -- Defines the keys that are active in our resize-pane mode.
+    -- Since we're likely to want to make multiple adjustments,
+    -- we made the activation one_shot=false. We therefore need
+    -- to define a key assignment for getting out of this mode.
+    -- 'resize_pane' here corresponds to the name="resize_pane" in
+    -- the key assignments above.
     resize_pane = {
         {
             key = 'LeftArrow',
@@ -520,7 +419,340 @@ config.key_tables = {
             key = 'Escape',
             action = 'PopKeyTable'
         }
+
+    },
+
+    -- Defines the keys that are active in our activate-pane mode.
+    -- 'activate_pane' here corresponds to the name="activate_pane" in
+    -- the key assignments above.
+    activate_pane = {
+        {
+            key = 'LeftArrow',
+            action = act.ActivatePaneDirection 'Left'
+        },
+        {
+            key = 'h',
+            action = act.ActivatePaneDirection 'Left'
+        },
+
+        {
+            key = 'RightArrow',
+            action = act.ActivatePaneDirection 'Right'
+        },
+        {
+            key = 'l',
+            action = act.ActivatePaneDirection 'Right'
+        },
+
+        {
+            key = 'UpArrow',
+            action = act.ActivatePaneDirection 'Up'
+        },
+        {
+            key = 'k',
+            action = act.ActivatePaneDirection 'Up'
+        },
+
+        {
+            key = 'DownArrow',
+            action = act.ActivatePaneDirection 'Down'
+        },
+        {
+            key = 'j',
+            action = act.ActivatePaneDirection 'Down'
+        }
+    },
+    copy_mode = {
+        {
+            key = "Escape",
+            mods = "NONE",
+            action = act.Multiple({
+                act.ClearSelection,
+                act.CopyMode("ClearPattern"),
+                act.CopyMode("Close")
+            })
+        },
+        {
+            key = "q",
+            mods = "NONE",
+            action = act.CopyMode("Close")
+        },
+        -- move cursor
+        {
+            key = "h",
+            mods = "NONE",
+            action = act.CopyMode("MoveLeft")
+        },
+        {
+            key = "LeftArrow",
+            mods = "NONE",
+            action = act.CopyMode("MoveLeft")
+        },
+        {
+            key = "j",
+            mods = "NONE",
+            action = act.CopyMode("MoveDown")
+        },
+        {
+            key = "DownArrow",
+            mods = "NONE",
+            action = act.CopyMode("MoveDown")
+        },
+        {
+            key = "k",
+            mods = "NONE",
+            action = act.CopyMode("MoveUp")
+        },
+        {
+            key = "UpArrow",
+            mods = "NONE",
+            action = act.CopyMode("MoveUp")
+        },
+        {
+            key = "l",
+            mods = "NONE",
+            action = act.CopyMode("MoveRight")
+        },
+        {
+            key = "RightArrow",
+            mods = "NONE",
+            action = act.CopyMode("MoveRight")
+        },
+        -- move word
+        {
+            key = "w",
+            mods = "NONE",
+            action = act.CopyMode("MoveForwardWord")
+        },
+        {
+            key = "b",
+            mods = "NONE",
+            action = act.CopyMode("MoveBackwardWord")
+        },
+        {
+            key = "e",
+            mods = "NONE",
+            action = act({
+                Multiple = {
+                    act.CopyMode("MoveRight"),
+                    act.CopyMode("MoveForwardWord"),
+                    act.CopyMode("MoveLeft")
+                }
+            })
+        },
+        -- move start/end
+        {
+            key = "0",
+            mods = "NONE",
+            action = act.CopyMode("MoveToStartOfLine")
+        },
+        {
+            key = "$",
+            mods = "NONE",
+            action = act.CopyMode("MoveToEndOfLineContent")
+        },
+        {
+            key = "a",
+            mods = "SHIFT",
+            action = act.CopyMode("MoveToEndOfLineContent")
+        },
+        {
+            key = "^",
+            mods = "NONE",
+            action = act.CopyMode("MoveToStartOfLineContent")
+        },
+        {
+            key = "i",
+            mods = "SHIFT",
+            action = act.CopyMode("MoveToStartOfLineContent")
+        },
+        -- select
+        {
+            key = " ",
+            mods = "NONE",
+            action = act.CopyMode({
+                SetSelectionMode = "Cell"
+            })
+        },
+        {
+            key = "v",
+            mods = "NONE",
+            action = act.CopyMode({
+                SetSelectionMode = "Cell"
+            })
+        },
+        {
+            key = "v",
+            mods = "SHIFT",
+            action = act({
+                Multiple = {
+                    act.CopyMode("MoveToStartOfLineContent"),
+                    act.CopyMode({
+                        SetSelectionMode = "Cell"
+                    }),
+                    act.CopyMode("MoveToEndOfLineContent")
+                }
+            })
+        },
+        -- copy
+        {
+            key = "y",
+            mods = "NONE",
+            action = act({
+                Multiple = {
+                    act({
+                        CopyTo = "ClipboardAndPrimarySelection"
+                    }),
+                    act.CopyMode("Close")
+                }
+            })
+        },
+        {
+            key = "y",
+            mods = "SHIFT",
+            action = act({
+                Multiple = {
+                    act.CopyMode({
+                        SetSelectionMode = "Cell"
+                    }),
+                    act.CopyMode("MoveToEndOfLineContent"),
+                    act({
+                        CopyTo = "ClipboardAndPrimarySelection"
+                    }),
+                    act.CopyMode("Close")
+                }
+            })
+        },
+        -- scroll
+        {
+            key = "G",
+            mods = "SHIFT",
+            action = act.CopyMode("MoveToScrollbackBottom")
+        },
+        {
+            key = "g",
+            mods = "NONE",
+            action = act.CopyMode("MoveToScrollbackTop")
+        },
+        {
+            key = "h",
+            mods = "SHIFT",
+            action = act.CopyMode("MoveToViewportTop")
+        },
+        {
+            key = "m",
+            mods = "SHIFT",
+            action = act.CopyMode("MoveToViewportMiddle")
+        },
+        {
+            key = "d",
+            mods = "SHIFT",
+            action = act.CopyMode("MoveToViewportBottom")
+        },
+        {
+            key = "o",
+            mods = "NONE",
+            action = act.CopyMode("MoveToSelectionOtherEnd")
+        },
+        {
+            key = "O",
+            mods = "NONE",
+            action = act.CopyMode("MoveToSelectionOtherEndHoriz")
+        },
+        {
+            key = "O",
+            mods = "SHIFT",
+            action = act.CopyMode("MoveToSelectionOtherEndHoriz")
+        },
+        {
+            key = "PageUp",
+            mods = "NONE",
+            action = act.CopyMode("PageUp")
+        },
+        {
+            key = "PageDown",
+            mods = "NONE",
+            action = act.CopyMode("PageDown")
+        },
+        {
+            key = "b",
+            mods = "CTRL",
+            action = act.CopyMode("PageUp")
+        },
+        {
+            key = "f",
+            mods = "CTRL",
+            action = act.CopyMode("PageDown")
+        },
+        {
+            key = "Enter",
+            mods = "NONE",
+            action = act.CopyMode("ClearSelectionMode")
+        },
+        -- search
+        {
+            key = "/",
+            mods = "NONE",
+            action = act.Search("CurrentSelectionOrEmptyString")
+        },
+        {
+            key = "n",
+            mods = "NONE",
+            action = act.Multiple({
+                act.CopyMode("NextMatch"),
+                act.CopyMode("ClearSelectionMode")
+            })
+        },
+        {
+            key = "N",
+            mods = "SHIFT",
+            action = act.Multiple({
+                act.CopyMode("PriorMatch"),
+                act.CopyMode("ClearSelectionMode")
+            })
+        }
+    },
+    search_mode = {
+        {
+            key = "Escape",
+            mods = "NONE",
+            action = act.CopyMode("Close")
+        },
+        {
+            key = "Enter",
+            mods = "NONE",
+            action = act.Multiple({
+                act.CopyMode("ClearSelectionMode"),
+                act.ActivateCopyMode
+            })
+        },
+        {
+            key = "p",
+            mods = "CTRL",
+            action = act.CopyMode("PriorMatch")
+        },
+        {
+            key = "n",
+            mods = "CTRL",
+            action = act.CopyMode("NextMatch")
+        },
+        {
+            key = "r",
+            mods = "CTRL",
+            action = act.CopyMode("CycleMatchType")
+        },
+        {
+            key = "/",
+            mods = "NONE",
+            action = act.CopyMode("ClearPattern")
+        },
+        {
+            key = "u",
+            mods = "CTRL",
+            action = act.CopyMode("ClearPattern")
+        }
     }
+
 }
 
 -- mode Activation
@@ -538,17 +770,34 @@ config.keys = {
     {
         key = 'Enter',
         mods = 'ALT',
-        action = act.ActivateCopyMode
+        action = act.ActivateKeyTable {
+            name = 'copy_mode'
+        }
+    },
+    {
+        key = 's',
+        mods = 'ALT',
+        action = act.ActivateKeyTable {
+            name = 'search_mode'
+        }
+    },
+    {
+        key = "n",
+        mods = "ALT",
+        action = act.PromptInputLine({
+            description = "Enter new name for tab",
+            -- selene: allow(unused_variable)
+            ---@diagnostic disable-next-line: unused-local
+            action = wezterm.action_callback(function(window, pane, line)
+                -- line will be `nil` if they hit escape without entering anything
+                -- An empty string if they just hit enter
+                -- Or the actual line of text they wrote
+                if line then window:active_tab():set_title(line) end
+            end)
+        })
     }
 
 }
-
--- Show which key table is active in the status area
-wezterm.on('update-right-status', function(window, pane)
-    local name = window:active_key_table()
-    if name then name = 'TABLE: ' .. name end
-    window:set_right_status(name or '')
-end)
 
 -- and finally, return the configuration to wezterm
 return config
