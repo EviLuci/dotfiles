@@ -40,7 +40,7 @@ In this repository, you'll find my dotfiles and installation scripts to make it 
 
 ### Sway Notification Daemon
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync1.png)  ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync2.png)
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync.png)  ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_menu.png)
 
 ## Installation
 
