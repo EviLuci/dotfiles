@@ -45,6 +45,7 @@ install_packages() {
     jdk-openjdk \
     clang \
     android-tools \
+    virtualbox \
     
 }
 
