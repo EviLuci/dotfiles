@@ -65,6 +65,7 @@ install_aur_packages() {
         "hyprshot-git"
         "hypridle-git"
         "hyprlock-git"
+        "hyprpicker-git"
         "microsoft-edge-stable-bin"
         "rofi-lbonn-wayland"
         "waybar-module-pacman-updates-git"
