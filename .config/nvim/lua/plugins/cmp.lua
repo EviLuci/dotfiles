@@ -1,19 +1,12 @@
 return {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
     dependencies = {
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-path",
         "petertriho/cmp-git",
         "saadparwaiz1/cmp_luasnip",
         'onsails/lspkind.nvim'
     },
-    opts = function()
-        vim.api.nvim_set_hl(0, "CmpGhostText", {
-            link = "Comment",
-            default = true
-        })
+    ---@param opts cmp.ConfigSchema
+    opts = function(_, opts)
         local cmp = require("cmp")
         local lspkind = require('lspkind')
         local luasnip = require("luasnip")
@@ -30,36 +23,6 @@ return {
         }
 
         return {
-            confirm_opts = {
-                behavior = cmp.ConfirmBehavior.Replace,
-                select = false
-            },
-            formatting = {
-                format = function(entry, vim_item)
-                    local lspkind_ok, lspkind = pcall(require, "lspkind")
-                    if not lspkind_ok then
-                        -- From kind_icons array
-                        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-                        -- Source
-                        vim_item.menu = ({
-                            buffer = "[Buffer]",
-                            nvim_lsp = "[LSP]",
-                            luasnip = "[LuaSnip]",
-                            nvim_lua = "[Lua]",
-                            latex_symbols = "[LaTeX]"
-                        })[entry.source.name]
-                        return vim_item
-                    else
-                        -- From lspkind
-                        return lspkind.cmp_format()(entry, vim_item)
-                    end
-                end
-            },
-            experimental = {
-                ghost_text = {
-                    hl_group = "CmpGhostText"
-                }
-            },
             mapping = cmp.mapping.preset.insert {
                 ["<C-n>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
@@ -123,9 +86,6 @@ return {
                 }),
                 ["<C-Space>"] = cmp.mapping.complete()
             },
-            snippet = {
-                expand = function(args) require('luasnip').lsp_expand(args.body) end
-            },
             sources = cmp.config.sources({
                 {
                     name = "nvim_lsp",
@@ -151,10 +111,7 @@ return {
                     name = "git",
                     group_index = 2
                 }
-            }),
-            completion = {
-                completeopt = "menu,menuone,noinsert"
-            }
+            })
         }
 
     end,

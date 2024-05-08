@@ -1,8 +1,25 @@
 return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
+    init = function()
+        vim.g.lualine_laststatus = vim.o.laststatus
+        if vim.fn.argc(-1) > 0 then
+            -- set an empty statusline till lualine loads
+            vim.o.statusline = " "
+        else
+            -- hide the statusline on the starter page
+            vim.o.laststatus = 0
+        end
+    end,
     opts = function()
         local lualine = require('lualine')
+        -- PERF: we don't need this lualine require madness 🤷
+        local lualine_require = require("lualine_require")
+        lualine_require.require = require
+
+        local icons = require("lazyvim.config").icons
+
+        vim.o.laststatus = vim.g.lualine_laststatus
 
         -- Color table for highlights
         -- stylua: ignore
@@ -36,23 +53,8 @@ return {
                 -- Disable sections and component separators
                 component_separators = '',
                 section_separators = '',
-                theme = {
-                    -- We are going to use lualine_c an lualine_x as left and
-                    -- right section. Both are highlighted by c theme .  So we
-                    -- are just setting default looks o statusline
-                    normal = {
-                        c = {
-                            fg = colors.fg,
-                            bg = colors.bg
-                        }
-                    },
-                    inactive = {
-                        c = {
-                            fg = colors.fg,
-                            bg = colors.bg
-                        }
-                    }
-                }
+                globalstatus = true,
+                theme = "auto"
             },
             sections = {
                 -- Left section component
@@ -116,6 +118,15 @@ return {
                         color = {
                             fg = colors.magenta,
                             gui = 'bold'
+                        }
+                    },
+                    {
+                        "filetype",
+                        icon_only = true,
+                        separator = "",
+                        padding = {
+                            left = 1,
+                            right = 0
                         }
                     },
                     {
@@ -207,7 +218,6 @@ return {
                     },
                     {
                         'diff',
-                        -- Is it me or the symbol for modified us really weird
                         symbols = {
                             added = ' ',
                             modified = '󰝤 ',
@@ -259,7 +269,13 @@ return {
                 "toggleterm",
                 "quickfix"
             },
-            disabled_filetypes = {}
+            disabled_filetypes = {
+                statusline = {
+                    "dashboard",
+                    "alpha",
+                    "starter"
+                }
+            }
         }
 
     end

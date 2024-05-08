@@ -35,6 +35,7 @@ install_packages() {
     qt6ct \
     polkit-gnome \
     waybar \
+    rofi-wayland \
     ttf-hack-nerd \
     ttf-firacode-nerd \
     otf-font-awesome \
@@ -67,7 +68,6 @@ install_aur_packages() {
         "hyprlock-git"
         "hyprpicker-git"
         "microsoft-edge-stable-bin"
-        "rofi-lbonn-wayland"
         "waybar-module-pacman-updates-git"
         "wlogout-git"
         "snap-pac-grub"
