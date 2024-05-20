@@ -20,7 +20,6 @@ install_packages() {
     tor \
     torbrowser-launcher \
     copyq \
-    telegram-desktop \
     gimp \
     feh \
     exa \

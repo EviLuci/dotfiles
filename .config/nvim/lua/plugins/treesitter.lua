@@ -54,9 +54,9 @@ return {
                     ["al"] = "@loop.outer",
                     ["il"] = "@loop.inner",
                     ["is"] = "@statement.inner",
-                    ["as"] = "@statement.outer",
-                    ["ap"] = "@parameter.outer",
-                    ["ip"] = "@parameter.inner"
+                    ["as"] = "@statement.outer"
+                    -- ["ap"] = "@parameter.outer",
+                    -- ["ip"] = "@parameter.inner"
                 }
             },
             swap = {
