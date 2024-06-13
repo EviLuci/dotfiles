@@ -1,6 +1,6 @@
 {
     "label": "lock",
-    "action": "swaylock",
+    "action": "pidof hyprlock || hyprlock",
     "text": "Lock",
     "keybind": "l"
 }

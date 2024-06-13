@@ -46,6 +46,7 @@ install_packages() {
     clang \
     android-tools \
     virtualbox \
+    obs-studio \
     
 }
 
@@ -72,7 +73,7 @@ install_aur_packages() {
         "snap-pac-grub"
         "snapper-gui-git"
         "beautyline"
-        "sweet-gtk-theme-dark"
+        "sweet-gtk-theme"
         "azote"
         "visual-studio-code-bin"
         "flutter"

@@ -7,6 +7,53 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, options)
 end
 
+-- Paste
+map("x", "p", '"_c<Esc>p', {
+    desc = "paste without yanking"
+})
+
+map("n", "]p", "m`o<ESC>p``", {
+    desc = "Paste below"
+})
+map("n", "[P", "m`O<ESC>p``", {
+    desc = "Paste above"
+})
+map("i", "<C-v>", '<ESC>"+p<ESC>a', {
+    desc = "Paste from clipboard"
+})
+map({
+    "n",
+    "x"
+}, "<C-c>", '"+y<ESC>', {
+    desc = "Copy to clipboard"
+})
+map({
+    "n",
+    "x"
+}, "<C-v>", '"+p<ESC>', {
+    desc = "Paste from clipboard"
+})
+map({
+    "n",
+    "x"
+}, "<C-x>", '"+y<ESC>dd', {
+    desc = "Cut to clipboard"
+})
+
+-- Paste over currently selected text without yanking it
+-- map("v", "p", '"_dp', {
+--     desc = "Paste over currently selected text without yanking it"
+-- })
+map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', {
+    desc = "Paste over currently selected text without yanking it"
+})
+
+-- Reselect the text that has just been pasted, see also https://stackoverflow.com/a/4317090/6064933.
+map("n", "<A-v>", "printf('`[%s`]', getregtype()[0])", {
+    expr = true,
+    desc = "reselect last pasted area"
+})
+
 -- save file
 map({
     "i",
@@ -24,6 +71,14 @@ map({
 }, "<C-q>", "<cmd>wq!<cr><esc>", {
     desc = "Force Save file and quit"
 })
+map({
+    "i",
+    "v",
+    "n",
+    "s"
+}, "<C-x>", "<cmd>x<cr>", {
+    desc = "quit current window"
+})
 
 -- ctrl a to selected all text in file
 map({
@@ -33,7 +88,7 @@ map({
 }, "<C-a>", "<esc>ggVG")
 
 -- quit
-map("n", "<A-q>", "<cmd>wqa<cr>", {
+map("n", "<A-q>", "<cmd>wqa!<cr>", {
     desc = "Quit all"
 })
 
@@ -44,6 +99,28 @@ map("i", "<A-b>", "<ESC>^i", {
 map("i", "<A-e>", "<End>", {
     desc = "Go to end of line"
 })
+
+-- Go to the beginning and end of current line in insert mode quickly
+map("i", "<A-h>", "<HOME>")
+map("i", "<A-l>", "<END>")
+
+-- Go to beginning of command in command-line mode
+map("c", "<C-A>", "<HOME>")
+
+-- insert semicolon in the end
+map("i", "<A-;>", "<Esc>miA;<Esc>`ii", {
+    desc = "insert semicolon in the end"
+})
+
+-- Alt/Meta + c to invert the caseu
+map('n', '<A-c>', 'guiw~iw')
+-- Turn the word under cursor to upper case
+map("i", "<c-u>", "<Esc>viwUea")
+-- Turn the current word into title case
+map("i", "<c-t>", "<Esc>b~lea")
+
+-- Undo
+map("i", "<C-z>", "<C-O>u")
 
 -- navigate within insert mode
 map("i", "<C-h>", "<Left>", {
@@ -89,57 +166,33 @@ map('n', '<C-a>', ':keepjumps normal! ggyG<cr>', {
     desc = "Select all"
 })
 
--- Copy whole file
+-- Copy whole buffer
 map("n", "<C-y>", "<cmd>%y+<CR>", {
-    desc = "Copy whole file"
+    desc = "Copy whole buffer"
 })
 
--- Remap _ and $
-map("n", "H", "_", {
+-- Go to start or end of line easier
+map({
+    "n",
+    "x"
+}, "H", "^", {
     desc = "Go to beginning of line"
 })
-map("n", "L", "$", {
+map({
+    "n",
+    "x"
+}, "L", "g_", {
     desc = "Go to end of line"
 })
 
--- Paste
-map("n", "]p", "o<Esc>p", {
-    desc = "Paste below"
-})
-map("n", "[P", "O<Esc>p", {
-    desc = "Paste above"
-})
-map("i", "<C-v>", '<ESC>"+p<ESC>a', {
-    desc = "Paste from clipboard"
-})
-map({
-    "n",
-    "x"
-}, "<C-c>", '"+y<ESC>', {
-    desc = "Copy to clipboard"
-})
-map({
-    "n",
-    "x"
-}, "<C-v>", '"+p<ESC>', {
-    desc = "Paste from clipboard"
-})
-map({
-    "n",
-    "x"
-}, "<C-x>", '"+y<ESC>dd', {
-    desc = "Cut to clipboard"
-})
-
--- Paste over currently selected text without yanking it
--- map("v", "p", '"_dp', {
---     desc = "Paste over currently selected text without yanking it"
+-- map("n", "H", "_", {
+--     desc = "Go to beginning of line"
 -- })
-map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', {
-    desc = "Paste over currently selected text without yanking it"
-})
+-- map("n", "L", "$", {
+--     desc = "Go to end of line"
+-- })
 
--- Change the default Copy to clipboard behaviour
+-- Change text without putting it into the vim register,
 map({
     "n",
     "x"
@@ -150,6 +203,12 @@ map({
     "n",
     "x"
 }, "C", '"_C', {
+    desc = "Change without yanking"
+})
+map({
+    "n",
+    "x"
+}, "cc", '"_cc', {
     desc = "Change without yanking"
 })
 map({
@@ -199,47 +258,41 @@ local searching_google_in_normal =
 map("n", "<C-q><C-g>", searching_google_in_normal)
 
 -- Quickfix and Location list mappings
-map("n", "[q", ":cprevious<CR>", {
+map("n", "[q", "<cmd>cprevious<CR>zvzz", {
     desc = "Next quickfix"
 })
-map("n", "]q", ":cnext<CR>", {
+map("n", "]q", "<cmd>cnext<CR>zvzz", {
     desc = "Previous quickfix"
 })
-map("n", "[Q", ":cfirst<CR>", {
+map("n", "[Q", "<cmd>cfirst<CR>zvzz", {
     desc = "First quickfix"
 })
-map("n", "]Q", ":clast<CR>", {
+map("n", "]Q", "<cmd>clast<CR>zvzz", {
     desc = "Last quickfix"
 })
-map("n", "[l", ":lprevious<CR>", {
+map("n", "[l", "<cmd>lprevious<CR>zvzz", {
     desc = "Previous location"
 })
-map("n", "]l", ":lnext<CR>", {
+map("n", "]l", "<cmd>lnext<CR>zvzz", {
     desc = "Next location"
 })
-map("n", "[L", ":lfirst<CR>", {
+map("n", "[L", "<cmd>lfirst<CR>zvzz", {
     desc = "First location"
 })
-map("n", "]L", ":llast<CR>", {
+map("n", "]L", "<cmd>llast<CR>zvzz", {
     desc = "Last location"
 })
-map('n', '<leader>qk', ':cexpr []<cr>', {
+map('n', '<leader>qk', '<cmd>cexpr []<cr>', {
     desc = 'Clear list'
 })
-map('n', '<leader>qc', ':cclose <cr>', {
+map('n', '<leader>qc', '<cmd>windo lclose <bar> cclose <cr>', {
     desc = 'Close list'
 })
-map('n', '<leader>qo', ':copen <cr>', {
+map('n', '<leader>qo', '<cmd>copen <cr>', {
     desc = 'Open list'
 })
-map('n', '<leader>qf', ':cfdo %s/', {
+map('n', '<leader>qs', '<cmd>cfdo %s/', {
     desc = 'Search & Replace'
-})
-map('n', '<leader>qp', ':cprev<cr>zz', {
-    desc = 'Prev Quickfix Item'
-})
-map('n', '<leader>qn', ':cnext<cr>zz', {
-    desc = 'Next Quickfix Item'
 })
 
 -- buffers
@@ -249,9 +302,6 @@ map("n", "<Tab>", "<cmd>bprevious<cr>", {
 map("n", "<A-Tab>", "<cmd>bnext<cr>", {
     desc = "Next buffer"
 })
-
--- Alt/Meta + c to invert the caseu
-map('n', '<A-c>', 'guiw~iw')
 
 -- Some cool remaps
 map("n", "n", "nzzzv")
@@ -263,10 +313,16 @@ map("n", "g,", "g,zvzz")
 map("n", "g;", "g;zvzz")
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
-
--- Undo
-map("i", "<C-z>", "<C-O>u")
+map("n", "^", "g^")
+map("n", "0", "g0")
+-- Do not include white space characters when using $ in visual mode,
+map("x", "$", "g_")
+-- Always use very magic mode for searching
+map("n", "/", [[/\v]])
 
 -- Add undo break-points
 map("i", "?", "?<c-g>u")
-
+map("i", "!", "!<c-g>u")
+map("i", ",", ",<c-g>u")
+map("i", ".", ".<c-g>u")
+map("i", ";", ";<c-g>u")

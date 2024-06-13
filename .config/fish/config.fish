@@ -8,19 +8,19 @@ set -e fish_user_paths
 set fish_greeting                                    # Supresses fish's intro message
 set TERM "xterm-256color"                            # Sets the terminal type
 set -x EDITOR "vim"                                  # $EDITOR use vim in terminal
-set -x VISUAL "code"                                 # $VISUAL use code in GUI mode
+set -x VISUAL "vim"                                 # $VISUAL use code in GUI mode
 
 ### SET MANPAGER
 ### Uncomment only one of these!
 
 ### "bat" as manpager
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+# set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ### "vim" as manpager
 # set -x MANPAGER '/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 
 ### "nvim" as manpager
-# set -x MANPAGER "nvim -c 'set ft=man' -"
+set -x MANPAGER "nvim -c 'set ft=man' -"
 
 # Prevent directories names from being shortened
 set fish_prompt_pwd_dir_length 0
