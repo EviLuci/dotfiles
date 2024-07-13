@@ -27,12 +27,12 @@ map({
 }, "<C-c>", '"+y<ESC>', {
     desc = "Copy to clipboard"
 })
-map({
-    "n",
-    "x"
-}, "<C-v>", '"+p<ESC>', {
-    desc = "Paste from clipboard"
-})
+-- map({
+--     "n",
+--     "x"
+-- }, "<C-v>", '"+p<ESC>', {
+--     desc = "Paste from clipboard"
+-- })
 map({
     "n",
     "x"
