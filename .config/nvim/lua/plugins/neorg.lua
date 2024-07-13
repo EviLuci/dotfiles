@@ -1,6 +1,11 @@
 return {
     {
         "nvim-neorg/neorg",
+        cmd = "Neorg",
+        event = {
+            "BufReadPre *.norg",
+            "BufNewFile *.norg"
+        },
         dependencies = {
             {
                 "nvim-lua/plenary.nvim"
@@ -14,7 +19,16 @@ return {
                 load = {
                     ["core.defaults"] = {}, -- Loads default behaviour
                     ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                    ["core.ui.calendar"] = {},
+                    ["core.completion"] = {
+                        config = {
+                            engine = "nvim-cmp",
+                            name = "[Neorg]"
+                        }
+                    },
+                    ["core.integrations.nvim-cmp"] = {},
                     ["core.integrations.telescope"] = {}, --  Telescope Integration
+                    ["core.integrations.treesitter"] = {},
                     ["core.dirman"] = { -- Manages Neorg workspaces
                         config = {
                             workspaces = {
@@ -22,7 +36,11 @@ return {
                             },
                             default_workspace = "notes"
                         }
-                    }
+                    },
+                    ["core.dirman.utils"] = {},
+                    -- Export norg files to other formats
+                    ["core.export"] = {},
+                    ["core.export.markdown"] = {}
                 }
             }
             local neorg_callbacks = require("neorg.core.callbacks")
@@ -48,6 +66,38 @@ return {
                     noremap = true
                 })
             end)
-        end
+        end,
+        keys = {
+            {
+                "<leader>nw",
+                "<CMD>Telescope neorg switch_workspace<CR>",
+                desc = "Set Neorg Workspace"
+            },
+            {
+                "<leader>ni",
+                "<CMD>Neorg index<CR>",
+                desc = "Go to workspace index.norg"
+            },
+            {
+                "<leader>nr",
+                "<CMD>Neorg return<CR>",
+                desc = "Close all norg buffers"
+            },
+            {
+                "<leader>ntc",
+                "<CMD>Neorg toggle-concealer<CR>",
+                desc = "Toggle Concealer"
+            },
+            {
+                "<leader>nef",
+                ":Neorg export to-file ",
+                desc = "Export File"
+            },
+            {
+                "<leader>ned",
+                ":Neorg export directory ",
+                desc = "Export Directory"
+            }
+        }
     }
 }
