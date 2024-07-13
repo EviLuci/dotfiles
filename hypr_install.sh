@@ -7,6 +7,7 @@ install_packages() {
     xdg-desktop-portal-hyprland \
     wl-clipboard \
     brightnessctl \
+    firefox-developer-edition \
     neovim \
     fish \
     wezterm \

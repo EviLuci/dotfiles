@@ -31,37 +31,39 @@ return {
         opts = {
             signs = {
                 add = {
-                    hl = "GitSignsAdd",
-                    text = "+",
-                    numhl = "GitSignsAddNr",
-                    linehl = "GitSignsAddLn"
+                    text = "+"
                 },
                 change = {
-                    hl = "GitSignsChange",
-                    text = "▍",
-                    numhl = "GitSignsChangeNr",
-                    linehl = "GitSignsChangeLn"
+                    text = "▎"
                 },
                 delete = {
-                    hl = "GitSignsDelete",
-                    text = "",
-                    numhl = "GitSignsDeleteNr",
-                    linehl = "GitSignsDeleteLn"
+                    text = ""
                 },
                 topdelete = {
-                    hl = "GitSignsDelete",
-                    text = "▾",
-                    numhl = "GitSignsDeleteNr",
-                    linehl = "GitSignsDeleteLn"
+                    text = "▾"
                 },
                 changedelete = {
-                    hl = "GitSignsChange",
-                    text = "~",
-                    numhl = "GitSignsChangeNr",
-                    linehl = "GitSignsChangeLn"
+                    text = "~"
                 },
                 untracked = {
                     text = "┆"
+                }
+            },
+            signs_staged = {
+                add = {
+                    text = "+"
+                },
+                change = {
+                    text = "▎"
+                },
+                delete = {
+                    text = ""
+                },
+                topdelete = {
+                    text = "▾"
+                },
+                changedelete = {
+                    text = "~"
                 }
             }
         }

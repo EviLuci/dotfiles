@@ -8,8 +8,5 @@ return {
             "nvim-tree/nvim-web-devicons"
         },
         config = true
-    },
-    {
-        "NvChad/nvim-colorizer.lua"
     }
 }

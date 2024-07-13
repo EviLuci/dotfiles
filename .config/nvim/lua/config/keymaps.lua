@@ -136,11 +136,6 @@ map("i", "<C-k>", "<Up>", {
     desc = "Move Up"
 })
 
--- new file
-map("n", "<leader>of", "<cmd>enew<cr>", {
-    desc = "New File"
-})
-
 -- Insert empty line without entering insert mode
 map('n', '[o', ':<C-u>call append(line("."), repeat([""], v:count1))<CR>', {
     desc = "Insert empty line below"
@@ -218,6 +213,10 @@ map({
     desc = "delete without yanking"
 })
 
+-- Increment/decrement
+map("n", "+", "<C-a>")
+map("n", "-", "<C-x>")
+
 -- Better escape using jk in insert and terminal mode
 map("i", "jk", "<ESC>")
 map("i", "kj", "<ESC>")
@@ -282,16 +281,16 @@ map("n", "[L", "<cmd>lfirst<CR>zvzz", {
 map("n", "]L", "<cmd>llast<CR>zvzz", {
     desc = "Last location"
 })
-map('n', '<leader>qk', '<cmd>cexpr []<cr>', {
+map('n', '<leader>xk', '<cmd>cexpr []<cr>', {
     desc = 'Clear list'
 })
-map('n', '<leader>qc', '<cmd>windo lclose <bar> cclose <cr>', {
+map('n', '<leader>xc', '<cmd>windo lclose <bar> cclose <cr>', {
     desc = 'Close list'
 })
-map('n', '<leader>qo', '<cmd>copen <cr>', {
+map('n', '<leader>xo', '<cmd>copen <cr>', {
     desc = 'Open list'
 })
-map('n', '<leader>qs', '<cmd>cfdo %s/', {
+map('n', '<leader>xs', '<cmd>cfdo %s/', {
     desc = 'Search & Replace'
 })
 
