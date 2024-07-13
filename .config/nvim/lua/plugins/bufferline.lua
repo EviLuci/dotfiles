@@ -12,12 +12,12 @@ return {
             desc = "Move buffer Next"
         },
         {
-            "A-p",
+            "<A-p>",
             "<cmd>BufferLineCyclePrev<cr>",
             desc = "Prev buffer"
         },
         {
-            "A-n",
+            "<A-n>",
             "<cmd>BufferLineCycleNext<cr>",
             desc = "Next buffer"
         },

@@ -50,7 +50,7 @@ return {
                 keybinds.map_event_to_mode("norg", {
                     n = { -- Bind keys in normal mode
                         {
-                            "<C-s>",
+                            "<C-l>",
                             "core.integrations.telescope.find_linkable"
                         }
                     },

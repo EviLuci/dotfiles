@@ -325,3 +325,6 @@ map("i", "!", "!<c-g>u")
 map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
+
+-- compromised backward search when comma is being used as localleader
+map("n", "<A-,>", ",")

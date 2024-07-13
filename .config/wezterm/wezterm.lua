@@ -37,6 +37,8 @@ local config = {
     font_size = 10,
     line_height = 1,
 
+    disable_default_key_bindings = true,
+
     leader = {
         key = 'Space',
         mods = 'CTRL|SHIFT',
@@ -87,6 +89,12 @@ config.hyperlink_rules = {
 -- Keybindings
 -- Personal key assignment
 config.keys = {
+    -- Disable default keybindings for alt+enter
+    {
+        key = 'Enter',
+        mods = 'ALT',
+        action = wezterm.action.DisableDefaultAssignment
+    },
     -- Navigation
     {
         key = "h",
@@ -337,7 +345,7 @@ config.keys = {
     },
     {
         key = 'Enter',
-        mods = 'ALT',
+        mods = 'ALT|CTRL',
         action = "QuickSelect"
     },
     {
@@ -805,7 +813,7 @@ config.keys = {
         }
     },
     {
-        key = 'Enter',
+        key = 'c',
         mods = 'ALT',
         action = act.ActivateKeyTable {
             name = 'copy_mode'
