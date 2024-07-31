@@ -16,12 +16,12 @@
     margin: 1px 1px;
 }
 
-/* Special Case: Remove Left Margin for First Module in Left Section */
+/* Special Case: Left Margin for First Module in Left Section */
 .modules-left>widget:first-child .module {
     margin-left: 5px;
 }
 
-/* Special Case: Remove Right Margin for Last Module in Right Section */
+/* Special Case: Right Margin for Last Module in Right Section */
 .modules-right>widget:last-child .module {
     margin-right: 5px;
 }
@@ -66,6 +66,7 @@ tooltip label {
     font-weight: bolder;
     box-shadow: inset 0 -3px transparent;
     transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 0 5px;
 }
 
 #workspaces button.active {
@@ -73,7 +74,7 @@ tooltip label {
     border-bottom: 2px solid transparent;
     /* border-top: 2px solid transparent; */
     border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
-    padding: 0 5px;
+    padding: 0 10px;
 }
 
 #workspaces button.focused {
@@ -148,6 +149,10 @@ window#waybar.empty {
 #image {
     background-color: black;
     color: rgb(0, 238, 255);
+}
+
+#power {
+    margin-right: 5px;
 }
 
 #temperature.critical {

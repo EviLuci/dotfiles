@@ -28,15 +28,19 @@ In this repository, you'll find my dotfiles and installation scripts to make it 
 
 ### Neovim
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/neovim.png)
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/nvim.png)
 
-### Rofi
+### nwg-drawer
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi.png)
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/nwg-drawer.png)
 
 ### Waybar
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/waybar.png)
+Top Bar
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/top-bar.png)
+
+Bottom Bar
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/bottom-bar.png)
 
 ### Sway Notification Daemon
 
@@ -49,11 +53,11 @@ In this repository, you'll find my dotfiles and installation scripts to make it 
 - [Hyprland](https://github.com/vaxerski/Hyprland/) (Hyprland is a dynamic tiling Wayland compositor that doesn't sacrifice on its looks.)
 - [waybar](https://github.com/Alexays/Waybar/) (Like polybar, but for wlroots, very customizable)
 - [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter) (GNOME like notification daemon, with GUI and all)
-- [Rofi-wayland](https://github.com/lbonn/rofi) (Rofi fork with support for wlroots)
+- [Nwg-drawer](https://github.com/nwg-piotr/nwg-drawer) (Application drawer for wlroots-based Wayland compositors )
 - [Hyprshot](https://github.com/Gustash/Hyprshot) (utility to easily take screenshot in Hyprland using your mouse)
 - [Wlogout](https://github.com/ArtsyMacaw/wlogout) (Logout menu)
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (Command-line copy/paste utilities for Wayland)
-- [Azote](https://github.com/nwg-piotr/azote) (GTK3 based wallpaper setter using swaybg)
+- [waypaper-engine](https://github.com/0bCdian/Waypaper-Engine) (A wallpaper setter gui, developed with ricing in mind! 🍚, using swww)
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
 - [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
 - [Pipewire](https://github.com/PipeWire/pipewire) (server and user space API to deal with multimedia pipelines)
