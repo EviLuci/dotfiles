@@ -4,6 +4,8 @@
 install_packages() {
     sudo pacman -S --needed --noconfirm \
     hyprland \
+    hypridle \
+    hyprlock \
     xdg-desktop-portal-hyprland \
     wl-clipboard \
     brightnessctl \
@@ -27,6 +29,7 @@ install_packages() {
     fzf \
     vlc \
     ripgrep \
+    swaync \
     lazygit \
     btop \
     cmus \
@@ -47,8 +50,8 @@ install_packages() {
     clang \
     android-tools \
     virtualbox \
-    obs-studio \
-    
+    npm \
+
 }
 
 # Install AUR packages
@@ -60,13 +63,10 @@ install_aur_packages() {
         (cd /tmp/paru && makepkg -si --noconfirm)
         rm -rf /paru
     fi
-    
+
     # AUR packages list
     AUR_PACKAGES=(
-        "swaync-git"
         "hyprshot-git"
-        "hypridle-git"
-        "hyprlock-git"
         "hyprpicker-git"
         "microsoft-edge-stable-bin"
         "waybar-module-pacman-updates-git"
@@ -75,13 +75,13 @@ install_aur_packages() {
         "snapper-gui-git"
         "beautyline"
         "sweet-gtk-theme"
-        "azote"
+        "waypaper-engine"
         "visual-studio-code-bin"
         "flutter"
         "android-studio"
         # Add more AUR packages as necessary
     )
-    
+
     # Install AUR packages using paru
     echo "Installing AUR packages..."
     paru -S --needed --noconfirm "${AUR_PACKAGES[@]}"

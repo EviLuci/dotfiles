@@ -8,14 +8,14 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Paste
-map("x", "p", '"_c<Esc>p', {
-    desc = "paste without yanking"
-})
+-- map("x", "p", '"_c<Esc>p', {
+--     desc = "paste without yanking"
+-- })
 
-map("n", "]p", "m`o<ESC>p``", {
+map("n", "<A-v>", "m`o<ESC>p``", {
     desc = "Paste below"
 })
-map("n", "[P", "m`O<ESC>p``", {
+map("n", "<A-p>", "m`O<ESC>p``", {
     desc = "Paste above"
 })
 map("i", "<C-v>", '<ESC>"+p<ESC>a', {
@@ -81,11 +81,16 @@ map({
 })
 
 -- ctrl a to selected all text in file
-map({
-    "n",
-    "i",
-    "v"
-}, "<C-a>", "<esc>ggVG")
+-- map({
+--     "n",
+--     "i",
+--     "v"
+-- }, "<C-a>", "<esc>ggVG")
+--
+-- Select all text in the current buffer
+map('n', '<C-a>', ':keepjumps normal! ggyG<cr>', {
+    desc = "Select all"
+})
 
 -- quit
 map("n", "<A-q>", "<cmd>wqa!<cr>", {
@@ -155,11 +160,6 @@ map("i", "<A-O>", "<C-O>O", {
 -- Insert blank line
 -- keymap("n", "]<Space>", "o<Esc>")
 -- keymap("n", "[<Space>", "O<Esc>")
-
--- Select all text in the current buffer
-map('n', '<C-a>', ':keepjumps normal! ggyG<cr>', {
-    desc = "Select all"
-})
 
 -- Copy whole buffer
 map("n", "<C-y>", "<cmd>%y+<CR>", {
@@ -286,9 +286,6 @@ map('n', '<leader>xk', '<cmd>cexpr []<cr>', {
 })
 map('n', '<leader>xc', '<cmd>windo lclose <bar> cclose <cr>', {
     desc = 'Close list'
-})
-map('n', '<leader>xo', '<cmd>copen <cr>', {
-    desc = 'Open list'
 })
 map('n', '<leader>xs', '<cmd>cfdo %s/', {
     desc = 'Search & Replace'

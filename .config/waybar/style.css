@@ -1,125 +1,128 @@
-/* Global styles */
+/* Global Styles */
 * {
     border: none;
-    border-radius: 0;
+    border-radius: 10px;
     font-family: FiraCode Nerd Font;
     font-weight: bold;
     font-size: 12px;
     min-height: 20px;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0.5px;
 }
 
-/* Window styling */
+/* Module Styles */
+.module {
+    padding: 0px 10px;
+    margin: 1px 1px;
+}
+
+/* Special Case: Remove Left Margin for First Module in Left Section */
+.modules-left>widget:first-child .module {
+    margin-left: 5px;
+}
+
+/* Special Case: Remove Right Margin for Last Module in Right Section */
+.modules-right>widget:last-child .module {
+    margin-right: 5px;
+}
+
+/* Window Styling */
 window#waybar {
     background-color: transparent;
     color: black;
-    transition-property: background-color;
-    transition-duration: 0.5s;
+    transition: background-color 0.5s;
 }
 
-/* Modules */
-#custom-updates,
-#custom-cmus,
-#custom-spotify,
-#custom-notification,
-#custom-vpn,
-#mpris,
-#mpd,
-#clock,
-#idle_inhibitor,
-#cpu,
-#temperature,
-#privacy,
-#memory,
-#backlight,
-#taskbar,
-#window,
-#battery,
-#bluetooth,
-#wireplumber,
-#network,
-#tray,
-#submap,
-#keyboard-state,
-#workspaces {
-    background: black;
-    padding: 0px 10px 0px 10px;
-    border-radius: 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 1px;
-    margin-right: 1px;
+/* Make window module transparent when no windows present */
+window#waybar.empty #window {
+    background-color: transparent;
+    background: transparent;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-    margin-left: 0px;
+window#waybar.hidden {
+    opacity: 0.2;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-    margin-right: 0px;
+/* Tooltip styling */
+menu,
+tooltip {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    border: 2px transparent;
+    border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
+    padding: 5px;
+    box-shadow: 0 0 0 1px;
 }
 
-/* Workspaces button */
+menu label,
+tooltip label {
+    color: rgb(0, 238, 255);
+}
+
+/* Workspaces Button Styling */
 #workspaces button {
     color: rgb(0, 238, 255);
     background: transparent;
     font-weight: bolder;
-    /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
-    border-radius: 20px;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #workspaces button.active {
     color: black;
-    background-color: #2BD2FF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    padding-left: 5px;
-    padding-right: 5px;
+    border-bottom: 2px solid transparent;
+    /* border-top: 2px solid transparent; */
+    border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
+    padding: 0 5px;
 }
 
 #workspaces button.focused {
     background: black;
 }
 
+#workspaces button.visible {
+    color: rgb(0, 238, 255);
+}
+
 #workspaces button.urgent {
     background: red;
+    color: black;
+    padding: 0 5px;
 }
 
 #workspaces button:hover {
-    background: #09ff00;
-    color: black;
+    background: black;
+    border: 1px solid transparent;
+    border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
+    padding: 0 5px;
 }
 
+/* Taskbar Button Styling */
 #taskbar button {
-    border-radius: 20px;
-    padding-left: 1px;
-    padding-right: 1px;
+    padding: 0 1px;
 }
 
 #taskbar button.active {
-    background-color: #2BD2FF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    padding-left: 5px;
-    padding-right: 5px;
+    background: black;
+    border-bottom: 2px solid transparent;
+    /* border-top: 2px solid transparent; */
+    border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
+    padding: 0 5px;
 }
-
 #taskbar button:hover {
-    background-color: #2BD2FF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    padding-left: 5px;
-    padding-right: 5px;
+    background: black;
+    border: 1px solid transparent;
+    border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
+    padding: 0 5px;
 }
 
-/* make module transparent when empty */
+/* Transparent Modules When Empty */
 #taskbar.empty,
 window#waybar.empty {
     background-color: transparent;
 }
 
-/* Specific module styles */
+/* Specific Module Styles */
 #backlight,
 #cpu,
 #idle_inhibitor,
@@ -135,7 +138,14 @@ window#waybar.empty {
 #keyboard-state,
 #custom-vpn,
 #custom-notification,
-#taskbar {
+#taskbar,
+#user,
+#systemd-failed-units,
+#power,
+#load,
+#jack,
+#cpu-load,
+#image {
     background-color: black;
     color: rgb(0, 238, 255);
 }
@@ -144,80 +154,71 @@ window#waybar.empty {
     background-color: red;
 }
 
-#network.disconnected {
-    background-color: black;
-    color: red;
-}
-
+#network.disconnected,
 #wireplumber.muted {
-    background-color: black;
     color: red;
 }
 
 #battery.charging,
 #battery.plugged {
-    background-color: rgb(0, 238, 255);
     color: black;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    background: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
 }
 
 @keyframes blink {
     to {
         background-color: black;
-        color: #000000;
+        color: red;
     }
 }
 
-#battery.warning:not(.charging) {
-    background-color: red;
-    color: black;
-}
-
+#battery.warning:not(.charging),
 #battery.critical:not(.charging) {
     background-color: red;
     color: black;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
+#battery.warning:not(.charging) {
+    animation: blink 1s linear infinite alternate;
+}
+#battery.critical:not(.charging) {
+    animation: blink 0.5s linear infinite alternate;
+}
+
+/* Focused Label Background */
 label:focus {
-    background-color: #000000;
+    background-color: black;
 }
 
+/* Keyboard State Styles */
 #keyboard-state>label {
-    padding: 0px 5px;
+    padding: 0 5px;
 }
 
 #keyboard-state>label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
 
+/* Tray Styles */
 #tray {
-    background-color: #000000;
+    background-color: black;
 }
 
 #tray>.passive {
     -gtk-icon-effect: dim;
-    border-radius: 20px;
 }
 
 #tray>.needs-attention {
     -gtk-icon-effect: highlight;
-    border-radius: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 0 5px;
     background-color: red;
 }
 
-/* Gradient module style */
+/* Gradient Module Styles */
 #custom-cmus,
 #mpd,
 #custom-spotify,
 #mpris,
 #window {
-    background-color: #2BD2FF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    background: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
 }

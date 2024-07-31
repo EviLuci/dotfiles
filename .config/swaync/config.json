@@ -1,7 +1,7 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
-  "positionY": "top",
+  "positionY": "bottom",
   "control-center-positionX": "none",
   "control-center-positionY": "none",
   "control-center-margin-top": 8,
@@ -115,7 +115,7 @@
         },
         {
           "label": "󰸉",
-          "command": "azote"
+          "command": "waypaper-engine"
         },
         {
           "label": " ",

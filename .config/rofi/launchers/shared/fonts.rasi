@@ -1,9 +1,0 @@
-/**
- *
- * Fonts
- *
- **/
-
-* {
-    font: "FiraCode Nerd Font 10";
-}

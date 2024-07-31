@@ -3,6 +3,9 @@ return {
     dependencies = {
         {
             "RRethy/nvim-treesitter-endwise"
+        },
+        {
+            "RRethy/nvim-treesitter-textsubjects"
         }
     },
     opts = {
@@ -12,9 +15,10 @@ return {
             "sql"
         }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
         highlight = {
+            enable = true,
             disable = {},
             additional_vim_regex_highlighting = {
-                "org",
+                "norg",
                 "markdown"
             }
         },
@@ -38,13 +42,34 @@ return {
                     ["al"] = "@loop.outer",
                     ["il"] = "@loop.inner",
                     ["is"] = "@statement.inner",
-                    ["as"] = "@statement.outer"
-                    -- ["ap"] = "@parameter.outer",
-                    -- ["ip"] = "@parameter.inner"
+                    ["as"] = "@statement.outer",
+                    ["ap"] = "@parameter.outer",
+                    ["ip"] = "@parameter.inner"
+                }
+            },
+            lsp_interop = {
+                enable = true,
+                border = 'none',
+                floating_preview_opts = {},
+                peek_definition_code = {
+                    ["<leader>df"] = "@function.outer",
+                    ["<leader>dF"] = "@class.outer"
                 }
             },
             swap = {
                 enable = true
+            }
+        },
+        textsubjects = {
+            enable = true,
+            prev_selection = ',', -- (Optional) keymap to select the previous selection
+            keymaps = {
+                ['.'] = 'textsubjects-smart',
+                [';'] = 'textsubjects-container-outer',
+                ['i;'] = {
+                    'textsubjects-container-inner',
+                    desc = "Select inside containers (classes, functions, etc.)"
+                }
             }
         },
         matchup = {

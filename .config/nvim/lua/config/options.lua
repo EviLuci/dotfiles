@@ -8,6 +8,7 @@ local opt = vim.opt
 opt.shiftwidth = indent
 opt.tabstop = indent
 opt.softtabstop = indent
+opt.swapfile = false
 
 -- opt.listchars = {
 --     tab = "→ ",

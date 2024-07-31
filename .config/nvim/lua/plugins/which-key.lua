@@ -12,10 +12,6 @@ return {
                     "v"
                 },
                 {
-                    "z",
-                    group = "fold"
-                },
-                {
                     "n",
                     group = "neorg"
                 }
