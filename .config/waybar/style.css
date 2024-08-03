@@ -146,7 +146,8 @@ window#waybar.empty {
 #load,
 #jack,
 #cpu-load,
-#image {
+#image,
+#workspaces {
     background-color: black;
     color: rgb(0, 238, 255);
 }

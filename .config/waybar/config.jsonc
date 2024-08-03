@@ -69,12 +69,6 @@
             "tooltip": false,
             "on-click": "shutdown now"
         },
-        "jack": {
-            "format": "DSP {}%",
-            "format-xrun": "{xruns} xruns",
-            "format-disconnected": "DSP off",
-            "realtime": true
-        },
         "group/cpu-load": {
             "orientation": "inherit",
             "drawer": {
@@ -227,28 +221,28 @@
             "format-alt": "{time} {icon}",
             "format-full": "⚡ {capacity}%",
             "format-icons": [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
-                // "󰂎",
-                // "󰁺",
-                // "󰁻",
-                // "󰁼",
-                // "󰁽",
-                // "󰁾",
-                // "󰁿",
-                // "󰂀",
-                // "󰂁",
-                // "󰂂",
-                // "󰁹"
+                // "",
+                // "",
+                // "",
+                // "",
+                // "",
+                // "",
+                // "",
+                // "",
+                // "",
+                // "",
+                // ""
+                "󰂎",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
             ]
         },
         "wireplumber": {
@@ -256,8 +250,14 @@
             "format-muted": " Muted",
             "format-icons": ["", " ", " "],
             "scroll-step": 0.2,
-            "max-volume": 150,
+            "max-volume": 100,
             "on-click": "qpwgraph"
+        },
+        "jack": {
+            "format": "DSP {}%",
+            "format-xrun": "{xruns} xruns",
+            "format-disconnected": "DSP off",
+            "realtime": true
         },
         "mpris": {
             "format": "{player_icon} {dynamic}",
@@ -322,7 +322,7 @@
                 "updated": ""
             },
             "exec-if": "which waybar-module-pacman-updates",
-            "exec": "waybar-module-pacman-updates"
+            "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
         },
         "custom/spotify": {
             "format": "  {}",
@@ -372,52 +372,62 @@
             "format-window-separator": " ",
             "window-rewrite-default": "",
             "window-rewrite": {
-                "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
-                "class<firefox>": "", // Windows whose classes are "firefox"
-                "title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-                "wezterm": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
-                "kitty": "",
+                "title<.*youtube.*>": "",
+                "title<.*whatsapp.*>": "",
+                "title<.*messenger.*>": "",
+                "title<.*facebook.*>": "",
+                "class<firefoxdeveloperedition>": "🦊",
+                "class<firefox>": "",
+                "title<.*github.*>": "",
+                "wezterm": "",
+                "kitty": "",
                 "code": "󰨞",
                 "nvim": "",
                 "cmus": "",
                 "spotify": "",
-                "class<brave>": "",
-                "nemo": ""
+                // "brave": "",
+                "brave": "🦁",
+                "class<discord>": "💬",
+                "class<slack>": "",
+                "class<vlc>": "🎬",
+                "class<libreoffice-writer>": "📝",
+                "class<libreoffice-calc>": "📊",
+                // "class<gimp>": " ",
+                "class<gimp>": "🎨",
+                "class<thunderbird>": "",
+                "title<.*gmail.*>": "📧",
+                "class<telegram-desktop>": "",
+                "class<remmina>": "🖥️",
+                "class<virt-manager>": "",
+                "class<obs>": "📹",
+                "class<jetbrains-idea>": "",
+                "class<microsoft-edge>": "🌐",
+                "class<emulator>": "📱",
+                "class<virtualbox>": "💽",
+                "class<android-studio>": "",
+                "class<steam>": "🎮"
             },
             // "persistent-workspaces": {
-            //     "*": 10 // 10 workspaces by default on every monitor
+            //     "*": [10] // 1 workspaces by default on every monitor
             //     // "HDMI-A-1": 3 // but only three on HDMI-A-1
             // },
             "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
             "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
             "format-icons": {
-                //            "1": "",
-                //            "2": "",
-                //            "3": "",
-                //            "4": "",
-                //            "5": "",
-                //            "6": "",
-                //            "7": "",
-                //            "8": "",
-                //            "9": "",
-                //            "0": "",
-                //            "6": "",
-                //            "7": "",
-                "1": "1",
-                "2": "2",
-                "3": "3",
-                "4": "4",
-                "5": "5",
-                "6": "6",
-                "7": "7",
-                "8": "8",
-                "9": "9",
-                "10": "10"
-                //"special": "󰮯",
-                //"urgent": "",
-                //"focused": "",
-                //"default": " ",
-                //"default": ""
+                // "1": "1",
+                // "2": "2",
+                // "3": "3",
+                // "4": "4",
+                // "5": "5",
+                // "6": "6",
+                // "7": "7",
+                // "8": "8",
+                // "9": "9",
+                // "10": "10",
+                "special": "🎁",
+                // "urgent": "",
+                "persistent": ""
+                // "default": " ",
             }
         },
         "wlr/taskbar": {
@@ -428,7 +438,6 @@
             "tooltip-format": "{title}",
             "on-click": "activate",
             "on-click-middle": "close",
-            "on-click-right": "minimize",
             // "ignore-list": ["Alacritty"],
             "app_ids-mapping": {
                 "firefoxdeveloperedition": "firefox-developer-edition"
