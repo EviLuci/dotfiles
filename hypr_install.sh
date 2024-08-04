@@ -53,6 +53,7 @@ install_packages() {
     npm \
     bluez \
     bluez-utils \
+    blueman \
     pipewire \
     pipewire-alsa \
     pipewire-jack \
@@ -78,7 +79,7 @@ install_aur_packages() {
         "hyprpicker-git"
         "microsoft-edge-stable-bin"
         "waybar-module-pacman-updates-git"
-        "wlogout-git"
+        "wleave-git"
         "snap-pac-grub"
         "snapper-gui-git"
         "beautyline"
