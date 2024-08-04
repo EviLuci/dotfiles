@@ -101,20 +101,65 @@ echo "Installing necessary packages..."
 install_packages
 install_aur_packages
 
-echo "Hypr specific installation complete!"
+echo "Hypr setup installation complete!"
 
-# Determine the directory of the current script
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Dotfiles setup
+# Define the dotfiles directory
+DOTFILES_DIR="$HOME/dotfiles"
 
-# Path to the script to source
-SOURCE_FILE="$SCRIPT_DIR/dotfiles_setup.sh"
+# Function to backup existing directory
+backup_directory() {
+    local dir="$1"
+    local backup_dir
+    backup_dir="${dir}.backup_$(date +%Y%m%d%H%M%S)"
+    if [ -d "$dir" ]; then
+        echo "Backing up existing directory $dir to $backup_dir"
+        mv "$dir" "$backup_dir"
+    fi
+}
 
-# Check if the source file exists
-if [[ -f "$SOURCE_FILE" ]]; then
-    # Source the script
-    source "$SOURCE_FILE"
-else
-    echo "Error: $SOURCE_FILE not found."
-    exit 1
-fi
+# Define the directories and files to be installed
+CONFIG_DIRS=(
+    "nvim"
+    "fish"
+    "wezterm"
+    "kitty"
+    "wleave"
+    "hypr"
+    "nwg-drawer"
+    "swaync"
+    "waybar"
+)
+CONFIG_FILES=(
+    ".vimrc"
+    ".bashrc"
+)
 
+# Backup existing configuration directories
+for dir in "${CONFIG_DIRS[@]}"; do
+    backup_directory "$HOME/.config/$dir"
+done
+
+# Backup existing individual files
+for file in "${CONFIG_FILES[@]}"; do
+    if [ -f "$HOME/$file" ] || [ -d "$HOME/$file" ]; then
+        echo "Backing up existing $file to $HOME/${file}.bak"
+        mv "$HOME/$file" "$HOME/${file}.bak"
+    fi
+done
+
+# Install .config directories
+for dir in "${CONFIG_DIRS[@]}"; do
+    # Create symlink to .config directory
+    echo "Creating symlink for .config/$dir"
+    ln -s "$DOTFILES_DIR/.config/$dir" "$HOME/.config/$dir"
+done
+
+# Install individual files
+for file in "${CONFIG_FILES[@]}"; do
+    # Create symlink to file
+    echo "Creating symlink for $file"
+    ln -s "$DOTFILES_DIR/$file" "$HOME/$file"
+done
+
+echo "Dotfiles setup complete!"
