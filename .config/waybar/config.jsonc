@@ -21,8 +21,6 @@
         "modules-center": ["hyprland/window"],
         "modules-right": [
             "mpris",
-            "custom/cmus",
-            "custom/spotify",
             "mpd",
             "battery",
             "backlight",
@@ -34,6 +32,7 @@
             "systemd-failed-units",
             "group/power"
         ],
+
         // Group Configuration
         "group/power": {
             "orientation": "inherit",
@@ -248,7 +247,20 @@
         "wireplumber": {
             "format": "{icon} {volume}%",
             "format-muted": " Muted",
-            "format-icons": ["", " ", " "],
+            "format-bluetooth": "󰂰 󰥰 {volume}{format_source}",
+            "format-bluetooth-muted": "󰂲 Mute",
+            "format-source": "󰍬{volume}",
+            "format-source-muted": "󰍭 ",
+            // "format-icons": ["", " ", " "],
+            "format-icons": {
+                "headphone": "󰋎 ",
+                "hands-free": "",
+                "headset": "󰋎 ",
+                "phone": "󰏲 ",
+                "portable": "󰏲 ",
+                "car": " ",
+                "default": ["", " ", " "]
+            },
             "scroll-step": 0.2,
             "max-volume": 100,
             "on-click": "qpwgraph"
@@ -265,14 +277,19 @@
             "max-length": 50,
             "player-icons": {
                 "default": "󰎆 ",
+                "cmus": "",
                 "mpv": "🎵",
-                "vlc": "▶ "
+                "vlc": "🎬",
+                "spotify": " "
             },
             "status-icons": {
                 "paused": "⏸"
             },
             "on-click": "playerctl play-pause",
-            "ignored-players": ["cmus", "spotify"]
+            "on-click-right": "playerctl stop",
+            "smooth-scrolling-threshold": 10,
+            "on-scroll-down": "playerctl previous"
+            // "ignored-players": ["cmus", "spotify"]
         },
         "mpd": {
             "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
@@ -323,29 +340,6 @@
             },
             "exec-if": "which waybar-module-pacman-updates",
             "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300"
-        },
-        "custom/spotify": {
-            "format": "  {}",
-            "escape": true,
-            "return-type": "json",
-            "max-length": 20,
-            "interval": 30, // Remove this if your script is endless and write in loop
-            "on-click": "playerctl -p spotify play-pause",
-            "on-click-right": "killall spotify",
-            "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-            "on-scroll-up": "playerctl -p spotify next",
-            "on-scroll-down": "playerctl -p spotify previous",
-            "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
-            "exec-if": "pgrep spotify"
-        },
-        "custom/cmus": {
-            "format": "󰎆 {}",
-            "max-length": 20,
-            "interval": 10,
-            "exec": "cmus-remote -C \"format_print '%a - %t'\"", // artist - title
-            "exec-if": "pgrep cmus",
-            "on-click": "cmus-remote -u", //toggle pause
-            "escape": true //handle markup entities
         }
     },
     {
@@ -403,9 +397,12 @@
                 "class<jetbrains-idea>": "",
                 "class<microsoft-edge>": "🌐",
                 "class<emulator>": "📱",
-                "class<virtualbox>": "💽",
+                "class<virtualbox manager>": "💽",
+                "title<virtualbox>": "💽",
                 "class<android-studio>": "",
-                "class<steam>": "🎮"
+                "class<steam>": "🎮",
+                "class<figma>": "",
+                "class<tor browser>": ""
             },
             // "persistent-workspaces": {
             //     "*": [10] // 1 workspaces by default on every monitor

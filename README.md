@@ -1,6 +1,6 @@
 # Dotfiles (WIP)
 
-This repository contains my personal dotfiles and installation scripts for setting up my Hyprland setup.
+This repository contains my personal dotfiles and installation scripts for setting up my Hyprland environment on Arch Linux.
 
 ## Contents
 
@@ -11,14 +11,12 @@ This repository contains my personal dotfiles and installation scripts for setti
   - [Hypr Install](#hypr-install)
   - [Dotfiles Setup](#dotfiles-setup)
 - [Usage](#usage)
-- [Customization](#customization)
-- [Contributing](#contributing)
 
 ## Introduction
 
-In this repository, you'll find my dotfiles and installation scripts to make it easier to replicate my environment on a new arch system.
+Welcome to my dotfiles repository! This collection contains my personal configuration files and scripts for setting up a customized Hyprland environment on Arch Linux. The aim is to streamline the process of replicating my setup on new systems.
 
-⚠️ **Disclaimer**: The dotfiles and scripts provided in this repository are experimental and are intended for my personal use only. If you choose to use them, please be aware that you do so at your own risk. I make no guarantees about the reliability or suitability of these scripts and the configs for any purpose other than my own personal setup. It's completely a newbie setup ,so don't expect everything to work lol 😂😂😂
+⚠️ **Disclaimer**: These dotfiles and scripts are experimental and intended for personal use only. Use them at your own risk. I make no guarantees about their reliability or suitability for any purpose other than my own. This is a newbie setup, so expect some rough edges. 😂
 
 ## Preview
 
@@ -48,7 +46,7 @@ Bottom Bar
 
 ## Installation
 
-### Necessary dependencies for my hyprland setup
+### Necessary dependencies
 
 - [Hyprland](https://github.com/vaxerski/Hyprland/) (Hyprland is a dynamic tiling Wayland compositor that doesn't sacrifice on its looks.)
 - [waybar](https://github.com/Alexays/Waybar/) (Like polybar, but for wlroots, very customizable)
@@ -74,19 +72,19 @@ Bottom Bar
 
 ### Cloning the Repository
 
-Before running the installation scripts, clone this repository to your local machine:
+Clone this repository to your local machine:
 
 ```bash
 git clone https://github.com/EviLuci/dotfiles.git
 ```
 
-It is recommended to review the script and understand its actions before executing it.
+Review the scripts and understand their actions before executing them.
 
 ### Arch Base Installation
 
-The `arch_base_install.sh` script is used to configure and set up everything during Arch Linux installation. It includes system configurations, package installations, bootloader setup, user creation, and initial dotfiles setup.
+The arch_base_install.sh script configures and sets up everything during an Arch Linux installation, including system configurations, package installations, bootloader setup, user creation, and initial dotfiles setup.
 
-⚠️ **Warning**: Please use the `arch_base_install.sh` script at your own risk. This script is experimental at the moment and makes system-level changes and is only advisable to be used during fresh arch installation after going through arch installation wiki and entering arch-chroot environment.
+⚠️ **Warning**: Use the arch_base_install.sh script at your own risk. This script is experimental and makes system-level changes. It is advisable to use it only during a fresh Arch installation after following the Arch installation wiki and entering the arch-chroot environment.
 
 To run the Arch base installation script:
 
@@ -99,32 +97,26 @@ cd
 
 ### Hypr Install
 
-The `hypr_install.sh` script installs packages that i use in my personal setup and sets up dotfiles. This script is useful for installing additional packages and configuring dotfiles after a fresh base Arch Linux installation.
+The hypr_install.sh script installs packages used in my setup and sets up dotfiles. This script is useful for installing additional packages and configuring dotfiles after a fresh base Arch Linux installation.
 
-To run the Hypr installation script, `cd` into the cloned `dotfiles` directory and then run:
+To run the Hypr installation script:
 
 ```bash
+cd dotfiles
 ./hypr_install.sh
 ```
 
 ### Dotfiles Setup
 
-The `dotfiles_setup.sh` script is used solely for setting up dotfiles. It can be used independently of the Arch Linux installation scripts to quickly set up dotfiles on existing systems.
+The dotfiles_setup.sh script is used solely for setting up dotfiles. It can be used independently of the Arch Linux installation scripts to quickly set up dotfiles on existing systems.
 
-To run the dotfiles setup script, `cd` into the cloned `dotfiles` directory and then run:
+To run the dotfiles setup script:
 
 ```bash
+cd dotfiles
 ./dotfiles_setup.sh
 ```
 
 ## Usage
 
-These installation scripts are designed to be used on Arch Linux systems. Before running the scripts, make sure to review and customize the configurations according to your preferences. Additionally, ensure that you have backed up any existing configurations that may be overwritten during the installation process.
-
-## Customization
-
-Feel free to customize the dotfiles and installation scripts to better suit your needs. You can modify the configurations, add or remove packages, or extend the scripts to automate additional tasks.
-
-## Contributing
-
-If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request. Contributions are welcome!
+These installation scripts are designed for Arch Linux systems. Before running the scripts, review and customize the configurations according to your preferences. Ensure you have backed up any existing configurations that may be overwritten during the installation process.

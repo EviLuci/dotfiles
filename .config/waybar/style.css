@@ -137,7 +137,6 @@ window#waybar.empty {
 #network,
 #wireplumber,
 #keyboard-state,
-#custom-vpn,
 #custom-notification,
 #taskbar,
 #user,
@@ -221,9 +220,7 @@ label:focus {
 }
 
 /* Gradient Module Styles */
-#custom-cmus,
 #mpd,
-#custom-spotify,
 #mpris,
 #window {
     background: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);

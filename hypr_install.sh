@@ -51,6 +51,14 @@ install_packages() {
     android-tools \
     virtualbox \
     npm \
+    bluez \
+    bluez-utils \
+    pipewire \
+    pipewire-alsa \
+    pipewire-jack \
+    pipewire-pulse \
+    pipewire-zeroconf \
+    wireplumber \
 
 }
 
