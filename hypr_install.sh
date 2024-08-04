@@ -103,5 +103,18 @@ install_aur_packages
 
 echo "Hypr specific installation complete!"
 
-source dotfiles_setup.sh
+# Determine the directory of the current script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Path to the script to source
+SOURCE_FILE="$SCRIPT_DIR/dotfiles_setup.sh"
+
+# Check if the source file exists
+if [[ -f "$SOURCE_FILE" ]]; then
+    # Source the script
+    source "$SOURCE_FILE"
+else
+    echo "Error: $SOURCE_FILE not found."
+    exit 1
+fi
 
