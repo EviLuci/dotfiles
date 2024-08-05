@@ -403,7 +403,7 @@
                 "title<virtualbox>": "💽",
                 "class<android-studio>": "",
                 "class<steam>": "🎮",
-                "class<figma>": "",
+                "class<figma-linux>": "",
                 "class<tor browser>": ""
             },
             // "persistent-workspaces": {
