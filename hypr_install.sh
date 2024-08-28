@@ -60,6 +60,7 @@ install_packages() {
     pipewire-pulse \
     pipewire-zeroconf \
     wireplumber \
+    pavucontrol \
 
 }
 
