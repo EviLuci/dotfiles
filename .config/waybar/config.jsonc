@@ -263,7 +263,8 @@
       },
       "scroll-step": 0.2,
       "max-volume": 100,
-      "on-click": "qpwgraph"
+      "on-click": "pavucontrol",
+      "on-click-right": "qpwgraph"
     },
     "jack": {
       "format": "DSP {}%",
