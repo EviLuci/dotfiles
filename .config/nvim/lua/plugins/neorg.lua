@@ -4,15 +4,15 @@ return {
     cmd = "Neorg",
     event = {
       "BufReadPre *.norg",
-      "BufNewFile *.norg",
+      "BufNewFile *.norg"
     },
     dependencies = {
       {
-        "nvim-lua/plenary.nvim",
+        "nvim-lua/plenary.nvim"
       },
       {
-        "nvim-neorg/neorg-telescope",
-      },
+        "nvim-neorg/neorg-telescope"
+      }
     },
     config = function()
       require("neorg").setup({
@@ -22,8 +22,8 @@ return {
           ["core.completion"] = {
             config = {
               engine = "nvim-cmp",
-              name = "[Neorg]",
-            },
+              name = "[Neorg]"
+            }
           },
           ["core.integrations.nvim-cmp"] = {},
           ["core.integrations.telescope"] = {}, --  Telescope Integration
@@ -31,16 +31,16 @@ return {
           ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
               workspaces = {
-                notes = "~/notes",
+                notes = "~/git repos/notes"
               },
-              default_workspace = "notes",
-            },
+              default_workspace = "notes"
+            }
           },
           ["core.dirman.utils"] = {},
           -- Export norg files to other formats
           ["core.export"] = {},
-          ["core.export.markdown"] = {},
-        },
+          ["core.export.markdown"] = {}
+        }
       })
       local neorg_callbacks = require("neorg.core.callbacks")
 
@@ -50,19 +50,19 @@ return {
           n = { -- Bind keys in normal mode
             {
               "<C-l>",
-              "core.integrations.telescope.find_linkable",
-            },
+              "core.integrations.telescope.find_linkable"
+            }
           },
 
           i = { -- Bind in insert mode
             {
               "<C-l>",
-              "core.integrations.telescope.insert_link",
-            },
-          },
+              "core.integrations.telescope.insert_link"
+            }
+          }
         }, {
           silent = true,
-          noremap = true,
+          noremap = true
         })
       end)
     end,
@@ -70,33 +70,33 @@ return {
       {
         "<leader>nw",
         "<CMD>Telescope neorg switch_workspace<CR>",
-        desc = "Set Neorg Workspace",
+        desc = "Set Neorg Workspace"
       },
       {
         "<leader>ni",
         "<CMD>Neorg index<CR>",
-        desc = "Go to workspace index.norg",
+        desc = "Go to workspace index.norg"
       },
       {
         "<leader>nr",
         "<CMD>Neorg return<CR>",
-        desc = "Close all norg buffers",
+        desc = "Close all norg buffers"
       },
       {
         "<leader>ntc",
         "<CMD>Neorg toggle-concealer<CR>",
-        desc = "Toggle Concealer",
+        desc = "Toggle Concealer"
       },
       {
         "<leader>nef",
         ":Neorg export to-file ",
-        desc = "Export File",
+        desc = "Export File"
       },
       {
         "<leader>ned",
         ":Neorg export directory ",
-        desc = "Export Directory",
-      },
-    },
-  },
+        desc = "Export Directory"
+      }
+    }
+  }
 }

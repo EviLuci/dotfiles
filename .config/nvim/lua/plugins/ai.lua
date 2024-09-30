@@ -1,4 +1,15 @@
 return {
   "supermaven-inc/supermaven-nvim",
-  config = function() require("supermaven-nvim").setup({}) end
+  keys = {
+    "<leader>at",
+    "<Cmd>SupermavenToggle<CR>",
+    desc = "Toggle Supermaven"
+  },
+  config = function()
+    require("supermaven-nvim").setup({
+      ignore_file_types = {
+        norg = true
+      }
+    })
+  end
 }
