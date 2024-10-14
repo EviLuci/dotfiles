@@ -98,7 +98,7 @@
         "actions": [
           {
             "label": "  Swaync Github",
-            "command": "firefox https://github.com/ErikReider/SwayNotificationCenter"
+            "command": "firefox-developer-edition https://github.com/ErikReider/SwayNotificationCenter"
           }
         ]
       }
