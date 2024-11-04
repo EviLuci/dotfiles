@@ -36,7 +36,8 @@ return {
               default_workspace = "notes"
             }
           },
-          ["core.dirman.utils"] = {},
+          ["core.dirman.utils"] = {}, -- A set of utilities for the core.dirman module
+          ["core.summary"] = {}, -- Creates links to all files in any workspace
           -- Export norg files to other formats
           ["core.export"] = {},
           ["core.export.markdown"] = {}
