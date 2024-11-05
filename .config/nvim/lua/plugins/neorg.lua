@@ -2,6 +2,8 @@ return {
   {
     "nvim-neorg/neorg",
     cmd = "Neorg",
+    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+    version = "*", -- Pin Neorg to the latest stable release
     event = {
       "BufReadPre *.norg",
       "BufNewFile *.norg"
@@ -18,12 +20,12 @@ return {
       load = {
         ["core.defaults"] = {}, -- Loads default behaviour
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        --[[         ["core.completion"] = {
+        ["core.completion"] = {
           config = {
             engine = "nvim-cmp"
           }
         },
-        ["core.integrations.nvim-cmp"] = {}, ]]
+        ["core.integrations.nvim-cmp"] = {},
         ["core.integrations.telescope"] = {}, --  Telescope Integration
         ["core.integrations.treesitter"] = {},
         ["core.dirman"] = { -- Manages Neorg workspaces
@@ -42,31 +44,6 @@ return {
       }
 
     },
-    config = function()
-      local neorg_callbacks = require("neorg.core.callbacks")
-
-      neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
-        -- Map all the below keybinds only when the "norg" mode is active
-        keybinds.map_event_to_mode("norg", {
-          n = { -- Bind keys in normal mode
-            {
-              "<C-l>",
-              "core.integrations.telescope.find_linkable"
-            }
-          },
-
-          i = { -- Bind in insert mode
-            {
-              "<C-l>",
-              "core.integrations.telescope.insert_link"
-            }
-          }
-        }, {
-          silent = true,
-          noremap = true
-        })
-      end)
-    end,
     keys = {
       {
         "<leader>nw",

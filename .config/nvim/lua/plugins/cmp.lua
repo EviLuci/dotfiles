@@ -10,7 +10,6 @@ return {
         group_index = 1,
         priority = 100
       })
-
     end
   }
 }
