@@ -11,6 +11,8 @@ install_packages() {
     brightnessctl \
     firefox-developer-edition \
     neovim \
+    zed \
+    luarocks \
     fish \
     wezterm \
     kitty \
@@ -89,6 +91,7 @@ install_aur_packages() {
         "visual-studio-code-bin"
         "flutter"
         "android-studio"
+        "woomer"
         # Add more AUR packages as necessary
     )
 

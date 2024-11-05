@@ -14,35 +14,35 @@ return {
         "nvim-neorg/neorg-telescope"
       }
     },
+    opts = {
+      load = {
+        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.concealer"] = {}, -- Adds pretty icons to your documents
+        --[[         ["core.completion"] = {
+          config = {
+            engine = "nvim-cmp"
+          }
+        },
+        ["core.integrations.nvim-cmp"] = {}, ]]
+        ["core.integrations.telescope"] = {}, --  Telescope Integration
+        ["core.integrations.treesitter"] = {},
+        ["core.dirman"] = { -- Manages Neorg workspaces
+          config = {
+            workspaces = {
+              notes = "~/git repos/notes"
+            },
+            default_workspace = "notes"
+          }
+        },
+        ["core.dirman.utils"] = {}, -- A set of utilities for the core.dirman module
+        ["core.summary"] = {}, -- Creates links to all files in any workspace
+        -- Export norg files to other formats
+        ["core.export"] = {},
+        ["core.export.markdown"] = {}
+      }
+
+    },
     config = function()
-      require("neorg").setup({
-        load = {
-          ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.completion"] = {
-            config = {
-              engine = "nvim-cmp",
-              name = "[Neorg]"
-            }
-          },
-          ["core.integrations.nvim-cmp"] = {},
-          ["core.integrations.telescope"] = {}, --  Telescope Integration
-          ["core.integrations.treesitter"] = {},
-          ["core.dirman"] = { -- Manages Neorg workspaces
-            config = {
-              workspaces = {
-                notes = "~/git repos/notes"
-              },
-              default_workspace = "notes"
-            }
-          },
-          ["core.dirman.utils"] = {}, -- A set of utilities for the core.dirman module
-          ["core.summary"] = {}, -- Creates links to all files in any workspace
-          -- Export norg files to other formats
-          ["core.export"] = {},
-          ["core.export.markdown"] = {}
-        }
-      })
       local neorg_callbacks = require("neorg.core.callbacks")
 
       neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
