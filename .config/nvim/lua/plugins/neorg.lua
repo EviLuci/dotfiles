@@ -19,7 +19,11 @@ return {
     opts = {
       load = {
         ["core.defaults"] = {}, -- Loads default behaviour
-        ["core.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.concealer"] = {
+          config = {
+            icon_preset = "basic" -- basic | diamond | varied
+          }
+        }, -- Adds pretty icons to your documents
         ["core.completion"] = {
           config = {
             engine = "nvim-cmp"
