@@ -80,7 +80,7 @@ install_aur_packages() {
     AUR_PACKAGES=(
         "hyprshot-git"
         "hyprpicker-git"
-        "microsoft-edge-stable-bin"
+        "microsoft-edge-dev-bin"
         "waybar-module-pacman-updates-git"
         "wleave-git"
         "snap-pac-grub"
