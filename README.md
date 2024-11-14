@@ -48,7 +48,7 @@ Bottom Bar
 - [waybar](https://github.com/Alexays/Waybar/) (Like polybar, but for wlroots, very customizable)
 - [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter) (GNOME like notification daemon, with GUI and all)
 - [Nwg-drawer](https://github.com/nwg-piotr/nwg-drawer) (Application drawer for wlroots-based Wayland compositors )
-- [Wlogout](https://github.com/ArtsyMacaw/wlogout) (Logout menu)
+- [Wleave](https://github.com/AMNatty/wleave) (Basically a fork of wlogout, rewritten in Rust.)
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (Command-line copy/paste utilities for Wayland)
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
 - [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
