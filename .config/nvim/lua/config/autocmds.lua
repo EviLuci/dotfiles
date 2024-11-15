@@ -1,3 +1,8 @@
+-- Suggested solution for https://github.com/altermo/ultimate-autopair.nvim/issues/102
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(ev) if not vim.api.nvim_buf_is_loaded(ev.buf) then vim.fn.bufload(ev.buf) end end
+})
+
 -- show cursor line only in active window
 vim.api.nvim_create_autocmd({
   "InsertLeave",
