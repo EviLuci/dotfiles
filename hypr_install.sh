@@ -26,7 +26,6 @@ install_packages() {
     torbrowser-launcher \
     copyq \
     gimp \
-    feh \
     exa \
     fzf \
     vlc \

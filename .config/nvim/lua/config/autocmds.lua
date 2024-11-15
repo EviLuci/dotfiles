@@ -1,7 +1,9 @@
 -- Suggested solution for https://github.com/altermo/ultimate-autopair.nvim/issues/102
-vim.api.nvim_create_autocmd('FileType', {
-  callback = function(ev) if not vim.api.nvim_buf_is_loaded(ev.buf) then vim.fn.bufload(ev.buf) end end
-})
+local get_option = vim.filetype.get_option
+rawset(vim.filetype, 'get_option', function(ft, opt)
+  if ft == 'norg' then return vim.api.nvim_get_option_value(opt, {}) end
+  return get_option(ft, opt)
+end)
 
 -- show cursor line only in active window
 vim.api.nvim_create_autocmd({
