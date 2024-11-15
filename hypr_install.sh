@@ -86,7 +86,7 @@ install_aur_packages() {
         "snapper-gui-git"
         "beautyline"
         "sweet-gtk-theme"
-        "waypaper-engine"
+        "waypaper"
         "visual-studio-code-bin"
         "flutter"
         "android-studio"
