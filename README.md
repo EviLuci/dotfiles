@@ -22,7 +22,7 @@ Welcome to my dotfiles repository! This collection contains my personal configur
 
 ### Neovim
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/nvim.png)
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/neovim.png)
 
 ### nwg-drawer
 
