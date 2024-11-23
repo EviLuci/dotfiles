@@ -5,17 +5,14 @@ return {
       dashboard = {
         preset = {
           header = [[
-  ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆
-   ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦
-         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄
-          ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄
-         ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀
-  ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄
- ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄
-⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄
-⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄
-     ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆
-      ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃
+
+███████╗██╗   ██╗██╗██╗     ██╗   ██╗ ██████╗██╗
+██╔════╝██║   ██║██║██║     ██║   ██║██╔════╝██║
+█████╗  ██║   ██║██║██║     ██║   ██║██║     ██║
+██╔══╝  ╚██╗ ██╔╝██║██║     ██║   ██║██║     ██║
+███████╗ ╚████╔╝ ██║███████╗╚██████╔╝╚██████╗██║
+╚══════╝  ╚═══╝  ╚═╝╚══════╝ ╚═════╝  ╚═════╝╚═╝
+
    ]]
         },
         sections = {
@@ -32,7 +29,23 @@ return {
             padding = 1
           },
           {
-            -- pane = 2,
+            pane = 2,
+            section = "terminal",
+            cmd = "fortune",
+            padding = 1,
+            height = 10
+          },
+          {
+            pane = 2,
+            icon = " ",
+            title = "Recent Files (CWD)",
+            section = "recent_files",
+            cwd = true,
+            indent = 2,
+            padding = 1
+          },
+          {
+            pane = 2,
             icon = " ",
             title = "Recent Files",
             section = "recent_files",
@@ -40,7 +53,7 @@ return {
             padding = 1
           },
           {
-            -- pane = 2,
+            pane = 2,
             icon = " ",
             title = "Projects",
             section = "projects",
@@ -48,7 +61,7 @@ return {
             padding = 1
           },
           {
-            -- pane = 2,
+            pane = 2,
             icon = " ",
             title = "Git Status",
             section = "terminal",

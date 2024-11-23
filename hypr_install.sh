@@ -62,6 +62,7 @@ install_packages() {
     pipewire-zeroconf \
     wireplumber \
     pavucontrol \
+    fortune-mod \
 
 }
 
