@@ -62,8 +62,6 @@ Bottom Bar
 - [Fish](https://github.com/fish-shell/fish-shell) (smart and user-friendly command line shell)
 - [Starship](https://github.com/starship/starship) (cross-shell prompt)
 - [Hyprshot](https://github.com/Gustash/Hyprshot) (utility to easily take screenshot in Hyprland using your mouse)
-- [waypaper-engine](https://github.com/0bCdian/Waypaper-Engine) (A wallpaper setter gui, developed with ricing in mind! 🍚, using swww)
+- [Waypaper](https://github.com/anufrievroman/waypaper) (GUI wallpaper manager for Wayland and Xorg Linux systems)
 - FiraCode Nerd Font, Font Awesome (fonts with icons)
 - sweet-gtk-theme-dark, beautyline (system and icon themes)
-
-⚠️ **Warning**: Use the scripts available at your own risk. This script is experimental and makes system-level changes. Review the scripts and understand their actions before executing them.
