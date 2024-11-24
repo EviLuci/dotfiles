@@ -40,6 +40,10 @@ Bottom Bar
 
 ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync.png) ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_menu.png)
 
+### CopyQ
+
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/CopyQ.png)
+
 ## Packages
 
 ### Necessary dependencies
