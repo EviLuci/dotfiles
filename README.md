@@ -1,4 +1,4 @@
-# Dotfiles (WIP)
+# Dotfiles (Always WIP)
 
 This repository contains my personal dotfiles and installation scripts for setting up my Hyprland environment on Arch Linux.
 
@@ -57,6 +57,7 @@ Bottom Bar
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
 - [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
 - [Pipewire](https://github.com/PipeWire/pipewire) (server and user space API to deal with multimedia pipelines)
+- [Waypaper](https://github.com/anufrievroman/waypaper) (GUI wallpaper manager for Wayland and Xorg Linux systems)
 
 ### Optional packages
 
@@ -66,6 +67,5 @@ Bottom Bar
 - [Fish](https://github.com/fish-shell/fish-shell) (smart and user-friendly command line shell)
 - [Starship](https://github.com/starship/starship) (cross-shell prompt)
 - [Hyprshot](https://github.com/Gustash/Hyprshot) (utility to easily take screenshot in Hyprland using your mouse)
-- [Waypaper](https://github.com/anufrievroman/waypaper) (GUI wallpaper manager for Wayland and Xorg Linux systems)
 - FiraCode Nerd Font, Font Awesome (fonts with icons)
 - sweet-gtk-theme-dark, beautyline (system and icon themes)
