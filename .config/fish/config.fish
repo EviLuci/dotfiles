@@ -131,6 +131,11 @@ alias clear='echo -en "\x1b[2J\x1b[1;1H" ; echo; echo; seq 1 (tput cols) | sort 
 # root privileges
 alias doas="doas --"
 
+# Emacs
+alias emacs="emacsclient -c -a 'emacs'" # GUI versions of Emacs
+alias em="/usr/bin/emacs -nw" # Terminal version of Emacs
+alias rem="killall emacs || echo 'Emacs server not running'; /usr/bin/emacs --daemon" # Kill Emacs and restart daemon..
+
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -148,12 +153,14 @@ alias updqte='sudo pacman -Syyu'
 alias upqll='paru -Syu --noconfirm'
 alias upal='paru -Syu --noconfirm'
 
-# Changing "ls" to "exa"
-alias ls='exa --icons -al --color=always --group-directories-first' # my preferred listing
-alias la='exa --icons -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa --icons -l --color=always --group-directories-first'  # long format
-alias lt='exa --icons -aT --color=always --group-directories-first' # tree listing
-alias l.='exa --icons -a | egrep "^\."'
+# Changing "ls" to "eza"
+alias ls='eza -al --color=always --group-directories-first' # my preferred listing
+alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -aT --color=always --group-directories-first' # tree listing
+alias l.='eza -al --color=always --group-directories-first ../' # ls on the PARENT directory
+alias l..='eza -al --color=always --group-directories-first ../../' # ls on directory 2 levels up
+alias l...='eza -al --color=always --group-directories-first ../../../' # ls on directory 3 levels up
 
 #pacman
 alias sps='sudo pacman -S'
@@ -203,11 +210,6 @@ alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacma
 alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
-#our experimental - best option for the moment
-alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias ram="rate-mirrors --allow-root --disable-comments arch | sudo tee /etc/pacman.d/mirrorlist"
-alias rams="rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist"
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -223,14 +225,10 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 # adding flags
-alias df='df -h'                          # human-readable sizes
-alias lynx='lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
-alias vifm='./.config/vifm/scripts/vifmrun'
-alias ncmpcpp='ncmpcpp ncmpcpp_directory=$HOME/.config/ncmpcpp/'
-alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc -O MOCDir="$XDG_CONFIG_HOME"/moc'
+alias df='df -h'  # human-readable sizes
 
 #free
-alias free="free -mt"
+alias free="free -mt" # show sizes in MB
 
 #continue download
 alias wget="wget -c"
@@ -261,8 +259,10 @@ alias commit='git commit -m'
 alias fetch='git fetch'
 alias pull='git pull origin'
 alias push='git push origin'
+alias stat='git status'  # 'status' is protected name so using 'stat' instead
 alias tag='git tag'
 alias newtag='git tag -a'
+
 
 #hardware info --short
 alias hw="hwinfo --short"
@@ -311,6 +311,7 @@ alias nresolv="sudo $EDITOR /etc/resolv.conf"
 #verify signature for isos
 alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
 alias fix-gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+
 #receive the key of a developer
 alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
