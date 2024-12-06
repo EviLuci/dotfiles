@@ -4,6 +4,7 @@
 # your path gets massive and fish becomes very slow.
 set -e fish_user_paths
 set -Ux fish_user_paths $HOME/flutter/bin $fish_user_paths
+set -U fish_user_paths $HOME/.config/emacs/bin $fish_user_paths
 
 ### EXPORT ###
 set fish_greeting                                    # Supresses fish's intro message
