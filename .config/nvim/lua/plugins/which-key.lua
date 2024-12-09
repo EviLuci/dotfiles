@@ -13,7 +13,7 @@ return {
         },
         {
           "n",
-          group = "Notes - Neorg"
+          group = "Notes"
         },
         {
           "a",
