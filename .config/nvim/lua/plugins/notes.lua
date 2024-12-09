@@ -3,12 +3,19 @@ return {
     "MeanderingProgrammer/render-markdown.nvim",
     opts = {
       code = {
-        sign = true,
         width = "block",
         right_pad = 1
       },
       heading = {
-        sign = true
+        width = "block",
+        icons = {
+          '󰲡 ',
+          '󰲣 ',
+          '󰲥 ',
+          '󰲧 ',
+          '󰲩 ',
+          '󰲫 '
+        }
       }
     }
   },
@@ -126,7 +133,7 @@ return {
       workspaces = {
         {
           name = "notes",
-          path = "~/git repos/notes"
+          path = "~/git\ repos/notes"
         }
       },
       completion = {
@@ -200,7 +207,8 @@ return {
       sort_by = "modified",
       sort_reversed = true,
       search_max_lines = 1000,
-      open_notes_in = "current" -- vsplit|hsplit
+      open_notes_in = "current", -- vsplit|hsplit
+      ui = { enable = false },
     }
   }
 }

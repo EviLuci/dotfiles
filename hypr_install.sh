@@ -63,6 +63,7 @@ install_packages() {
     wireplumber \
     pavucontrol \
     fortune-mod \
+    obsidian \
 
 }
 
