@@ -8,7 +8,7 @@ return {
   config = function()
     require("supermaven-nvim").setup({
       ignore_file_types = {
-        norg = true
+        markdown = true
       }
     })
   end
