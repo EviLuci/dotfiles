@@ -116,7 +116,7 @@ return {
     "epwalsh/obsidian.nvim",
     version = "*",
     lazy = true,
-    ft = "markdown",
+    -- ft = "markdown",
     -- event = {
     --   "BufReadPre *.md",
     --   "BufNewFile *.md"
@@ -127,6 +127,33 @@ return {
       -- refer to `:h file-pattern` for more examples
       "BufReadPre " .. vim.fn.expand "~" .. "/git repos/notes/*.md",
       "BufNewFile " .. vim.fn.expand "~" .. "/git repos/notes/*.md"
+    },
+    keys = {
+      {
+        "<leader>nss",
+        "<cmd>ObsidianQuickSearch<cr>",
+        desc = "Search Notes"
+      },
+      {
+        "<leader>nip",
+        "<cmd>ObsidianPasteImg<cr>",
+        desc = "Paste Image"
+      },
+      {
+        "<leader>ntc",
+        "<cmd>ObsidianToggleCheckbox<cr>",
+        desc = "Toggle Checkbox"
+      },
+      {
+        "<leader>ntt",
+        "<cmd>ObsidianTOC<cr>",
+        desc = "Table of Contents"
+      },
+      {
+        "<leader>nst",
+        "<cmd>ObsidianTags<cr>",
+        desc = "Search Tags"
+      }
     },
 
     init = function() vim.opt.conceallevel = 1 end,
@@ -198,7 +225,7 @@ return {
         })
       end,
       picker = {
-        name = "telescope.nvim",
+        name = "fzf-lua",
         note_mappings = {
           -- create a new note from your query.
           new = "<C-n>",
@@ -210,10 +237,6 @@ return {
           insert_tag = "<C-l>"
         }
       },
-      sort_by = "modified",
-      sort_reversed = true,
-      search_max_lines = 1000,
-      open_notes_in = "current", -- vsplit|hsplit
       ui = {
         enable = false
       }
