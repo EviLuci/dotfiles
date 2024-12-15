@@ -299,6 +299,11 @@ map("n", "<A-Tab>", "<cmd>bnext<cr>", {
   desc = "Next buffer"
 })
 
+-- folds
+map("n", "<leader>z", "<cmd>normal! zMzv<cr>", {
+  desc = "Fold all others"
+})
+
 -- Some cool remaps
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")

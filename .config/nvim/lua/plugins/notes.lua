@@ -1,11 +1,16 @@
 return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
+    lazy = true,
+    ft = "markdown",
     opts = {
       render_modes = true,
       code = {
         width = "block",
-        right_pad = 1
+        right_pad = 1,
+        disable_background = {
+          'css'
+        }
       },
       heading = {
         width = "block",
@@ -147,7 +152,7 @@ return {
           }
         },
         -- toggle check-boxes.
-        ["<leader>ntt"] = {
+        ["<leader>ch"] = {
           action = function() return require("obsidian").util.toggle_checkbox() end,
           opts = {
             buffer = true
@@ -162,6 +167,8 @@ return {
           }
         }
       },
+      -- Optional, alternatively you can customize the frontmatter data.
+      ---@return table
       note_frontmatter_func = function(note)
         if note.title then note:add_alias(note.title) end
         local out = {
@@ -175,6 +182,9 @@ return {
         end
         return out
       end,
+      -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
+      -- URL it will be ignored but you can customize this behavior here.
+      ---@param url string
       follow_url_func = function(url)
         vim.fn.jobstart({
           "yank",
