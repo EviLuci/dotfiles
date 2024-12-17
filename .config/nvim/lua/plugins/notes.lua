@@ -130,27 +130,33 @@ return {
     },
     keys = {
       {
-        "<leader>nss",
-        "<cmd>ObsidianQuickSearch<cr>",
+        "<leader>oss",
+        "<cmd>ObsidianQuickSwitch<cr>",
         desc = "Search Notes"
       },
       {
-        "<leader>nip",
+        "<leader>oi",
         "<cmd>ObsidianPasteImg<cr>",
         desc = "Paste Image"
       },
       {
-        "<leader>ntc",
+        "<leader>ot",
         "<cmd>ObsidianToggleCheckbox<cr>",
         desc = "Toggle Checkbox"
       },
       {
-        "<leader>ntt",
-        "<cmd>ObsidianTOC<cr>",
-        desc = "Table of Contents"
+        "<C-t>",
+        "<esc><cmd>ObsidianToggleCheckbox<cr>i",
+        desc = "Toggle Checkbox",
+        mode = "i"
       },
       {
-        "<leader>nst",
+        "<leader>osc",
+        "<cmd>ObsidianTOC<cr>",
+        desc = "Search TOC"
+      },
+      {
+        "<leader>ost",
         "<cmd>ObsidianTags<cr>",
         desc = "Search Tags"
       }

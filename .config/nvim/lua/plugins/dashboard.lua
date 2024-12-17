@@ -31,6 +31,7 @@ return {
           {
             pane = 2,
             section = "terminal",
+            icon = "󱀢 ",
             title = "Today's Quote",
             cmd = "fortune",
             padding = 1,
