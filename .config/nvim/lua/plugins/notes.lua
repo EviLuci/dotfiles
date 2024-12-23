@@ -136,7 +136,7 @@ return {
       },
       {
         "<leader>oi",
-        "<cmd>ObsidianPasteImg<cr>",
+        "<cmd>ObsidianPasteIhmg<cr>",
         desc = "Paste Image"
       },
       {
