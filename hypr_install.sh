@@ -6,6 +6,8 @@ install_packages() {
     hyprland \
     hypridle \
     hyprlock \
+    hyprpicker \
+    hyprutils \
     xdg-desktop-portal-hyprland \
     wl-clipboard \
     brightnessctl \
@@ -80,7 +82,6 @@ install_aur_packages() {
     # AUR packages list
     AUR_PACKAGES=(
         "hyprshot-git"
-        "hyprpicker-git"
         "microsoft-edge-dev-bin"
         "waybar-module-pacman-updates-git"
         "wleave-git"
