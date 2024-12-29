@@ -62,6 +62,7 @@ Bottom Bar
 ### Optional packages
 
 - [copyq](https://hluk.github.io/CopyQ/) (CopyQ is an advanced clipboard manager with editing and scripting features.)
+- [Ghostty](https://github.com/ghostty-org/ghostty) (👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.)
 - [Kitty](https://github.com/kovidgoyal/kitty) (A cross-platform, fast, feature-full, GPU-based terminal emulator)
 - [Wezterm](https://wezfurlong.org/wezterm/) (A GPU-accelerated cross-platform terminal emulator and multiplexer)
 - [Fish](https://github.com/fish-shell/fish-shell) (smart and user-friendly command line shell)
