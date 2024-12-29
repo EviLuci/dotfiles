@@ -18,7 +18,6 @@ install_packages() {
     fish \
     wezterm \
     ghostty \
-    kitty \
     gimp \
     wireplumber \
     qpwgraph \
@@ -129,7 +128,6 @@ CONFIG_DIRS=(
     "nvim"
     "fish"
     "wezterm"
-    "kitty"
     "ghostty"
     "wleave"
     "hypr"
