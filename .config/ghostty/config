@@ -1,0 +1,5 @@
+font-family = "Firacode Nerd Font"
+font-size = 10
+theme = "tokyonight"
+background-opacity = 0.9
+window-decoration = false

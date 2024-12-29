@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export CHROME_EXECUTABLE:/usr/bin/microsoft\x2dedge\x2ddev
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:\x237d7d7d
 SETUVAR fish_color_cancel:\x2dr

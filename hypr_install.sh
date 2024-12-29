@@ -17,6 +17,7 @@ install_packages() {
     luarocks \
     fish \
     wezterm \
+    ghostty \
     kitty \
     gimp \
     wireplumber \
@@ -35,7 +36,6 @@ install_packages() {
     swaync \
     lazygit \
     btop \
-    cmus \
     qt6-base \
     qt6-wayland \
     qt6ct \
@@ -130,6 +130,7 @@ CONFIG_DIRS=(
     "fish"
     "wezterm"
     "kitty"
+    "ghostty"
     "wleave"
     "hypr"
     "nwg-drawer"
