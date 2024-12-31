@@ -114,7 +114,7 @@ return {
   -- },
   {
     "epwalsh/obsidian.nvim",
-    version = "*",
+    version = "*", -- Pin to the latest release
     lazy = true,
     -- ft = "markdown",
     -- event = {
@@ -171,34 +171,8 @@ return {
         }
       },
       completion = {
-        nvim_cmp = true,
+        nvim_cmp = false,
         min_chars = 2
-      },
-      mappings = {
-        -- overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-        ["gf"] = {
-          action = function() return require("obsidian").util.gf_passthrough() end,
-          opts = {
-            noremap = false,
-            expr = true,
-            buffer = true
-          }
-        },
-        -- toggle check-boxes.
-        ["<leader>ch"] = {
-          action = function() return require("obsidian").util.toggle_checkbox() end,
-          opts = {
-            buffer = true
-          }
-        },
-        -- smart action depending on context, either follow link or toggle checkbox.
-        ["<cr>"] = {
-          action = function() return require("obsidian").util.smart_action() end,
-          opts = {
-            buffer = true,
-            expr = true
-          }
-        }
       },
       -- Optional, alternatively you can customize the frontmatter data.
       ---@return table
