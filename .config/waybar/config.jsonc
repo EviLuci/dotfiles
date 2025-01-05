@@ -247,20 +247,6 @@
     "wireplumber": {
       "format": "{icon} {volume}%",
       "format-muted": " Muted",
-      "format-bluetooth": "󰂰 󰥰 {volume}{format_source}",
-      "format-bluetooth-muted": "󰂲 Mute",
-      "format-source": "󰍬{volume}",
-      "format-source-muted": "󰍭 ",
-      // "format-icons": ["", " ", " "],
-      "format-icons": {
-        "headphone": "󰋎 ",
-        "hands-free": "",
-        "headset": "󰋎 ",
-        "phone": "󰏲 ",
-        "portable": "󰏲 ",
-        "car": " ",
-        "default": ["", " ", " "]
-      },
       "scroll-step": 0.2,
       "max-volume": 100,
       "on-click": "pavucontrol",
@@ -372,6 +358,7 @@
         "title<.*whatsapp.*>": "",
         "title<.*messenger.*>": "",
         "title<.*facebook.*>": "",
+        "title<.*figma.*>": "",
         "class<firefox-developer-edition>": "🦊",
         "class<firefox>": "",
         "title<.*github.*>": "",
@@ -407,7 +394,6 @@
         "title<virtualbox>": "💽",
         "class<android-studio>": "",
         "class<steam>": "🎮",
-        "class<figma-linux>": "",
         "class<tor browser>": ""
       },
       // "persistent-workspaces": {
