@@ -136,8 +136,14 @@ return {
       },
       {
         "<leader>oi",
-        "<cmd>ObsidianPasteIhmg<cr>",
+        "<cmd>ObsidianPasteImg<cr>",
         desc = "Paste Image"
+      },
+      {
+        "<C-i>",
+        "<esc><cmd>ObsidianPasteImg<cr>o",
+        desc = "Paste Image",
+        mode = "i"
       },
       {
         "<leader>ot",
