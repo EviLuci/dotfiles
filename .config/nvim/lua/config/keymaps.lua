@@ -88,8 +88,11 @@ map({
 -- }, "<C-a>", "<esc>ggVG")
 --
 -- Select all text in the current buffer
-map('n', '<C-a>', ':keepjumps normal! ggyG<cr>', {
+map('i', '<C-a>', '<esc><cmd>keepjumps normal! ggVG<cr>', {
   desc = "Select all"
+})
+map('i', '<A-a>', '<esc><cmd>keepjumps normal! ggyG<cr>', {
+  desc = "Copy all"
 })
 
 -- quit
