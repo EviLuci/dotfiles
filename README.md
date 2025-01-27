@@ -12,7 +12,7 @@ This repository contains my personal dotfiles and installation scripts for setti
 
 Welcome to my dotfiles repository! This collection contains my personal configuration files and scripts for setting up a customized Hyprland environment on Arch Linux. The aim is to streamline the process of replicating my setup on new systems.
 
-> ⚠️ **Disclaimer**: These dotfiles and scripts (Even i haven't tried them and it is my first attempt at bash scripting. So, I have no idea if it will work or not as well 😂) are experimental and intended for personal use only. Use them at your own risk. I make no guarantees about their reliability or suitability for any purpose other than my own. This is a newbie setup, so expect some rough edges.
+> ⚠️ **Disclaimer**: This is a newbie setup. So "Heads Up", Everything won't work out of the box
 
 ## Preview
 
