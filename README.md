@@ -44,6 +44,9 @@ Bottom Bar
 
 ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/CopyQ.png)
 
+### Hyprlock
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/hyprlock.png)
+
 ## Packages
 
 ### Necessary dependencies

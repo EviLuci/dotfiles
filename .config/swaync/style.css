@@ -4,41 +4,45 @@
     font-weight: bold;
 }
 
+.control-center .notification-row {
+    background-color: unset;
+}
+
 /* Notification Row */
 .notification-row:focus,
 .notification-row:hover {
-    background: black;
+    background: #05060B;
 }
 
 /* Notification */
 .notification {
-    background: black;
+    background: rgba(0, 0, 0, 0.8);
     color: rgb(0, 238, 255);
     border: 1px solid rgb(0, 238, 255);
+    border-radius: 10px;
 }
 .notification .critical {
-    background: black;
     color: red;
 }
 
 .notification-content {
-    background: black;
+    background: #05060B;
 }
 
 .close-button {
-    background: black;
+    background: #05060B;
     color: rgb(0, 238, 255);
 }
 
 .close-button:hover {
     background: rgb(0, 238, 255);
-    color : black;
+    color : #05060B;
 }
 
 /* Notification Actions */
 .notification-default-action,
 .notification-action {
-    background: black;
+    background: #05060B;
     border: 1px solid rgb(0, 238, 255);
     color: rgb(0, 238, 255);
 }
@@ -47,8 +51,8 @@
 .notification-action:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-    border: 1px solid black;
+    color: #05060B;
+    border: 1px solid #05060B;
 }
 
 /* The "extra" optional bottom notification image */
@@ -72,26 +76,25 @@
 .inline-reply .inline-reply-entry {
     color: rgb(0, 238, 255);
     caret-color: rgb(0, 238, 255);
-    background: black;
+    background: #05060B;
 }
 
 .inline-reply-button {
     color: rgb(0, 238, 255);
-    background: black;
+    background: #05060B;
 }
 .inline-reply-button:disabled {
     color: rgb(248, 115, 237);
-    background: black;
 }
 .inline-reply-button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+    color: #05060B;
 }
 
 /* Styling only for Grouped Notifications */
 .notification-group {
-    background: black;
+    background: #05060B;
     color: rgb(0, 238, 255);
     border: none;
 }
@@ -103,14 +106,17 @@
 }
 
 /* The Control Center which contains the old notifications + widgets */
+
 .control-center {
-    background: black;
+    background: rgba(0, 0, 0, 0.8);
     color: rgb(0, 238, 255);
-    border: 2px solid rgb(0, 238, 255);
+    border: 1px solid rgb(0, 238, 255);
+    border-radius: 10px;
+    padding: 5px;
 }
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
-    background-color: black;
+    background-color: #05060B;
 }
 
 /* The list of notifications */
@@ -132,35 +138,35 @@
 /* Title widget */
 .widget-title {
     color: rgb(0, 238, 255);
-    font-size: large;
+    font-size: 16px;
 }
 
 .widget-title>button {
     color: rgb(0, 238, 255);
-    background: black;
+    background: #05060B;
     border: 1px solid rgb(0, 238, 255);
 }
 
 .widget-title>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+    color: #05060B;
 }
 
 /* DND widget */
 .widget-dnd {
     color: rgb(0, 238, 255);
-    font-size: large;
+    font-size: 16px;
 }
 
 .widget-dnd>switch {
     color: rgb(0, 238, 255);
-    background: black;
+    background: #05060B;
     border: 1px solid rgb(0, 238, 255);
 }
 
 .widget-dnd>switch:checked {
-    background: black;
+    background: #05060B;
 }
 
 .widget-dnd>switch slider {
@@ -174,16 +180,23 @@
 }
 .widget-inhibitors>button {
     color: rgb(0, 238, 255);
-    background: black;
+    background: #05060B;
     border: 1px solid rgb(0, 238, 255);
 }
 .widget-inhibitors>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+    color: #05060B;
 }
 
 /* Mpris widget */
+.widget-mpris {
+    margin: 8px;
+    border: 1px solid rgb(0, 238, 255);
+    border-radius: 10px;
+    /* box-shadow: rgb(0, 238, 255) 0px 20px 20px -20px, rgb(0, 238, 255) 0px 20px 20px -20px, rgb(0, 238, 255) 0px -2px 6px 0px inset; */
+}
+
 .widget-mpris,
 .widget-mpris-player,
 .widget-mpris-title,
@@ -195,50 +208,54 @@
 .widget-mpris-player>box>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+    color: #05060B;
 }
 
 /* Volume and Brightness Widget*/
-.widget-volume {
-    background-color: black;
-    padding: 4px 8px 8px 8px;
-    margin: 0px 8px 8px 8px;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
+/* Volume and Brightness Widget*/
+.widget-volume,
+.widget-backlight {
+    background-color: transparent;
+    padding: 5px;
+    margin: 2px;
 }
 
-.widget-backlight {
-    background-color: black;
-    padding: 8px 8px 4px 8px;
-    margin: 8px 8px 0px 8px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+.widget-menubar {
+    background-color: transparent;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 10px;
 }
 
 .dotfiles-buttons,
 .power-buttons {
     color: rgb(0, 238, 255);
     background-color: transparent;
-    padding: 8px;
-    margin: 8px;
-    border-radius: 12px;
+    padding: 0px;
+    margin: 5px 0px;
+    border-radius: 10px;
 }
 
 .dotfiles-buttons>button,
 .power-buttons>button {
     color: rgb(0, 238, 255);
     background: transparent;
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid rgb(0, 238, 255);
+    border-radius: 5px;
 }
 
 .dotfiles-buttons>button:hover,
 .power-buttons>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+    color: #05060B;
 }
 
 /* Menubar */
 .widget-menubar>box>.menu-button-bar>button {
+    border: 1px solid rgb(0, 238, 255);
     color: rgb(0, 238, 255);
     background: transparent;
 }
@@ -246,21 +263,27 @@
 .widget-menubar>box>.menu-button-bar>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+    color: #05060B;
 }
 
 /** Buttons Grid **/
 .widget-buttons-grid {
     background-color: transparent;
+    border: 1px solid rgb(0, 238, 255);
+    padding: 5px;
+    border-radius: 10px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
+    border-radius: 10px;
+    margin-top: 5px;
+    border: 0px;
     color: rgb(0, 238, 255);
-    background: black;
+    background: transparent;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
+    color: #05060B;
 }

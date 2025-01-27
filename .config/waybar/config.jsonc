@@ -363,7 +363,7 @@
         "title<.*jira.*>": "",
         "title<.*ChatGPT.*>": "🤖",
         "title<.*deepseek.*>": "🤖",
-        "title<.*AI.*>": "🤖",
+        "title<.*Google AI.*>": "🤖",
         "class<firefox-developer-edition>": "🦊",
         "class<firefox>": "",
         "title<.*github.*>": "",

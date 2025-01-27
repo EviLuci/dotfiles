@@ -115,19 +115,19 @@
         },
         {
           "label": "󰸉",
-          "command": "waypaper-engine"
+          "command": "waypaper"
         },
         {
           "label": " ",
-          "command": "wezterm -e cmus"
+          "command": "vlc"
         },
         {
           "label": "",
-          "command": "wezterm -e paru"
+          "command": "ghostty -e paru"
         },
         {
           "label": "",
-          "command": "firefox"
+          "command": "firefox-developer-edition"
         }
       ]
     }
