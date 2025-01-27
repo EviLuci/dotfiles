@@ -38,6 +38,9 @@ Bottom Bar
 
 ### Sway Notification Daemon
 
+<img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync.png" alt="Swaync" width="150"/> <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_menu.png" alt="Swaync" width="150"/>
+
+
 ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync.png) ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_menu.png)
 
 ### CopyQ
