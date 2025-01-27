@@ -19,8 +19,7 @@ install_packages() {
     wezterm \
     ghostty \
     gimp \
-    wireplumber \
-    qpwgraph \
+    yazi \
     nemo \
     nemo-fileroller \
     nemo-terminal \
@@ -35,9 +34,6 @@ install_packages() {
     swaync \
     lazygit \
     btop \
-    qt6-base \
-    qt6-wayland \
-    qt6ct \
     polkit-gnome \
     waybar \
     rofi-wayland \
@@ -47,9 +43,6 @@ install_packages() {
     noto-fonts-emoji \
     starship \
     snapper \
-    dart \
-    jdk-openjdk \
-    clang \
     android-tools \
     virtualbox \
     npm \
@@ -62,9 +55,11 @@ install_packages() {
     pipewire-pulse \
     pipewire-zeroconf \
     wireplumber \
+    qpwgraph \
     pavucontrol \
     fortune-mod \
     obsidian \
+    zellij \
 
 }
 
