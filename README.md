@@ -42,7 +42,7 @@ Bottom Bar
 
 ### CopyQ
 
-![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/copyq.png)
+![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/CopyQ.png)
 
 ### Hyprlock
 ![image](https://github.com/EviLuci/dotfiles/blob/main/screenshots/hyprlock.png)
