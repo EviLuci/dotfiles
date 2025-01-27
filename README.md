@@ -53,6 +53,9 @@ Bottom Bar
 
 - [Hyprland](https://github.com/vaxerski/Hyprland/) (Hyprland is a dynamic tiling Wayland compositor that doesn't sacrifice on its looks.)
 - [waybar](https://github.com/Alexays/Waybar/) (Like polybar, but for wlroots, very customizable)
+- [hyprpicker](https://github.com/hyprwm/hyprpicker) (Colorpicker)
+- [hyprlock](https://github.com/hyprwm/hyprlock) (Lock screen)
+- [hypridle](https://github.com/hyprwm/hypridle) (Idle daemon)
 - [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter) (GNOME like notification daemon, with GUI and all)
 - [Nwg-drawer](https://github.com/nwg-piotr/nwg-drawer) (Application drawer for wlroots-based Wayland compositors )
 - [Wleave](https://github.com/AMNatty/wleave) (Basically a fork of wlogout, rewritten in Rust.)
