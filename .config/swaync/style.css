@@ -11,7 +11,7 @@
 /* Notification Row */
 .notification-row:focus,
 .notification-row:hover {
-    background: #05060B;
+    background: black;
 }
 
 /* Notification */
@@ -26,23 +26,23 @@
 }
 
 .notification-content {
-    background: #05060B;
+    background: black;
 }
 
 .close-button {
-    background: #05060B;
+    background: black;
     color: rgb(0, 238, 255);
 }
 
 .close-button:hover {
     background: rgb(0, 238, 255);
-    color : #05060B;
+    color : black;
 }
 
 /* Notification Actions */
 .notification-default-action,
 .notification-action {
-    background: #05060B;
+    background: black;
     border: 1px solid rgb(0, 238, 255);
     color: rgb(0, 238, 255);
 }
@@ -51,8 +51,8 @@
 .notification-action:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: #05060B;
-    border: 1px solid #05060B;
+    color: black;
+    border: 1px solid black;
 }
 
 /* The "extra" optional bottom notification image */
@@ -76,12 +76,12 @@
 .inline-reply .inline-reply-entry {
     color: rgb(0, 238, 255);
     caret-color: rgb(0, 238, 255);
-    background: #05060B;
+    background: black;
 }
 
 .inline-reply-button {
     color: rgb(0, 238, 255);
-    background: #05060B;
+    background: black;
 }
 .inline-reply-button:disabled {
     color: rgb(248, 115, 237);
@@ -89,12 +89,12 @@
 .inline-reply-button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: #05060B;
+    color: black;
 }
 
 /* Styling only for Grouped Notifications */
 .notification-group {
-    background: #05060B;
+    background: black;
     color: rgb(0, 238, 255);
     border: none;
 }
@@ -108,7 +108,7 @@
 /* The Control Center which contains the old notifications + widgets */
 
 .control-center {
-    background: rgba(0, 0, 0, 0.8);
+    background: black;
     color: rgb(0, 238, 255);
     border: 1px solid rgb(0, 238, 255);
     border-radius: 10px;
@@ -116,7 +116,7 @@
 }
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
-    background-color: #05060B;
+    background-color: black;
 }
 
 /* The list of notifications */
@@ -143,14 +143,14 @@
 
 .widget-title>button {
     color: rgb(0, 238, 255);
-    background: #05060B;
+    background: black;
     border: 1px solid rgb(0, 238, 255);
 }
 
 .widget-title>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: #05060B;
+    color: black;
 }
 
 /* DND widget */
@@ -161,12 +161,12 @@
 
 .widget-dnd>switch {
     color: rgb(0, 238, 255);
-    background: #05060B;
+    background: black;
     border: 1px solid rgb(0, 238, 255);
 }
 
 .widget-dnd>switch:checked {
-    background: #05060B;
+    background: black;
 }
 
 .widget-dnd>switch slider {
@@ -180,13 +180,13 @@
 }
 .widget-inhibitors>button {
     color: rgb(0, 238, 255);
-    background: #05060B;
+    background: black;
     border: 1px solid rgb(0, 238, 255);
 }
 .widget-inhibitors>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: #05060B;
+    color: black;
 }
 
 /* Mpris widget */
@@ -208,7 +208,7 @@
 .widget-mpris-player>box>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: #05060B;
+    color: black;
 }
 
 /* Volume and Brightness Widget*/
@@ -250,7 +250,7 @@
 .power-buttons>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: #05060B;
+    color: black;
 }
 
 /* Menubar */
@@ -263,7 +263,7 @@
 .widget-menubar>box>.menu-button-bar>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: #05060B;
+    color: black;
 }
 
 /** Buttons Grid **/
@@ -285,5 +285,5 @@
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
     background: rgb(0, 238, 255);
     background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: #05060B;
+    color: black;
 }
