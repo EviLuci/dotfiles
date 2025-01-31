@@ -8,40 +8,38 @@ install_packages() {
     hyprlock \
     hyprpicker \
     hyprutils \
+    waybar \
+    nwg-drawer \
     xdg-desktop-portal-hyprland \
     wl-clipboard \
     brightnessctl \
     firefox-developer-edition \
+    tor \
+    torbrowser-launcher \
     neovim \
     zed \
-    luarocks \
     fish \
     wezterm \
     ghostty \
-    gimp \
     yazi \
-    nemo \
-    nemo-fileroller \
-    nemo-terminal \
-    tor \
-    torbrowser-launcher \
     copyq \
     gimp \
     exa \
     fzf \
-    vlc \
     ripgrep \
+    fd \
+    zoxide \
+    starship \
     swaync \
     lazygit \
+    zellij \
     btop \
     polkit-gnome \
-    waybar \
-    rofi-wayland \
-    ttf-hack-nerd \
-    ttf-firacode-nerd \
-    otf-font-awesome \
-    noto-fonts-emoji \
-    starship \
+    gimp \
+    vlc \
+    nemo \
+    nemo-fileroller \
+    nemo-terminal \
     snapper \
     android-tools \
     virtualbox \
@@ -57,10 +55,12 @@ install_packages() {
     wireplumber \
     qpwgraph \
     pavucontrol \
-    fortune-mod \
     obsidian \
-    zellij \
-
+    fortune-mod \
+    ttf-hack-nerd \
+    ttf-firacode-nerd \
+    otf-font-awesome \
+    noto-fonts-emoji \
 }
 
 # Install AUR packages
@@ -85,7 +85,6 @@ install_aur_packages() {
         "sweet-gtk-theme"
         "waypaper"
         "visual-studio-code-bin"
-        "flutter"
         "android-studio"
         "woomer"
         # Add more AUR packages as necessary
