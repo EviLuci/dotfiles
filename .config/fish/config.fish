@@ -11,8 +11,8 @@ set -Ux CHROME_EXECUTABLE /usr/bin/microsoft-edge-dev
 ### EXPORT ###
 set fish_greeting                                    # Supresses fish's intro message
 set TERM "xterm-256color"                            # Sets the terminal type
-set -x EDITOR "vim"                                  # $EDITOR use vim in terminal
-set -x VISUAL "vim"                                 # $VISUAL use code in GUI mode
+set -x EDITOR "nvim"                                  # $EDITOR use vim in terminal
+set -x VISUAL "zed"                                 # $VISUAL use code in GUI mode
 
 ### SET MANPAGER
 ### Uncomment only one of these!
