@@ -128,6 +128,7 @@ CONFIG_DIRS=(
     "nwg-drawer"
     "swaync"
     "waybar"
+    "yazi"
 )
 CONFIG_FILES=(
     ".vimrc"
