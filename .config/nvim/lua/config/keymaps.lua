@@ -1,59 +1,47 @@
 local function map(mode, lhs, rhs, opts)
   local options = {
     noremap = true,
-    silent = true,
+    silent = true
   }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
+  if opts then options = vim.tbl_extend("force", options, opts) end
   vim.keymap.set(mode, lhs, rhs, options)
 end
 
 -- Paste
 map("n", "<A-v>", "m`o<ESC>p``", {
-  desc = "Paste below",
+  desc = "Paste below"
 })
 map("n", "<A-p>", "m`O<ESC>p``", {
-  desc = "Paste above",
+  desc = "Paste above"
 })
 map("i", "<C-v>", '<ESC>"+p<ESC>a', {
-  desc = "Paste from clipboard",
+  desc = "Paste from clipboard"
 })
-map(
-  {
-    "n",
-    "x",
-  },
-  "<C-c>",
-  '"+y<ESC>',
-  {
-    desc = "Copy to clipboard",
-  }
-)
+map({
+  "n",
+  "x"
+}, "<C-c>", '"+y<ESC>', {
+  desc = "Copy to clipboard"
+})
 -- map({
 --     "n",
 --     "x"
 -- }, "<C-v>", '"+p<ESC>', {
 --     desc = "Paste from clipboard"
 -- })
-map(
-  {
-    "n",
-    "x",
-  },
-  "<C-x>",
-  '"+y<ESC>dd',
-  {
-    desc = "Cut to clipboard",
-  }
-)
+map({
+  "n",
+  "x"
+}, "<C-x>", '"+y<ESC>dd', {
+  desc = "Cut to clipboard"
+})
 
 -- Paste over currently selected text without yanking it
 -- map("v", "p", '"_dp', {
 --     desc = "Paste over currently selected text without yanking it"
 -- })
 map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', {
-  desc = "Paste over currently selected text without yanking it",
+  desc = "Paste over currently selected text without yanking it"
 })
 -- map("x", "p", '"_c<Esc>p', {
 --     desc = "paste without yanking"
@@ -68,10 +56,10 @@ map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', {
 --
 -- Select all text in the current buffer
 map("i", "<C-a>", "<esc><cmd>keepjumps normal! ggVG<cr>", {
-  desc = "Select all",
+  desc = "Select all"
 })
 map("i", "<A-a>", "<esc><cmd>keepjumps normal! ggyG<cr>", {
-  desc = "Copy all",
+  desc = "Copy all"
 })
 
 -- Go to the beginning and end of current line in insert mode quickly
@@ -80,7 +68,7 @@ map("i", "<A-l>", "<END>")
 
 -- insert semicolon in the end
 map("i", "<A-;>", "<Esc>miA;<Esc>`ii", {
-  desc = "insert semicolon in the end",
+  desc = "insert semicolon in the end"
 })
 
 -- Undo
@@ -88,18 +76,18 @@ map("i", "<C-z>", "<C-O>u")
 
 -- Insert empty line without entering insert mode
 map("n", "[o", ':<C-u>call append(line("."), repeat([""], v:count1))<CR>', {
-  desc = "Insert empty line below",
+  desc = "Insert empty line below"
 })
 map("n", "]o", ':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>', {
-  desc = "Insert empty line above",
+  desc = "Insert empty line above"
 })
 
 -- Insert empty line in insert mode
 map("i", "<A-o>", "<C-O>o", {
-  desc = "Insert empty line below",
+  desc = "Insert empty line below"
 })
 map("i", "<A-O>", "<C-O>O", {
-  desc = "Insert empty line above",
+  desc = "Insert empty line above"
 })
 
 -- Insert blank line
@@ -108,78 +96,48 @@ map("i", "<A-O>", "<C-O>O", {
 
 -- Copy whole buffer
 map("n", "<C-y>", "<cmd>%y+<CR>", {
-  desc = "Copy whole buffer",
+  desc = "Copy whole buffer"
 })
 
 -- Go to start or end of line easier
-map(
-  {
-    "n",
-    "x",
-  },
-  "H",
-  "^",
-  {
-    desc = "Go to beginning of line",
-  }
-)
-map(
-  {
-    "n",
-    "x",
-  },
-  "L",
-  "g_",
-  {
-    desc = "Go to end of line",
-  }
-)
+map({
+  "n",
+  "x"
+}, "H", "^", {
+  desc = "Go to beginning of line"
+})
+map({
+  "n",
+  "x"
+}, "L", "g_", {
+  desc = "Go to end of line"
+})
 
 -- Change text without putting it into the vim register,
-map(
-  {
-    "n",
-    "x",
-  },
-  "c",
-  '"_c',
-  {
-    desc = "Change without yanking",
-  }
-)
-map(
-  {
-    "n",
-    "x",
-  },
-  "C",
-  '"_C',
-  {
-    desc = "Change without yanking",
-  }
-)
-map(
-  {
-    "n",
-    "x",
-  },
-  "cc",
-  '"_cc',
-  {
-    desc = "Change without yanking",
-  }
-)
-map(
-  {
-    "n",
-    "x",
-  },
-  "x",
-  '"_x',
-  {
-    desc = "delete without yanking",
-  }
-)
+map({
+  "n",
+  "x"
+}, "c", '"_c', {
+  desc = "Change without yanking"
+})
+map({
+  "n",
+  "x"
+}, "C", '"_C', {
+  desc = "Change without yanking"
+})
+map({
+  "n",
+  "x"
+}, "cc", '"_cc', {
+  desc = "Change without yanking"
+})
+map({
+  "n",
+  "x"
+}, "x", '"_x', {
+  desc = "delete without yanking"
+})
 
 -- Increment/decrement
 map("n", "+", "<C-a>")
@@ -197,74 +155,69 @@ map("t", "<ESC>", "<C-\\><C-n>")
 
 -- Move with shift-arrows
 map("n", "<S-Left>", "<C-w><S-h>", {
-  desc = "Move window to the left",
+  desc = "Move window to the left"
 })
 map("n", "<S-Down>", "<C-w><S-j>", {
-  desc = "Move window down",
+  desc = "Move window down"
 })
 map("n", "<S-Up>", "<C-w><S-k>", {
-  desc = "Move window up",
+  desc = "Move window up"
 })
 map("n", "<S-Right>", "<C-w><S-l>", {
-  desc = "Move window to the right",
+  desc = "Move window to the right"
 })
 
 -- Search
-map(
-  {
-    "n",
-    "x",
-  },
-  "gw",
-  "*N",
-  {
-    desc = "Search word under cursor",
-  }
-)
+map({
+  "n",
+  "x"
+}, "gw", "*N", {
+  desc = "Search word under cursor"
+})
 
 -- Quickfix and Location list mappings
 map("n", "[q", "<cmd>cprevious<CR>zvzz", {
-  desc = "Next quickfix",
+  desc = "Next quickfix"
 })
 map("n", "]q", "<cmd>cnext<CR>zvzz", {
-  desc = "Previous quickfix",
+  desc = "Previous quickfix"
 })
 map("n", "[Q", "<cmd>cfirst<CR>zvzz", {
-  desc = "First quickfix",
+  desc = "First quickfix"
 })
 map("n", "]Q", "<cmd>clast<CR>zvzz", {
-  desc = "Last quickfix",
+  desc = "Last quickfix"
 })
 map("n", "[l", "<cmd>lprevious<CR>zvzz", {
-  desc = "Previous location",
+  desc = "Previous location"
 })
 map("n", "]l", "<cmd>lnext<CR>zvzz", {
-  desc = "Next location",
+  desc = "Next location"
 })
 map("n", "[L", "<cmd>lfirst<CR>zvzz", {
-  desc = "First location",
+  desc = "First location"
 })
 map("n", "]L", "<cmd>llast<CR>zvzz", {
-  desc = "Last location",
+  desc = "Last location"
 })
 map("n", "<leader>xk", "<cmd>cexpr []<cr>", {
-  desc = "Clear list",
+  desc = "Clear list"
 })
 map("n", "<leader>xc", "<cmd>windo lclose <bar> cclose <cr>", {
-  desc = "Close list",
+  desc = "Close list"
 })
 
 -- buffers
-map("n", "<Tab>", "<cmd>bprevious<cr>", {
-  desc = "Prev buffer",
+map("n", "<S-Tab>", "<cmd>bprevious<cr>", {
+  desc = "Prev buffer"
 })
-map("n", "<A-Tab>", "<cmd>bnext<cr>", {
-  desc = "Next buffer",
+map("n", "<Tab>", "<cmd>bnext<cr>", {
+  desc = "Next buffer"
 })
 
 -- folds
 map("n", "<leader>z", "<cmd>normal! zMzv<cr>", {
-  desc = "Fold all others",
+  desc = "Fold all others"
 })
 
 -- Some cool remaps
