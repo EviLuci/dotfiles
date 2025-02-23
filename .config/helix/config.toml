@@ -1,0 +1,174 @@
+# Color theme, press ":theme" to select more
+theme = "tokyonight"
+
+[editor]
+cursorline = true
+true-color = true
+mouse = true
+line-number = "relative"
+# Show buffer line when > 1 buffer
+bufferline = "multiple"
+gutters = ["diff", "line-numbers", "spacer", "diagnostics"]
+
+[editor.lsp]
+# Show LSP messages in the status line
+display-messages = true
+# Show inlay hints
+display-inlay-hints = true
+
+# Cursor
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+# Indent
+[editor.indent-guides]
+render = true
+
+[keys.insert]
+j = { k = "normal_mode" }
+k = { j = "normal_mode" }
+
+# Escape the madness! No more fighting with the cursor! Or with multiple cursors!
+esc = ["collapse_selection", "normal_mode"]
+
+[keys.normal]
+# q and Q for macro but doesn't use much so I map it to close buffer
+q = ":buffer-close"
+"C-q" = ":buffer-close"
+# Save file
+"C-s" = ":write"
+# Save selection to jump list
+"A-s" = "save_selection"
+esc = ["collapse_selection", "keep_primary_selection"]
+# Next/prev buffer
+"A-l" = ":buffer-next"
+"A-h" = ":buffer-previous"
+# LSP doc
+"S-k" = "hover"
+# Enter to next line and return to normal mode
+"ret" = ["open_below", "normal_mode"]
+# Expand selection
+"C-space" = "expand_selection"
+
+# Quick iteration on config changes
+C-o = ":config-open"
+C-r = ":config-reload"
+
+# Some nice Helix stuff
+C-h = "select_prev_sibling"
+C-j = "shrink_selection"
+C-k = "expand_selection"
+C-l = "select_next_sibling"
+
+# Personal preference
+o = ["open_below", "normal_mode"]
+O = ["open_above", "normal_mode"]
+
+# Muscle memory
+"{" = ["goto_prev_paragraph", "collapse_selection"]
+"}" = ["goto_next_paragraph", "collapse_selection"]
+0 = "goto_line_start"
+"$" = "goto_line_end"
+"^" = "goto_first_nonwhitespace"
+G = "goto_file_end"
+"%" = "match_brackets"
+V = ["select_mode", "extend_to_line_bounds"]
+C = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection", "insert_mode"]
+D = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection"]
+S = "surround_add" # Would be nice to be able to do something after this but it isn't chainable
+
+# Clipboards over registers ye ye
+x = "delete_selection"
+p = ["paste_clipboard_after", "collapse_selection"]
+P = ["paste_clipboard_before", "collapse_selection"]
+# Would be nice to add ya and yi, but the surround commands can't be chained
+Y = ["extend_to_line_end", "yank_main_selection_to_clipboard", "collapse_selection"]
+
+# Undoing the 'd' + motion commands restores the selection which is annoying
+u = ["undo", "collapse_selection"]
+
+# Search for word under cursor
+"*" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "search_next"]
+"#" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "search_prev"]
+
+# Make j and k behave as they do Vim when soft-wrap is enabled
+j = "move_line_down"
+k = "move_line_up"
+
+[keys.normal."space"]
+q = { q = ":quit-all" }
+l = { f = ":format" }
+w = { r = ":reload", c = ":config-reload" }
+"." = "file_picker_in_current_buffer_directory"
+"," = "buffer_picker"
+"space" = "file_picker"
+
+# Toggle
+t = { h = ":toggle file-picker.hidden", f = ":toggle auto-format", i = ":toggle lsp.display-inlay-hints" }
+
+[keys.normal.d]
+d = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection"]
+t = ["extend_till_char"]
+s = ["surround_delete"]
+i = ["select_textobject_inner"]
+a = ["select_textobject_around"]
+j = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
+down = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
+k = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
+up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
+G = ["select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
+w = ["move_next_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
+W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
+g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"] }
+
+[keys.normal.y]
+y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "normal_mode", "collapse_selection"]
+j = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+down = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+k = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+G = ["select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+w = ["move_next_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"] }
+
+
+[keys.select]
+# Muscle memory
+"{" = ["extend_to_line_bounds", "goto_prev_paragraph"]
+"}" = ["extend_to_line_bounds", "goto_next_paragraph"]
+0 = "goto_line_start"
+"$" = "goto_line_end"
+"^" = "goto_first_nonwhitespace"
+G = "goto_file_end"
+D = ["extend_to_line_bounds", "delete_selection", "normal_mode"]
+C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
+"%" = "match_brackets"
+S = "surround_add" # Basically 99% of what I use vim-surround for
+u = ["switch_to_lowercase", "collapse_selection", "normal_mode"]
+U = ["switch_to_uppercase", "collapse_selection", "normal_mode"]
+
+# Visual-mode specific muscle memory
+i = "select_textobject_inner"
+a = "select_textobject_around"
+
+# Some extra binds to allow us to insert/append in select mode because it's nice with multiple cursors
+tab = ["insert_mode", "collapse_selection"] # tab is read by most terminal editors as "C-i"
+C-a = ["append_mode", "collapse_selection"]
+
+# Make selecting lines in visual mode behave sensibly
+k = ["extend_line_up", "extend_to_line_bounds"]
+j = ["extend_line_down", "extend_to_line_bounds"]
+
+# Clipboards over registers ye ye
+d = ["yank_main_selection_to_clipboard", "delete_selection"]
+x = ["yank_main_selection_to_clipboard", "delete_selection"]
+y = ["yank_main_selection_to_clipboard", "normal_mode", "flip_selections", "collapse_selection"]
+Y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "goto_line_start", "collapse_selection", "normal_mode"]
+p = "replace_selections_with_clipboard" # No life without this
+P = "paste_clipboard_before"
+
+# Escape the madness! No more fighting with the cursor! Or with multiple cursors!
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]

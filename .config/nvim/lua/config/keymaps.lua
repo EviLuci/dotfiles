@@ -208,7 +208,7 @@ map("n", "<leader>xc", "<cmd>windo lclose <bar> cclose <cr>", {
 })
 
 -- buffers
-map("n", "<S-Tab>", "<cmd>bprevious<cr>", {
+map("n", "<C-Tab>", "<cmd>bprevious<cr>", {
   desc = "Prev buffer"
 })
 map("n", "<Tab>", "<cmd>bnext<cr>", {
