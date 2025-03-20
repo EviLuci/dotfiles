@@ -59,7 +59,6 @@ Bottom Bar
 - [hypridle](https://github.com/hyprwm/hypridle) (Idle daemon)
 - [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter) (GNOME like notification daemon, with GUI and all)
 - [Nwg-drawer](https://github.com/nwg-piotr/nwg-drawer) (Application drawer for wlroots-based Wayland compositors )
-- [Wleave](https://github.com/AMNatty/wleave) (Basically a fork of wlogout, rewritten in Rust.)
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (Command-line copy/paste utilities for Wayland)
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
 - [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
