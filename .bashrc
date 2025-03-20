@@ -4,6 +4,7 @@ export VISUAL='vim'
 export HISTCONTROL=ignoreboth:erasedups
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export CHROME_EXECUTABLE=/usr/bin/microsoft-edge-dev
+export PATH="$PATH":"$HOME/.local/bin"
 
 #Ibus settings if you need them
 #type ibus-setup in terminal to change settings and start the daemon

@@ -11,11 +11,13 @@ install_packages() {
     waybar \
     nwg-drawer \
     xdg-desktop-portal-hyprland \
+    xdg-desktop-portal-gtk \
     wl-clipboard \
     brightnessctl \
     firefox-developer-edition \
     tor \
     torbrowser-launcher \
+    vivaldi \
     neovim \
     zed \
     fish \
@@ -34,6 +36,10 @@ install_packages() {
     lazygit \
     zellij \
     btop \
+    grim \
+    slurp \
+    wf-recorder \
+    satty \
     polkit-gnome \
     gimp \
     vlc \
@@ -59,7 +65,7 @@ install_packages() {
     fortune-mod \
     ttf-hack-nerd \
     ttf-firacode-nerd \
-    otf-font-awesome \
+    otf-font-awesome \ALT
     noto-fonts-emoji \
 }
 
@@ -78,7 +84,6 @@ install_aur_packages() {
         "hyprshot-git"
         "microsoft-edge-dev-bin"
         "waybar-module-pacman-updates-git"
-        "wleave-git"
         "snap-pac-grub"
         "snapper-gui-git"
         "beautyline"
@@ -123,7 +128,6 @@ CONFIG_DIRS=(
     "fish"
     "wezterm"
     "ghostty"
-    "wleave"
     "hypr"
     "nwg-drawer"
     "swaync"

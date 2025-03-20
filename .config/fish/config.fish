@@ -7,6 +7,7 @@ set -Ux fish_user_paths $HOME/flutter/bin $fish_user_paths
 set -U fish_user_paths $HOME/.config/emacs/bin $fish_user_paths
 set -U fish_user_paths $fish_user_paths $HOME/.pub-cache/bin
 set -Ux CHROME_EXECUTABLE /usr/bin/microsoft-edge-dev
+set -Ux fish_user_paths $fish_user_paths $HOME/.local/bin
 
 ### EXPORT ###
 set fish_greeting                                    # Supresses fish's intro message
