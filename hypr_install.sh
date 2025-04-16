@@ -47,7 +47,6 @@ install_packages() {
     nemo-fileroller \
     nemo-terminal \
     snapper \
-    android-tools \
     virtualbox \
     npm \
     bluez \
@@ -65,7 +64,7 @@ install_packages() {
     fortune-mod \
     ttf-hack-nerd \
     ttf-firacode-nerd \
-    otf-font-awesome \ALT
+    otf-font-awesome \
     noto-fonts-emoji \
 }
 
@@ -90,7 +89,6 @@ install_aur_packages() {
         "sweet-gtk-theme"
         "waypaper"
         "visual-studio-code-bin"
-        "android-studio"
         "woomer"
         # Add more AUR packages as necessary
     )
