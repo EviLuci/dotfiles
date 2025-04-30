@@ -58,7 +58,7 @@ Bottom Bar
 - [hyprlock](https://github.com/hyprwm/hyprlock) (Lock screen)
 - [hypridle](https://github.com/hyprwm/hypridle) (Idle daemon)
 - [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter) (GNOME like notification daemon, with GUI and all)
-- [Nwg-drawer](https://github.com/nwg-piotr/nwg-drawer) (Application drawer for wlroots-based Wayland compositors )
+- [Rofi](https://github.com/in0ni/rofi-wayland) (Rofi: A window switcher, run dialog and dmenu replacement - fork with wayland support)
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard) (Command-line copy/paste utilities for Wayland)
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl) (read and control device brightness)
 - [waybar-module-pacman-updates](https://github.com/coffebar/waybar-module-pacman-updates) (waybar module for arch to show system updates available)
