@@ -1,0 +1,241 @@
+/*****----- Colors and Fonts -----*****/
+* {
+    font:                       "Firacode Nerd Font 10";
+    background:               rgba(0, 0, 0, 0.9);
+    background-alt:             black;
+    foreground:               #FFFFFF;
+    selected:                 rgb(0, 238, 255);
+    active:                   #FA8BFF;
+    urgent:                     rgba( 220, 50, 47, 1);
+}
+
+/*****----- Main Window -----*****/
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  true;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            @background;
+    cursor:                      "default";
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     50px;
+    margin:                      0px;
+    padding:                     100px 100px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    children:                    [ "inputbar", "message", "listview", "sidebar"];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0% 28%;
+    padding:                     10px;
+    border:                      1px solid;
+    border-radius:               10px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    children:                    [ "prompt","textbox-prompt-colon","entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
+}
+
+prompt {
+    spacing:                    0;
+    text-color:                 @selected;
+    background-color:           transparent;
+}
+
+textbox-prompt-colon {
+    str:                         "::";
+    expand:                     false;
+    text-color:                 inherit;
+    background-color:           transparent;
+}
+
+entry {
+    background-color:            transparent;
+    text-color:                  @active;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
+    spacing:                    0;
+}
+
+/*****----- Filter Info (optional display) -----*****/
+num-filtered-rows,
+textbox-num-sep,
+num-rows,
+case-indicator {
+    expand:                     false;
+    spacing:                    0;
+    background-color:           transparent;
+    text-color:                 @active;
+}
+textbox-num-sep {
+    str:                        "/";
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     8;
+    lines:                       4;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   true;
+    layout:                      vertical;
+    flow:                        horizontal;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    spacing:                     2px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    // text-color:                  @active;
+    cursor:                      "default";
+}
+
+scrollbar {
+    width:                       0px;
+    handle-width:                2px ;
+    handle-color:                @active;
+    border-radius:               0px;
+    background-color:            transparent;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     20px 10px;
+    border:                      0px solid;
+    border-radius:               10px;
+    border-color:                @selected;
+    background-color:            transparent;
+    // text-color:                  @foreground;
+    orientation:                 vertical;
+    cursor:                      pointer;
+}
+
+element normal.normal,
+element alternate.normal {
+    text-color:                 @foreground;
+}
+element normal.urgent,
+element alternate.urgent {
+    text-color:                 @urgent;
+}
+element normal.active,
+element alternate.active {
+    text-color:                 @active;
+}
+
+element selected.normal,
+element selected.urgent,
+element selected.active {
+    background-color:           @background;
+    border:                     1px solid;
+    border-color:               @selected;
+}
+element selected.normal  { text-color: @foreground; }
+element selected.urgent  { text-color: @urgent; }
+element selected.active  { text-color: @active; }
+
+element-text selected,
+element selected.selected {
+    background-color:           transparent;
+    text-color:                 @foreground;
+    border-radius:              10px;
+    padding:                    10px;
+}
+
+element-icon {
+    size:                        6%;
+}
+element-icon,
+element-text {
+    background-color:           transparent;
+    text-color:                 inherit;
+    highlight:                  inherit;
+    cursor:                     inherit;
+    vertical-align:             0.5;
+    horizontal-align:           0.5;
+}
+element-text {
+    padding:                    10px;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color:            transparent;
+    border-color:                @selected;
+    border:                      2px dash 0px 0px ;
+}
+error-message {
+    padding:                     0px;
+    border-color:                @active;
+    background-color:            transparent;
+    text-color:                  @urgent;
+}
+
+/*****----- Textbox -----*****/
+textbox {
+    padding:                     20px;
+    border-radius:               15px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    highlight:                   none;
+}
+
+
+/*****----- Sidebar -----*****/
+sidebar {
+    border-color:               @selected;
+    border:                     2px dash 0px 0px ;
+    padding:                    20px;
+    background-color:           transparent;
+}
+
+button {
+    cursor:                     pointer;
+    spacing:                    0;
+    text-color:                 @active;
+    background-color:           transparent;
+    padding:                    20px;
+    border-radius:              10px;
+    expand:                     false;
+    spacing:                    20px;
+}
+
+button selected {
+    background-color:           @background-alt;
+    text-color:                 @selected;
+    border:                     1px solid;
+    border-color:               @selected;
+}
