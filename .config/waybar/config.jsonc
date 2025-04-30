@@ -247,6 +247,7 @@
     "wireplumber": {
       "format": "{icon} {volume}%",
       "format-muted": " Muted",
+      "format-icons": [" ", " ", " "],
       "scroll-step": 0.2,
       "max-volume": 100,
       "on-click": "pavucontrol",

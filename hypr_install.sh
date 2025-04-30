@@ -9,7 +9,7 @@ install_packages() {
     hyprpicker \
     hyprutils \
     waybar \
-    nwg-drawer \
+    rofi-wayland \
     xdg-desktop-portal-hyprland \
     xdg-desktop-portal-gtk \
     wl-clipboard \
@@ -87,7 +87,7 @@ install_aur_packages() {
         "snapper-gui-git"
         "beautyline"
         "sweet-gtk-theme"
-        "waypaper"
+        "waypaper-git"
         "visual-studio-code-bin"
         "woomer"
         # Add more AUR packages as necessary
@@ -122,14 +122,17 @@ backup_directory() {
 
 # Define the directories and files to be installed
 CONFIG_DIRS=(
-    "nvim"
     "fish"
-    "wezterm"
     "ghostty"
+    "helix"
     "hypr"
+    "kitty"
+    "nvim"
     "nwg-drawer"
+    "rofi"
     "swaync"
     "waybar"
+    "wezterm"
     "yazi"
 )
 CONFIG_FILES=(
