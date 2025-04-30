@@ -50,22 +50,26 @@
     },
     "custom/quit": {
       "format": "󰗼",
-      "tooltip": false,
+      "tooltip": true,
+      "tooltip-format": "Quit",
       "on-click": "hyprctl dispatch exit"
     },
     "custom/lock": {
       "format": "󰍁",
-      "tooltip": false,
+      "tooltip": true,
+      "tooltip-format": "Lock",
       "on-click": "hyprlock"
     },
     "custom/reboot": {
       "format": "󰜉",
-      "tooltip": false,
-      "on-click": "reboot"
+      "tooltip": true,
+      "tooltip-format": "Reboot",
+      "on-click": "systemctl reboot"
     },
     "custom/power": {
       "format": "",
-      "tooltip": false,
+      "tooltip": true,
+      "tooltip-format": "Shutdown",
       "on-click": "shutdown now"
     },
     "group/cpu-load": {

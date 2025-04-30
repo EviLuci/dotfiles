@@ -48,8 +48,8 @@ menu,
 tooltip {
     background: rgba(0, 0, 0, 0.9);
     border-radius: 10px;
-    border: 2px transparent;
-    border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
+    /* border: 0px solid; */
+    /* border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1; */
     padding: 5px;
     box-shadow: 0 0 0 1px;
 }
