@@ -40,7 +40,7 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 ## 🖥️ Preview
 
 ### 🌄 Desktop
-![Desktop](https://github.com/EviLuci/dotfiles/blob/main/screenshots/desktop.png)
+![Desktop](https://github.com/EviLuci/dotfiles/blob/main/screenshots/Desktop.png)
 
 ### 📝 Neovim
 ![Neovim](https://github.com/EviLuci/dotfiles/blob/main/screenshots/neovim.png)
