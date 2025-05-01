@@ -46,7 +46,7 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 ![Neovim](https://github.com/EviLuci/dotfiles/blob/main/screenshots/neovim.png)
 
 ### 🚀 Rofi
-![Rofi](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi.png)
+![Rofi](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi-final.png)
 
 ### 📊 Waybar
 
