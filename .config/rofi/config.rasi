@@ -1,14 +1,17 @@
 /*****----- Configuration -----*****/
 configuration {
     /*****----- General -----*****/
-    modes:                     [combi,drun,filebrowser,window,run,ssh];
-    combi-modes:               [drun,filebrowser,window,run];
+    modes:                     [combi,drun,recursivebrowser,filebrowser,window,run,ssh,keys];
+    combi-modes:               [drun,filebrowser];
     show-icons:                 true;
 	case-sensitive:             false;
 	cycle:                      true;
 	filter:                     "";
 	scroll-method:              0;
 	normalize-match:            true;
+    terminal:                   "Ghostty";
+    preview-cmd:               "rofi-preview -m {mode} -i {input}";
+    hover-select:               true;
 
 /*	cache-dir:                  ;*/
 	steal-focus:                false;
@@ -27,7 +30,6 @@ configuration {
     xoffset:                   0;
     sidebar-mode:             true;
     fixed-num-lines:           true;
-    preview-cmd:               "rofi-preview -m {mode} -i {input}";
 
     /*****----- Drun -----*****/
     drun-display-format:        "{name}";
@@ -35,6 +37,10 @@ configuration {
     drun-show-actions:          true;
     drun-url-launcher:          "xdg-open";
     drun-match-fields:          "name,generic,exec,categories,keywords";
+    drun {
+        scan-desktop:           false;
+        parse-user:             false;
+    }
 
     /*****----- Run -----*****/
     run-command:                "{cmd}";
@@ -45,6 +51,30 @@ configuration {
     window-command:             "wmctrl -i -R {window}";
     window-match-fields:        "all";
     window-format:              "{w} . {c} . {t-1}";
+
+	/*****----- SSH -----*****/
+    ssh-client:                 "ssh";
+	ssh-command:                "{terminal} -e {ssh-client} {host} [-p {port}]";
+	parse-hosts:                true;
+	parse-known-hosts:          true;
+
+    /*****----- File browser -----*****/
+    filebrowser {
+	  directory:                "$HOME";
+      directories-first:        true;
+      sorting-method:           "name";
+      show-hidden:              true;
+    }
+
+    /*****----- Recursive File browser -----*****/
+    recursivebrowser {
+      /** Directory the file browser starts in. */
+      directory:                "$HOME";
+      /** filter entries using regex */
+      filter-regex:             "(.*cache.*|.*\.o)";
+      /** command */
+      command:                  "xdg-open";
+   }
 
     /*****----- History and Sorting -----*****/
 	disable-history: false;
@@ -59,20 +89,25 @@ configuration {
 	display-combi:              "  Combi";
 	display-keys:               " Keys";
 	display-ssh:                "  SSH";
+    display-recursivebrowser:   "󰱼 Recursive File Search";
 
-	/*****----- SSH -----*****/
-    ssh-client:                 "ssh";
-	ssh-command:                "{terminal} -e {ssh-client} {host} [-p {port}]";
-	parse-hosts:                true;
-	parse-known-hosts:          true;
-
-
-    /*****----- File browserk -----*****/
-    filebrowser {
-	  directory:                "$HOME";
-      directories-first:        true;
-      sorting-method:           "name";
+    /*****----- Fallback Icons -----*****/
+    run {
+      fallback-icon: "/home/sujan/dotfiles/.config/rofi/icons/icons8-script-listener-64.png";
     }
+    ssh {
+      fallback-icon: "/home/sujan/dotfiles/.config/rofi/icons/icons8-ssh-64.png";
+    }
+    recursivebrowser {
+      fallback-icon: "/home/sujan/dotfiles/.config/rofi/icons/icons8-search-file-64.png";
+    }
+    filebrowser {
+        fallback-icon: "/home/sujan/dotfiles/.config/rofi/icons/icons8-question-mark-64.png";
+    }
+    keys {
+        fallback-icon: "/home/sujan/dotfiles/.config/rofi/icons/icons8-keyboard-64.png";
+    }
+
 }
 
 @theme "~/.config/rofi/theme/eviluci.rasi"

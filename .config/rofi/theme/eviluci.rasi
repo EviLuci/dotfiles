@@ -229,7 +229,7 @@ button {
     background-color:           transparent;
     padding:                    20px;
     border-radius:              10px;
-    expand:                     false;
+    expand:                     true;
     spacing:                    20px;
 }
 
