@@ -2,7 +2,7 @@
 
 > ⚠️ **Work in Progress**: These dotfiles are part of my personal setup journey. Things may break or not work out of the box. Use at your own risk and feel free to explore or adapt!
 
-This repository contains my **personal dotfiles and setup scripts** for configuring a minimal, beautiful, and functional **Hyprland** desktop environment on **Arch Linux**.
+This repository contains my **personal dotfiles** for configuring a minimal, beautiful, and functional **Hyprland** desktop environment on **Arch Linux**.
 
 ---
 
