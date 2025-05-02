@@ -1,4 +1,4 @@
-# 🛠️ My Dotfiles for Hyprland (Arch Linux)
+# My Dotfiles for Hyprland (Arch Linux)
 
 > ⚠️ **Work in Progress**: These dotfiles are part of my personal setup journey. Things may break or not work out of the box. Use at your own risk and feel free to explore or adapt!
 
@@ -6,49 +6,49 @@ This repository contains my **personal dotfiles** for configuring a minimal, bea
 
 ---
 
-## 📁 Contents
+## Contents
 
-- [🛠️ My Dotfiles for Hyprland (Arch Linux)](#️-my-dotfiles-for-hyprland-arch-linux)
-  - [📁 Contents](#-contents)
-  - [📌 Introduction](#-introduction)
-  - [🖥️ Preview](#️-preview)
-    - [🌄 Desktop](#-desktop)
-    - [📝 Neovim](#-neovim)
-    - [🚀 Rofi](#-rofi)
-    - [📊 Waybar](#-waybar)
-    - [🔔 Sway Notification Center](#-sway-notification-center)
-    - [📋 CopyQ](#-copyq)
-    - [🔒 Hyprlock](#-hyprlock)
-  - [📦 Packages Used](#-packages-used)
-    - [✅ Required Packages](#-required-packages)
-    - [✨ Optional (But Nice To Have)](#-optional-but-nice-to-have)
+- [My Dotfiles for Hyprland (Arch Linux)](#my-dotfiles-for-hyprland-arch-linux)
+  - [Contents](#contents)
+  - [Introduction](#introduction)
+  - [Preview](#preview)
+    - [Desktop](#desktop)
+    - [Neovim](#neovim)
+    - [Rofi](#rofi)
+    - [Waybar](#waybar)
+    - [Sway Notification Center](#sway-notification-center)
+    - [CopyQ](#copyq)
+    - [Hyprlock](#hyprlock)
+  - [Packages Used](#packages-used)
+    - [Required Packages](#required-packages)
+    - [Optional (But Nice To Have)](#optional-but-nice-to-have)
 
 ---
 
-## 📌 Introduction
+## Introduction
 
 Welcome to my dotfiles repo! This setup is focused on providing a minimal and aesthetic **Wayland** desktop using **Hyprland**. Whether you're learning or looking for inspiration for your own dotfiles, feel free to fork, clone, or adapt!
 
-- 🖥️ Window Manager: [Hyprland](https://github.com/vaxerski/Hyprland)
-- 🧰 Toolkit: Wayland + wlroots
-- 🧪 Shell & Prompt: Fish + Starship
-- 🖌️ Custom Theming: GTK, Waybar, Rofi, and more
-- 🧠 Philosophy: Minimal, functional, and beautiful
+-  Window Manager: [Hyprland](https://github.com/vaxerski/Hyprland)
+-  Toolkit: Wayland + wlroots
+-  Shell & Prompt: Fish + Starship
+-  Custom Theming: GTK, Waybar, Rofi, and more
+-  Philosophy: Minimal, functional, and beautiful
 
 ---
 
-## 🖥️ Preview
+## Preview
 
-### 🌄 Desktop
+### Desktop
 ![Desktop](https://github.com/EviLuci/dotfiles/blob/main/screenshots/Desktop.png)
 
-### 📝 Neovim
+### Neovim
 ![Neovim](https://github.com/EviLuci/dotfiles/blob/main/screenshots/neovim.png)
 
-### 🚀 Rofi
+### Rofi
 ![Rofi](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi-final.png)
 
-### 📊 Waybar
+### Waybar
 
 **Top Bar**
 ![Top Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/top-bar.png)
@@ -56,7 +56,7 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 **Bottom Bar**
 ![Bottom Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/bottom-bar.png)
 
-### 🔔 Sway Notification Center
+### Sway Notification Center
 
 <p float="left">
   <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync.png" width="150"/>
@@ -65,17 +65,17 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
   <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_mpris.png" width="150"/>
 </p>
 
-### 📋 CopyQ
+### CopyQ
 ![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/CopyQ.png)
 
-### 🔒 Hyprlock
+### Hyprlock
 ![Hyprlock](https://github.com/EviLuci/dotfiles/blob/main/screenshots/hyprlock.png)
 
 ---
 
-## 📦 Packages Used
+## Packages Used
 
-### ✅ Required Packages
+### Required Packages
 
 These are core components needed to replicate the environment:
 
@@ -99,7 +99,7 @@ These are core components needed to replicate the environment:
 
 ---
 
-### ✨ Optional (But Nice To Have)
+### Optional (But Nice To Have)
 
 | Package                                           | Description              |
 | ------------------------------------------------- | ------------------------ |
