@@ -93,6 +93,9 @@ These are core components needed to replicate the environment:
 | [pacman-updates module](https://github.com/coffebar/waybar-module-pacman-updates) | Waybar module for Arch updates |
 | [Pipewire](https://github.com/PipeWire/pipewire)                                  | Multimedia backend             |
 | [Waypaper](https://github.com/anufrievroman/waypaper)                             | GUI wallpaper manager          |
+| [Nemo](https://github.com/linuxmint/nemo)                                         | File Manager                   |
+| [Blueman](https://github.com/blueman-project/blueman)                             | Bluetooth Manager |
+| [Network Manager](https://github.com/NetworkManager/NetworkManager)               | Network Manager |
 
 ---
 
@@ -106,6 +109,8 @@ These are core components needed to replicate the environment:
 | [Fish](https://github.com/fish-shell/fish-shell)  | Friendly shell           |
 | [Starship](https://github.com/starship/starship)  | Cross-shell prompt       |
 | [Hyprshot](https://github.com/Gustash/Hyprshot)   | Screenshot utility       |
+| [Satty](https://github.com/gabm/Satty)            | Modern Screenshot Annotation |
+| [Woomer](https://github.com/coffeeispower/woomer) | Zoomer Application |
 | **Fonts**: FiraCode Nerd Font, Font Awesome       |
 | **Themes**: sweet-gtk-theme-dark, Beautyline      |
 

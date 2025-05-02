@@ -52,6 +52,8 @@ install_packages() {
     bluez \
     bluez-utils \
     blueman \
+    networkmanager \
+    network-manager-applet \
     pipewire \
     pipewire-alsa \
     pipewire-jack \
@@ -84,7 +86,6 @@ install_aur_packages() {
         "microsoft-edge-dev-bin"
         "waybar-module-pacman-updates-git"
         "snap-pac-grub"
-        "snapper-gui-git"
         "beautyline"
         "sweet-gtk-theme"
         "waypaper-git"
