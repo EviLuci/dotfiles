@@ -34,7 +34,6 @@ set nowritebackup
 set noswapfile
 set timeoutlen=500
 set formatoptions-=cro
-set clipboard=unnamedplus
 set wildmenu
 set history=1000
 set ignorecase
@@ -220,7 +219,7 @@ inoremap kj <Esc>
 inoremap jj <Esc>
 
 " go to the beginning and end in insert mode
-inoremap <A-b> <ESC>^i
+inoremap <A-h> <HOME>
 inoremap <A-e> <End>
 
 " navigate within insert mode
@@ -240,9 +239,11 @@ inoremap <A-O> <C-O>O
 vnoremap p "_dp
 
 " Copy and Paste
+nnoremap <A-v> m`o<esc>p``
+vnoremap <A-p> m`O<esc>p``
 nnoremap ]p o<esc>p
 nnoremap [P o<esc>P
-inoremap <C-v> <esc>po
+inoremap <C-v> <esc>"+p<esc>a
 
 " Move a line of text using ALT+[jk]
 nnoremap <A-j> <cmd>m .+1<cr>==
@@ -328,10 +329,14 @@ nnoremap <silent> gj :let _=&lazyredraw<CR>:set lazyredraw<CR>/\%<C-R>=virtcol("
 nnoremap <silent> gk :let _=&lazyredraw<CR>:set lazyredraw<CR>?\%<C-R>=virtcol(".")<CR>v\S<CR>:nohl<CR>:let &lazyredraw=_<CR>
 
 " Helpful delete/change into blackhole buffer
-nmap <leader>d "_d
-nmap <leader>c "_c
-nmap <leader>d "_d
-nmap <leader>c "_c
+nmap d "_d
+nmap dd "_dd
+nmap c "_c
+nmap cc "_cc
+nmap x "_x
+nmap X "_X
+nmap p "_p
+nmap P "_P
 
 nmap H _
 nmap L $
