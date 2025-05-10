@@ -1,8 +1,11 @@
 # My Dotfiles for Hyprland (Arch Linux)
 
-> ⚠️ **Work in Progress**: These dotfiles are part of my personal setup journey. Things may break or not work out of the box. Use at your own risk and feel free to explore or adapt!
+> ⚠️ **Work in Progress**: These dotfiles are part of my personal setup journey. Things may break or not work out of the box.
 
 This repository contains my **personal dotfiles** for configuring a minimal, beautiful, and functional **Hyprland** desktop environment on **Arch Linux**.
+
+> ⚠️ **Warning**: The install script available in this repo is experimental and intended for personal use only. Use at your own risk.
+
 
 ---
 
@@ -96,6 +99,9 @@ These are core components needed to replicate the environment:
 | [Nemo](https://github.com/linuxmint/nemo)                                         | File Manager                   |
 | [Blueman](https://github.com/blueman-project/blueman)                             | Bluetooth Manager |
 | [Network Manager](https://github.com/NetworkManager/NetworkManager)               | Network Manager |
+| [Polkit Gnome] | Authentication Agent |
+| **Themes**: sweet-gtk-theme-dark, Beautyline      |
+| **Fonts**: otf-font-awesome, noto-fonts-emoji |
 
 ---
 
@@ -111,7 +117,7 @@ These are core components needed to replicate the environment:
 | [Hyprshot](https://github.com/Gustash/Hyprshot)   | Screenshot utility       |
 | [Satty](https://github.com/gabm/Satty)            | Modern Screenshot Annotation |
 | [Woomer](https://github.com/coffeeispower/woomer) | Zoomer Application |
+| [Fortune-mod](https://github.com/shlomif/fortune-mod) | Random Quotation |
 | **Fonts**: FiraCode Nerd Font, Font Awesome       |
-| **Themes**: sweet-gtk-theme-dark, Beautyline      |
 
 ---
