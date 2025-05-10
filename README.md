@@ -99,7 +99,7 @@ These are core components needed to replicate the environment:
 | [Nemo](https://github.com/linuxmint/nemo)                                         | File Manager                   |
 | [Blueman](https://github.com/blueman-project/blueman)                             | Bluetooth Manager |
 | [Network Manager](https://github.com/NetworkManager/NetworkManager)               | Network Manager |
-| [Polkit Gnome] | Authentication Agent |
+| [Polkit Gnome](https://archlinux.org/packages/extra/x86_64/polkit-gnome/) | Authentication Agent |
 | **Themes**: sweet-gtk-theme-dark, Beautyline      |
 | **Fonts**: otf-font-awesome, noto-fonts-emoji |
 
