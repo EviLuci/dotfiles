@@ -9,25 +9,25 @@ return {
         width = "block",
         right_pad = 1,
         disable_background = {
-          'css'
-        }
+          "css",
+        },
       },
       heading = {
         width = "block",
         position = "inline",
         icons = {
-          '󰲡 ',
-          '󰲣 ',
-          '󰲥 ',
-          '󰲧 ',
-          '󰲩 ',
-          '󰲫 '
-        }
+          "󰲡 ",
+          "󰲣 ",
+          "󰲥 ",
+          "󰲧 ",
+          "󰲩 ",
+          "󰲫 ",
+        },
       },
       indent = {
-        enabled = true
-      }
-    }
+        enabled = true,
+      },
+    },
   },
   -- {
   --   "nvim-neorg/neorg",
@@ -112,7 +112,7 @@ return {
   --   }
   -- },
   {
-    "epwalsh/obsidian.nvim",
+    "obsidian-nvim/obsidian.nvim",
     version = "*", -- Pin to the latest release
     lazy = true,
     -- ft = "markdown",
@@ -124,73 +124,81 @@ return {
       -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
       -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
       -- refer to `:h file-pattern` for more examples
-      "BufReadPre " .. vim.fn.expand "~" .. "/git repos/notes/*.md",
-      "BufNewFile " .. vim.fn.expand "~" .. "/git repos/notes/*.md"
+      "BufReadPre "
+        .. vim.fn.expand("~")
+        .. "/git repos/notes/*.md",
+      "BufNewFile " .. vim.fn.expand("~") .. "/git repos/notes/*.md",
     },
     keys = {
       {
         "<leader>oss",
         "<cmd>ObsidianQuickSwitch<cr>",
-        desc = "Search Notes"
+        desc = "Search Notes",
       },
       {
         "<leader>oi",
         "<cmd>ObsidianPasteImg<cr>",
-        desc = "Paste Image"
+        desc = "Paste Image",
       },
       {
         "<C-i>",
         "<esc><cmd>ObsidianPasteImg<cr>o",
         desc = "Paste Image",
-        mode = "i"
+        mode = "i",
       },
       {
         "<leader>ot",
         "<cmd>ObsidianToggleCheckbox<cr>",
-        desc = "Toggle Checkbox"
+        desc = "Toggle Checkbox",
       },
       {
         "<C-t>",
         "<esc><cmd>ObsidianToggleCheckbox<cr>i",
         desc = "Toggle Checkbox",
-        mode = "i"
+        mode = "i",
       },
       {
         "<leader>osc",
         "<cmd>ObsidianTOC<cr>",
-        desc = "Search TOC"
+        desc = "Search TOC",
       },
       {
         "<leader>ost",
         "<cmd>ObsidianTags<cr>",
-        desc = "Search Tags"
-      }
+        desc = "Search Tags",
+      },
     },
 
-    init = function() vim.opt.conceallevel = 1 end,
+    init = function()
+      vim.opt.conceallevel = 1
+    end,
     opts = {
       workspaces = {
         {
           name = "notes",
-          path = "~/git repos/notes"
-        }
+          path = "~/git repos/notes",
+        },
       },
       completion = {
         nvim_cmp = false,
-        min_chars = 2
+        min_chars = 2,
       },
       -- Optional, alternatively you can customize the frontmatter data.
       ---@return table
       note_frontmatter_func = function(note)
-        if note.title then note:add_alias(note.title) end
+        if note.title then
+          note:add_alias(note.title)
+        end
         local out = {
           id = note.id,
           aliases = note.aliases,
-          tags = note.tags
+          tags = note.tags,
         }
         -- ensure fields are kept in the frontmatter
         if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-          for k, v in pairs(note.metadata) do out[k] = v end
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
         end
         return out
       end,
@@ -200,13 +208,13 @@ return {
       follow_url_func = function(url)
         vim.fn.jobstart({
           "yank",
-          url
+          url,
         })
       end,
       follow_img_func = function(img)
         vim.fn.jobstart({
           "yank",
-          img
+          img,
         })
       end,
       picker = {
@@ -215,16 +223,16 @@ return {
           -- create a new note from your query.
           new = "<C-n>",
           -- insert a link to the selected note.
-          insert_link = "<C-l>"
+          insert_link = "<C-l>",
         },
         tag_mappings = {
           tag_note = "<C-x>",
-          insert_tag = "<C-l>"
-        }
+          insert_tag = "<C-l>",
+        },
       },
       ui = {
-        enable = false
-      }
-    }
-  }
+        enable = false,
+      },
+    },
+  },
 }
