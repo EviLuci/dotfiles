@@ -141,8 +141,8 @@ map("i", "<A-O>", "<C-O>O", {
 })
 
 -- Insert blank line
-keymap("n", "]<Space>", "o<Esc>")
-keymap("n", "[<Space>", "O<Esc>")
+map("n", "]<Space>", "o<Esc>")
+map("n", "[<Space>", "O<Esc>")
 
 -- Change text without putting it into the vim register,
 map(
@@ -372,8 +372,8 @@ map("i", "<A-O>", "<C-O>O", {
 })
 
 -- Insert blank line
-keymap("n", "]<Space>", "o<Esc>")
-keymap("n", "[<Space>", "O<Esc>")
+map("n", "]<Space>", "o<Esc>")
+map("n", "[<Space>", "O<Esc>")
 
 -- Copy whole buffer
 map("n", "<C-y>", "<cmd>%y+<CR>", {
@@ -672,8 +672,8 @@ map("i", "<A-O>", "<C-O>O", {
 })
 
 -- Insert blank line
-keymap("n", "]<Space>", "o<Esc>")
-keymap("n", "[<Space>", "O<Esc>")
+map("n", "]<Space>", "o<Esc>")
+map("n", "[<Space>", "O<Esc>")
 
 -- Copy whole buffer
 map("n", "<C-y>", "<cmd>%y+<CR>", {
