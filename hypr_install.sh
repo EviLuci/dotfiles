@@ -3,6 +3,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+# Define the dotfiles directory
 DOTFILES_DIR="$HOME/dotfiles"
 
 # ───────────────────────────────────────────────────────────
@@ -103,9 +104,6 @@ install_aur_personal_packages() {
 }
 
 # Dotfiles setup
-
-# Define the dotfiles directory
-DOTFILES_DIR="$HOME/dotfiles"
 
 # Define the directories and files to be installed
 CONFIG_DIRS=(

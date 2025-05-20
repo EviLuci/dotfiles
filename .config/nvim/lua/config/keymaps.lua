@@ -16,7 +16,7 @@ map("n", "<A-v>", "m`o<ESC>p``", {
 map("n", "<A-p>", "m`O<ESC>p``", {
   desc = "Paste above",
 })
-map("i", "<C-v>", '<ESC>"+p<ESC>a', {
+map("i", "<C-v>", '<C-O>"+p', {
   desc = "Paste from clipboard",
 })
 map(
@@ -77,13 +77,18 @@ map("i", "<C-a>", "<esc><cmd>keepjumps normal! ggVG<cr>", {
   desc = "Select all",
 })
 
+-- Comment
+map("i", "<C-/>", "<C-O>gcc", {
+  desc = "Comment line",
+})
+
 -- Copy whole buffer
 map("n", "<C-a>", "<cmd>%y+<CR>", {
   desc = "Copy whole buffer",
 })
 
 -- Go to the beginning and end of current line in insert mode quickly
-map("i", "<A-h>", "<ESC>^i")
+map("i", "<A-h>", "<C-O>^i")
 map("i", "<A-l>", "<END>")
 
 -- Go to start or end of line easier
