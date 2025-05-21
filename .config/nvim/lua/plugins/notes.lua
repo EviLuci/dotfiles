@@ -9,8 +9,8 @@ return {
         width = "block",
         right_pad = 1,
         disable_background = {
-          "css"
-        }
+          "css",
+        },
       },
       heading = {
         width = "block",
@@ -21,13 +21,13 @@ return {
           "󰲥 ",
           "󰲧 ",
           "󰲩 ",
-          "󰲫 "
-        }
+          "󰲫 ",
+        },
       },
       indent = {
-        enabled = true
-      }
-    }
+        enabled = true,
+      },
+    },
   },
   -- {
   --   "nvim-neorg/neorg",
@@ -124,86 +124,94 @@ return {
       -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
       -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
       -- refer to `:h file-pattern` for more examples
-      "BufReadPre " .. vim.fn.expand("~") .. "/git repos/notes/*.md",
-      "BufNewFile " .. vim.fn.expand("~") .. "/git repos/notes/*.md"
+      "BufReadPre "
+        .. vim.fn.expand("~")
+        .. "/git repos/notes/*.md",
+      "BufNewFile " .. vim.fn.expand("~") .. "/git repos/notes/*.md",
     },
     keys = {
       {
         "<leader>oss",
         "<cmd>ObsidianQuickSwitch<cr>",
-        desc = "Search Notes"
+        desc = "Search Notes",
       },
       {
         "<leader>oi",
         "<cmd>ObsidianPasteImg<cr>",
-        desc = "Paste Image"
+        desc = "Paste Image",
       },
       {
         "<C-i>",
         "<esc><cmd>ObsidianPasteImg<cr>o",
         desc = "Paste Image",
-        mode = "i"
+        mode = "i",
       },
       {
         "<leader>ot",
         "<cmd>ObsidianToggleCheckbox<cr>",
-        desc = "Toggle Checkbox"
+        desc = "Toggle Checkbox",
       },
       {
         "<C-t>",
         "<esc><cmd>ObsidianToggleCheckbox<cr>i",
         desc = "Toggle Checkbox",
-        mode = "i"
+        mode = "i",
       },
       {
         "<leader>osc",
         "<cmd>ObsidianTOC<cr>",
-        desc = "Search TOC"
+        desc = "Search TOC",
       },
       {
         "<leader>ost",
         "<cmd>ObsidianTags<cr>",
-        desc = "Search Tags"
-      }
+        desc = "Search Tags",
+      },
     },
 
-    init = function() vim.opt.conceallevel = 1 end,
+    init = function()
+      vim.opt.conceallevel = 1
+    end,
     opts = {
       workspaces = {
         {
           name = "personal",
-          path = "~/git_repos/notes/personal"
+          path = "~/git_repos/notes/personal",
         },
         {
           name = "work",
-          path = "~/git_repos/notes/work"
+          path = "~/git_repos/notes/work",
         },
         {
           name = "projects",
-          path = "~/git_repos/notes/projects"
-        }
+          path = "~/git_repos/notes/projects",
+        },
       },
       completion = {
         nvim_cmp = false,
         blink = true,
-        min_chars = 2
+        min_chars = 2,
       },
 
       ---@return table
       note_frontmatter_func = function(note)
         -- Add the title of the note as an alias.
-        if note.title then note:add_alias(note.title) end
+        if note.title then
+          note:add_alias(note.title)
+        end
 
         local out = {
           id = note.id,
           aliases = note.aliases,
-          tags = note.tags
+          tags = note.tags,
         }
 
         -- `note.metadata` contains any manually added fields in the frontmatter.
         -- So here we just make sure those fields are kept in the frontmatter.
         if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-          for k, v in pairs(note.metadata) do out[k] = v end
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
         end
 
         return out
@@ -215,7 +223,7 @@ return {
         date_format = "%Y-%m-%d",
         time_format = "%H:%M",
         -- A map for custom variables, the key should be the variable and the value a function
-        substitutions = {}
+        substitutions = {},
       },
 
       picker = {
@@ -224,16 +232,16 @@ return {
           -- create a new note from your query.
           new = "<C-n>",
           -- insert a link to the selected note.
-          insert_link = "<C-l>"
+          insert_link = "<C-l>",
         },
         tag_mappings = {
           tag_note = "<C-x>",
-          insert_tag = "<C-l>"
-        }
+          insert_tag = "<C-l>",
+        },
       },
       ui = {
-        enable = false
-      }
-    }
-  }
+        enable = false,
+      },
+    },
+  },
 }
