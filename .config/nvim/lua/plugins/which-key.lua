@@ -1,7 +1,7 @@
 return {
   "folke/which-key.nvim",
   opts_extend = {
-    "spec",
+    "spec"
   },
   opts = {
     defaults = {},
@@ -9,21 +9,21 @@ return {
       {
         mode = {
           "n",
-          "v",
+          "v"
         },
         {
           "<leader>o",
-          group = "Obsidian",
+          group = "Open"
         },
         {
           "<leader>a",
-          group = "AI",
+          group = "AI"
         },
         {
           "<leader>t",
-          group = "Time Machine",
-        },
-      },
-    },
-  },
+          group = "Time Machine"
+        }
+      }
+    }
+  }
 }

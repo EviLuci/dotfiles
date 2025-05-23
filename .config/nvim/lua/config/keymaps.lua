@@ -42,6 +42,49 @@ map("n", "<C-y>", "<cmd>%y+<CR>", {
   desc = "Copy whole buffer"
 })
 
+-- Yank buffer's relative path to clipboard
+map("n", "<leader>y", function()
+  local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":~:.") or ""
+  vim.fn.setreg("+", path)
+  vim.notify(path, vim.log.levels.INFO, {
+    title = "Yanked relative path"
+  })
+end, {
+  silent = true,
+  desc = "Yank relative path"
+})
+
+-- Yank absolute path
+map("n", "<leader>Y", function()
+  local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":p") or ""
+  vim.fn.setreg("+", path)
+  vim.notify(path, vim.log.levels.INFO, {
+    title = "Yanked absolute path"
+  })
+end, {
+  silent = true,
+  desc = "Yank absolute path"
+})
+
+-- Duplicate lines without affecting PRIMARY and CLIPBOARD selections.
+map("n", "<Leader>dd", 'm`""Y""P``', {
+  desc = "Duplicate line"
+})
+map("x", "<Leader>dd", '""Y""Pgv', {
+  desc = "Duplicate selection"
+})
+
+-- Duplicate a line and comment out the first line
+map("n", "yc", "yygccp", {
+  remap = true,
+  desc = "Duplicate line and comment out the first line"
+})
+
+-- Change word in insert mode
+map("i", "<C-c>", "<C-o>ciw", {
+  desc = "Change word in insert mode"
+})
+
 -- Change text without putting it into the vim register,
 map({
   "n",
@@ -73,8 +116,14 @@ map({
 --     desc = "Paste over currently selected text without yanking it"
 -- })
 map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', {
-  desc = "Paste over currently selected text without yanking it"
+  silent = true,
+  desc = "Paste"
 })
+map("x", "P", 'P:let @+=@0<CR>:let @"=@0<CR>', {
+  silent = true,
+  desc = "Paste In-place"
+})
+
 -- map("x", "p", '"_c<Esc>p', {
 --     desc = "paste without yanking"
 -- })
@@ -91,14 +140,23 @@ map("i", "<C-a>", "<esc><cmd>keepjumps normal! ggVG<cr>", {
   desc = "Select all"
 })
 
--- Comment
-map("i", "<C-/>", "<C-O>gcc", {
-  desc = "Comment line"
-})
+-- Comment (doesn't work right now)
+-- map("i", "<C-/", "<C-O>gcc", {
+--   remap = true,
+--   desc = "Comment line",
+-- })
 
 -- Go to the beginning and end of current line in insert mode quickly
-map("i", "<A-h>", "<C-O>^i")
+map("i", "<A-h>", "<HOME>")
 map("i", "<A-l>", "<END>")
+
+-- Easier line-wise movement
+map("n", "gh", "g^", {
+  desc = "Jump to first screen character"
+})
+map("n", "gl", "g$", {
+  desc = "Jump to last screen character"
+})
 
 -- Go to start or end of line easier
 map({
@@ -157,11 +215,6 @@ map("i", "jk", "<ESC>")
 map("i", "kj", "<ESC>")
 map("i", "jj", "<ESC>")
 
--- Terminal Mappings
-map("t", "jk", "<C-\\><C-n>")
-map("t", "kj", "<C-\\><C-n>")
-map("t", "<ESC>", "<C-\\><C-n>")
-
 -- Move with shift-arrows
 map("n", "<S-Left>", "<C-w><S-h>", {
   desc = "Move window to the left"
@@ -174,6 +227,37 @@ map("n", "<S-Up>", "<C-w><S-k>", {
 })
 map("n", "<S-Right>", "<C-w><S-l>", {
   desc = "Move window to the right"
+})
+
+-- Use tab for indenting in visual/select mode
+map("x", "<Tab>", ">", {
+  remap = true,
+  desc = "Indent Left"
+})
+map("x", "<S-Tab>", "<", {
+  remap = true,
+  desc = "Indent Right"
+})
+
+-- Jump entire buffers throughout jumplist
+map("n", "g<C-i>", function() jump_buffer(1) end, {
+  desc = "Jump to newer buffer"
+})
+map("n", "g<C-o>", function() jump_buffer(-1) end, {
+  desc = "Jump to older buffer"
+})
+
+-- Moving tabs
+map("n", "<A-{>", "<cmd>-tabmove<CR>", {
+  desc = "Tab Move Backwards"
+})
+map("n", "<A-}>", "<cmd>+tabmove<CR>", {
+  desc = "Tab Move Forwards"
+})
+
+-- Quick substitute within selected area
+map("x", "sg", ":s//gc<Left><Left><Left>", {
+  desc = "Substitute Within Selection"
 })
 
 -- Search
@@ -217,9 +301,40 @@ map("n", "<leader>xc", "<cmd>windo lclose <bar> cclose <cr>", {
 })
 
 -- folds
-map("n", "<leader>z", "<cmd>normal! zMzv<cr>", {
+map("n", "<leader>zo", "<cmd>normal! zMzv<cr>", {
   desc = "Fold all others"
 })
+-- Focus the current fold by closing all others
+map("n", "<leader>zf", "zMzvzz", {
+  desc = "Focus Fold"
+})
+
+map("n", "<leader>zj", "zMzvzz", {
+  desc = "Focus Fold"
+})
+-- Close current fold when open. Always open next fold.
+map("n", "zj", "zcjzOzz", {
+  desc = "Close fold & open next one"
+})
+
+-- Close current fold when open. Always open previous fold.
+map("n", "zk", "zckzOzz", {
+  desc = "Close fold & open previous one"
+})
+
+-- Navigation in command line
+map("c", "<C-h>", "<Home>")
+map("c", "<C-l>", "<End>")
+map("c", "<C-f>", "<Right>")
+map("c", "<C-b>", "<Left>")
+
+-- Terminal Mappings
+map("t", "jk", "<C-\\><C-n>")
+map("t", "kj", "<C-\\><C-n>")
+map("t", "<ESC>", "<C-\\><C-n>")
+
+-- compromised backward search when comma is being used as localleader
+map("n", "<A-,>", ",")
 
 -- Some cool remaps
 map("n", "n", "nzzzv")
@@ -244,6 +359,3 @@ map("i", "!", "!<c-g>u")
 map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
-
--- compromised backward search when comma is being used as localleader
-map("n", "<A-,>", ",")
