@@ -67,21 +67,21 @@ end, {
 })
 
 -- Duplicate lines without affecting PRIMARY and CLIPBOARD selections.
-map("n", "<Leader>dd", 'm`""Y""P``', {
+map("n", "<Leader>yp", 'm`""Y""P``', {
   desc = "Duplicate line"
 })
-map("x", "<Leader>dd", '""Y""Pgv', {
+map("x", "<Leader>yp", '""Y""Pgv', {
   desc = "Duplicate selection"
 })
 
 -- Duplicate a line and comment out the first line
-map("n", "yc", "yygccp", {
+map("n", "<leader>yc", "yygccp", {
   remap = true,
   desc = "Duplicate line and comment out the first line"
 })
 
 -- Change word in insert mode
-map("i", "<C-c>", "<C-o>ciw", {
+map("i", "<C-w>", "<C-o>ciw", {
   desc = "Change word in insert mode"
 })
 
@@ -158,6 +158,11 @@ map("n", "gl", "g$", {
   desc = "Jump to last screen character"
 })
 
+-- Ctrl Backspace
+map('i', '<C-H>', '<C-W>', {
+  desc = "Delete word backwards"
+})
+
 -- Go to start or end of line easier
 map({
   "n",
@@ -215,10 +220,10 @@ map("i", "jk", "<ESC>")
 map("i", "kj", "<ESC>")
 map("i", "jj", "<ESC>")
 
--- Move with shift-arrows
 map("n", "<S-Left>", "<C-w><S-h>", {
   desc = "Move window to the left"
 })
+
 map("n", "<S-Down>", "<C-w><S-j>", {
   desc = "Move window down"
 })
@@ -230,11 +235,11 @@ map("n", "<S-Right>", "<C-w><S-l>", {
 })
 
 -- Use tab for indenting in visual/select mode
-map("x", "<Tab>", ">", {
+map("x", "<Tab>", ">gv", {
   remap = true,
   desc = "Indent Left"
 })
-map("x", "<S-Tab>", "<", {
+map("x", "<S-Tab>", "<gv", {
   remap = true,
   desc = "Indent Right"
 })
@@ -359,3 +364,14 @@ map("i", "!", "!<c-g>u")
 map("i", ",", ",<c-g>u")
 map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
+
+-- Keymaps Dependent to plugins
+
+-- Open Notes Folder
+map("n", "<leader>on", function()
+  Snacks.picker.files({
+    cwd = vim.fn.expand("~/git_repos/notes")
+  })
+end, {
+  desc = "Open Notes"
+})

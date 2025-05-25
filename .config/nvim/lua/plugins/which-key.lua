@@ -12,6 +12,10 @@ return {
           "v"
         },
         {
+          "<leader>y",
+          group = "Yank"
+        },
+        {
           "<leader>o",
           group = "Open"
         },
