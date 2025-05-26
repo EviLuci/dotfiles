@@ -73,6 +73,9 @@ map("n", "<Leader>yp", 'm`""Y""P``', {
 map("x", "<Leader>yp", '""Y""Pgv', {
   desc = "Duplicate selection"
 })
+map("i", "<A-d>", '<C-O>m`<C-O>""Y""P``', {
+  desc = "Duplicate line in insert mode"
+})
 
 -- Duplicate a line and comment out the first line
 map("n", "<leader>yc", "yygccp", {
@@ -81,7 +84,7 @@ map("n", "<leader>yc", "yygccp", {
 })
 
 -- Change word in insert mode
-map("i", "<C-w>", "<C-o>ciw", {
+map("i", "<C-w>", "<C-O>ciw", {
   desc = "Change word in insert mode"
 })
 
@@ -147,7 +150,7 @@ map("i", "<C-a>", "<esc><cmd>keepjumps normal! ggVG<cr>", {
 -- })
 
 -- Go to the beginning and end of current line in insert mode quickly
-map("i", "<A-h>", "<HOME>")
+map("i", "<A-h>", "<C-O>I")
 map("i", "<A-l>", "<END>")
 
 -- Easier line-wise movement
