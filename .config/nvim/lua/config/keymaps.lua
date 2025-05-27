@@ -184,6 +184,10 @@ map({
 map("i", "<A-;>", "<Esc>miA;<Esc>`ii", {
   desc = "insert semicolon in the end"
 })
+-- insert comma in the end
+map("i", "<A-,>", "<Esc>miA,<Esc>`ii", {
+  desc = "insert comma in the end"
+})
 
 -- Undo
 map("i", "<C-z>", "<C-O>u")
@@ -335,6 +339,12 @@ map("c", "<C-h>", "<Home>")
 map("c", "<C-l>", "<End>")
 map("c", "<C-f>", "<Right>")
 map("c", "<C-b>", "<Left>")
+
+-- Split Window Right
+map("n", "<C-\\>", "<C-W>v", {
+  desc = "Split Window Right",
+  remap = true
+})
 
 -- Terminal Mappings
 map("t", "jk", "<C-\\><C-n>")
