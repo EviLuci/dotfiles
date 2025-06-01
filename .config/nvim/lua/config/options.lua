@@ -5,6 +5,12 @@ local indent = 2
 
 local opt = vim.opt
 
+-- vscode specific settings
+if vim.g.vscode then
+  -- show mode in vscode status bar
+  opt.showmode = true
+end
+
 opt.shiftwidth = indent
 opt.tabstop = indent
 opt.softtabstop = indent

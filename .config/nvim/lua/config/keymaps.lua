@@ -8,10 +8,10 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Paste
-map("n", "<A-v>", "m`o<ESC>p``", {
+map("n", "]p", "m`o<ESC>p``", {
   desc = "Paste below"
 })
-map("n", "<A-p>", "m`O<ESC>p``", {
+map("n", "[p", "m`O<ESC>p``", {
   desc = "Paste above"
 })
 map("i", "<C-v>", '<C-O>"+p', {
@@ -27,9 +27,10 @@ map({
 map({
   "n",
   "x"
-}, "<C-v>", '"+p<ESC>', {
+}, "<A-v>", '"+p<ESC>', {
   desc = "Paste from clipboard"
 })
+
 map({
   "n",
   "x"
@@ -368,8 +369,6 @@ map("n", "^", "g^")
 map("n", "0", "g0")
 -- Do not include white space characters when using $ in visual mode,
 map("x", "$", "g_")
--- Always use very magic mode for searching
-map("n", "/", [[/\v]])
 
 -- Add undo break-points
 map("i", "?", "?<c-g>u")
