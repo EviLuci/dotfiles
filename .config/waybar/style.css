@@ -4,7 +4,7 @@
     border-radius: 10px;
     font-family: FiraCode Nerd Font;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 0.8rem;
     min-height: 20px;
     margin: 0px;
     padding: 0.5px;
@@ -110,6 +110,7 @@ tooltip label {
     border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
     padding: 0 5px;
 }
+
 #taskbar button:hover {
     background: black;
     border: 1px solid transparent;
@@ -186,6 +187,7 @@ window#waybar.empty {
 #battery.warning:not(.charging) {
     animation: blink 1s linear infinite alternate;
 }
+
 #battery.critical:not(.charging) {
     animation: blink 0.5s linear infinite alternate;
 }
@@ -220,7 +222,6 @@ label:focus {
 }
 
 /* Gradient Module Styles */
-#mpd,
 #mpris,
 #window {
     background: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);

@@ -35,9 +35,10 @@ PERSONAL_PACKAGES=(
     virtualbox
     npm
 )
+
 # AUR Personal packages
 AUR_PERSONAL_PACKAGES=(
-    visual-studio-code-bin waypaper-git microsoft-edge-dev-bin woomer snap-pac-grub waveterm-bin
+    visual-studio-code-bin waypaper-git microsoft-edge-dev-bin woomer snap-pac-grub evil-helix-bin
 )
 
 # ───────────────────────────────────────────────────────────
@@ -112,7 +113,6 @@ CONFIG_DIRS=(
     "hypr"
     "kitty"
     "nvim"
-    "nwg-drawer"
     "rofi"
     "swaync"
     "waybar"

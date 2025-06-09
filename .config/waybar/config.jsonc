@@ -91,7 +91,15 @@
       "interval": 10,
       "format": "load: {load1} {load5} {load15}"
     },
+
     // Modules configuration
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon} {percent}%",
+      "format-icons": ["", "", "", "", "", "", "", "", ""],
+      "on-scroll-up": "brightnessctl set 1%+",
+      "on-scroll-down": "brightnessctl set 1%-"
+    },
     "memory": {
       "interval": 30,
       "format": " {}%",
@@ -201,13 +209,6 @@
         "on-scroll-down": "shift_down"
       }
     },
-    "backlight": {
-      "device": "intel_backlight",
-      "format": "{icon} {percent}%",
-      "format-icons": ["", "", "", "", "", "", "", "", ""],
-      "on-scroll-up": "brightnessctl set 1%+",
-      "on-scroll-down": "brightnessctl set 1%-"
-    },
     "battery": {
       //"bat": "BAT2",
       "interval": 60,
@@ -282,31 +283,6 @@
       "smooth-scrolling-threshold": 10,
       "on-scroll-down": "playerctl previous"
       // "ignored-players": ["cmus", "spotify"]
-    },
-    "mpd": {
-      "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-      "format-disconnected": "Disconnected ",
-      "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-      "interval": 10,
-      "consume-icons": {
-        "on": " " // Icon shows only when "consume" is on
-      },
-      "random-icons": {
-        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
-        "on": " "
-      },
-      "repeat-icons": {
-        "on": " "
-      },
-      "single-icons": {
-        "on": "1 "
-      },
-      "state-icons": {
-        "paused": "",
-        "playing": ""
-      },
-      "tooltip-format": "MPD (connected)",
-      "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
       "format": "{icon}",
