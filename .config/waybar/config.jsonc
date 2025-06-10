@@ -348,6 +348,7 @@
         "title<.*qwen.*>": "🤖",
         "class<firefox-developer-edition>": "🦊",
         "class<firefox>": "",
+        "class<Postman>": "",
         "title<.*github.*>": "",
         "class<nemo>": "",
         "class<com.mitchellh.ghostty>": " ",

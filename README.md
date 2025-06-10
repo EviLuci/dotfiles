@@ -1,11 +1,9 @@
 # My Dotfiles for Hyprland (Arch Linux)
 
-> ⚠️ **Work in Progress**: These dotfiles are part of my personal setup journey. Things may break or not work out of the box.
 
 This repository contains my **personal dotfiles** for configuring a minimal, beautiful, and functional **Hyprland** desktop environment on **Arch Linux**.
 
-> ⚠️ **Warning**: The install script available in this repo is experimental and intended for personal use only. Use at your own risk.
-
+> ⚠️ **Warning**: The install script available in this repo is experimental and intended for personal use only. Use at your own risk. These dotfiles are part of my personal setup journey. Things may break or not work out of the box.
 
 ---
 
