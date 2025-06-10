@@ -15,7 +15,7 @@ HYPRLAND_ESSENTIALS_PACKAGES=(
     hyprland hypridle hyprlock hyprpicker hyprutils xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
     pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-zeroconf wireplumber qpwgraph pavucontrol
     waybar swaync bluez bluez-utils blueman networkmanager network-manager-applet rofi-wayland brightnessctl polkit-gnome
-    wl-clipboard copyq grim slurp wf-recorder satty
+    wl-clipboard copyq grim slurp kooha satty
     ttf-firacode-nerd otf-font-awesome noto-fonts-emoji
 )
 # AUR Essential packages
