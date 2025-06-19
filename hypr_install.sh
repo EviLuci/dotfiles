@@ -118,6 +118,7 @@ CONFIG_DIRS=(
     "waybar"
     "wezterm"
     "yazi"
+    "zellij"
 )
 
 CONFIG_FILES=(
