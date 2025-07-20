@@ -1,289 +1,40 @@
-/* Global styles */
+/* === Global Settings === */
+/* ===CSS Variables=== */
+:root {
+    --primary-color: rgb(0, 238, 255);
+    --secondary-color: black;
+    --tertiary-color: rgb(248, 115, 237);
+    --transparent-color: rgba(0, 0, 0, 0.8);
+    --warning-color: rgb(255, 0, 0);
+    --border-color: rgb(0, 238, 255);
+    --border-radius: 0.8rem;
+    --inner-border-radius: 0.5rem;
+    --font-size: 1rem;
+    --font-weight: bold;
+    --font-family: "FiraCode Nerd Font", "Material Icons", FontAwesome;
+}
+
 * {
-    font-family: FontAwesome, "FiraCode Nerd Font", "Material Icons";
-    font-weight: bold;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
 }
 
-.control-center .notification-row {
-    background-color: unset;
-}
-
-/* Notification Row */
-.notification-row:focus,
-.notification-row:hover {
-    background: black;
-}
-
-/* Notification */
-.notification {
-    background: rgba(0, 0, 0, 0.8);
-    color: rgb(0, 238, 255);
-    border: 1px solid rgb(0, 238, 255);
-    border-radius: 10px;
-}
-.notification .critical {
-    color: red;
-}
-
-.notification-content {
-    background: black;
-}
-
+/* === Close Button === */
 .close-button {
-    background: black;
-    color: rgb(0, 238, 255);
+    background: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .close-button:hover {
-    background: rgb(0, 238, 255);
-    color : black;
+    color: var(--tertiary-color);
+    border: 1px solid var(--tertiary-color);
 }
 
-/* Notification Actions */
-.notification-default-action,
-.notification-action {
-    background: black;
-    border: 1px solid rgb(0, 238, 255);
-    color: rgb(0, 238, 255);
-}
-
-.notification-default-action:hover,
-.notification-action:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-    border: 1px solid black;
-}
-
-/* The "extra" optional bottom notification image */
-.body-image {
-    color: rgb(0, 238, 255);
-}
-/* Notification summary/title */
-.summary {
-    color: rgb(0, 238, 255);
-}
-/* Notification time-ago */
-.time {
-    color: rgb(0, 238, 255);
-}
-/* Notification body */
-.body {
-    color: rgb(0, 238, 255);
-}
-
-/* The inline reply section */
-.inline-reply .inline-reply-entry {
-    color: rgb(0, 238, 255);
-    caret-color: rgb(0, 238, 255);
-    background: black;
-}
-
-.inline-reply-button {
-    color: rgb(0, 238, 255);
-    background: black;
-}
-.inline-reply-button:disabled {
-    color: rgb(248, 115, 237);
-}
-.inline-reply-button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-}
-
-/* Styling only for Grouped Notifications */
-.notification-group {
-    background: black;
-    color: rgb(0, 238, 255);
-    border: none;
-}
-.notification-group-headers,
-.notification-group-icon,
-.notification-group-header,
-.notification-group-buttons {
-    color: rgb(0, 238, 255);
-}
-
-/* The Control Center which contains the old notifications + widgets */
-
-.control-center {
-    background: black;
-    color: rgb(0, 238, 255);
-    border: 1px solid rgb(0, 238, 255);
-    border-radius: 10px;
-    padding: 5px;
-}
-.control-center .notification-row:focus,
-.control-center .notification-row:hover {
-    background-color: black;
-}
-
-/* The list of notifications */
-.control-center-list {
-    background: transparent;
-}
-
+.blank-window,
 .floating-notifications {
     background: transparent;
 }
 
-/* Window behind control center and on all other monitors */
-.blank-window {
-    background: transparent;
-}
-
-/*** Widgets ***/
-
-/* Title widget */
-.widget-title {
-    color: rgb(0, 238, 255);
-    font-size: 16px;
-}
-
-.widget-title>button {
-    color: rgb(0, 238, 255);
-    background: black;
-    border: 1px solid rgb(0, 238, 255);
-}
-
-.widget-title>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-}
-
-/* DND widget */
-.widget-dnd {
-    color: rgb(0, 238, 255);
-    font-size: 16px;
-}
-
-.widget-dnd>switch {
-    color: rgb(0, 238, 255);
-    background: black;
-    border: 1px solid rgb(0, 238, 255);
-}
-
-.widget-dnd>switch:checked {
-    background: black;
-}
-
-.widget-dnd>switch slider {
-    background: rgb(0, 238, 255);
-}
-
-/* Inhibitors widget */
-.widget-inhibitors {
-    color: rgb(0, 238, 255);
-    font-size: large;
-}
-.widget-inhibitors>button {
-    color: rgb(0, 238, 255);
-    background: black;
-    border: 1px solid rgb(0, 238, 255);
-}
-.widget-inhibitors>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-}
-
-/* Mpris widget */
-.widget-mpris {
-    margin: 8px;
-    border: 1px solid rgb(0, 238, 255);
-    border-radius: 10px;
-    /* box-shadow: rgb(0, 238, 255) 0px 20px 20px -20px, rgb(0, 238, 255) 0px 20px 20px -20px, rgb(0, 238, 255) 0px -2px 6px 0px inset; */
-}
-
-.widget-mpris,
-.widget-mpris-player,
-.widget-mpris-title,
-.widget-mpris-subtitle,
-.widget-mpris-player>box>button {
-    color: rgb(0, 238, 255);
-}
-
-.widget-mpris-player>box>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-}
-
-/* Volume and Brightness Widget*/
-/* Volume and Brightness Widget*/
-.widget-volume,
-.widget-backlight {
-    background-color: transparent;
-    padding: 5px;
-    margin: 2px;
-}
-
-.widget-menubar {
-    background-color: transparent;
-    padding: 5px;
-    margin: 2px;
-    border-radius: 10px;
-}
-
-.dotfiles-buttons,
-.power-buttons {
-    color: rgb(0, 238, 255);
-    background-color: transparent;
-    padding: 0px;
-    margin: 5px 0px;
-    border-radius: 10px;
-}
-
-.dotfiles-buttons>button,
-.power-buttons>button {
-    color: rgb(0, 238, 255);
-    background: transparent;
-    margin: 2px;
-    padding: 2px;
-    border: 1px solid rgb(0, 238, 255);
-    border-radius: 5px;
-}
-
-.dotfiles-buttons>button:hover,
-.power-buttons>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-}
-
-/* Menubar */
-.widget-menubar>box>.menu-button-bar>button {
-    border: 1px solid rgb(0, 238, 255);
-    color: rgb(0, 238, 255);
-    background: transparent;
-}
-
-.widget-menubar>box>.menu-button-bar>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-}
-
-/** Buttons Grid **/
-.widget-buttons-grid {
-    background-color: transparent;
-    border: 1px solid rgb(0, 238, 255);
-    padding: 5px;
-    border-radius: 10px;
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button {
-    border-radius: 10px;
-    margin-top: 5px;
-    border: 0px;
-    color: rgb(0, 238, 255);
-    background: transparent;
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
-    background: rgb(0, 238, 255);
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
-    color: black;
-}
+@import "theme/notification.css";
+@import "theme/control-center.css";

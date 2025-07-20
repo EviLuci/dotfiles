@@ -30,48 +30,10 @@
       "memory",
       "idle_inhibitor",
       "systemd-failed-units",
-      "group/power"
+      "custom/notification"
     ],
 
     // Group Configuration
-    "group/power": {
-      "orientation": "inherit",
-      "drawer": {
-        "transition-duration": 500,
-        "children-class": "drawer-child",
-        "transition-left-to-right": false
-      },
-      "modules": [
-        "custom/power", // First element is the "group leader" and won't ever be hidden
-        "custom/quit",
-        "custom/lock",
-        "custom/reboot"
-      ]
-    },
-    "custom/quit": {
-      "format": "󰗼",
-      "tooltip": true,
-      "tooltip-format": "Quit",
-      "on-click": "hyprctl dispatch exit"
-    },
-    "custom/lock": {
-      "format": "󰍁",
-      "tooltip": true,
-      "tooltip-format": "Lock",
-      "on-click": "hyprlock"
-    },
-    "custom/reboot": {
-      "format": "󰜉",
-      "tooltip": true,
-      "tooltip-format": "Reboot",
-      "on-click": "systemctl reboot"
-    },
-    "custom/power": {
-      "format": "",
-      "tooltip": true,
-      "tooltip-format": "Shutdown",
-      "on-click": "shutdown now"
-    },
     "group/cpu-load": {
       "orientation": "inherit",
       "drawer": {
@@ -297,6 +259,26 @@
       "system": true, // Monitor failed systemwide units.
       "user": false // Ignore failed user units.
     },
+    "custom/notification": {
+      "tooltip": false,
+      "format": "{} {icon}",
+      "format-icons": {
+        "notification": "<span foreground='red'><sup></sup></span>",
+        "none": "",
+        "dnd-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-none": "",
+        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-inhibited-none": ""
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    },
 
     // Custom
     "custom/updates": {
@@ -323,7 +305,7 @@
     "reload_style_on_change": true,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["wlr/taskbar"],
-    "modules-right": ["tray", "custom/notification"],
+    "modules-right": ["tray", "group/power"],
     "hyprland/submap": {
       "format": "✌️ {}",
       "max-length": 8,
@@ -427,25 +409,43 @@
       "icon-size": 18,
       "spacing": 10
     },
-    "custom/notification": {
-      "tooltip": false,
-      "format": "{} {icon}",
-      "format-icons": {
-        "notification": "<span foreground='red'><sup></sup></span>",
-        "none": "",
-        "dnd-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-none": "",
-        "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "inhibited-none": "",
-        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-        "dnd-inhibited-none": ""
+    "group/power": {
+      "orientation": "inherit",
+      "drawer": {
+        "transition-duration": 500,
+        "children-class": "drawer-child",
+        "transition-left-to-right": false
       },
-      "return-type": "json",
-      "exec-if": "which swaync-client",
-      "exec": "swaync-client -swb",
-      "on-click": "swaync-client -t -sw",
-      "on-click-right": "swaync-client -d -sw",
-      "escape": true
+      "modules": [
+        "custom/power", // First element is the "group leader" and won't ever be hidden
+        "custom/quit",
+        "custom/lock",
+        "custom/reboot"
+      ]
+    },
+    "custom/quit": {
+      "format": "󰗼",
+      "tooltip": true,
+      "tooltip-format": "Quit",
+      "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+      "format": "󰍁",
+      "tooltip": true,
+      "tooltip-format": "Lock",
+      "on-click": "hyprlock"
+    },
+    "custom/reboot": {
+      "format": "󰜉",
+      "tooltip": true,
+      "tooltip-format": "Reboot",
+      "on-click": "systemctl reboot"
+    },
+    "custom/power": {
+      "format": "",
+      "tooltip": true,
+      "tooltip-format": "Shutdown",
+      "on-click": "shutdown now"
     }
   }
 ]
