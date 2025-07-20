@@ -1,6 +1,5 @@
 # My Dotfiles for Hyprland (Arch Linux)
 
-
 This repository contains my **personal dotfiles** for configuring a minimal, beautiful, and functional **Hyprland** desktop environment on **Arch Linux**.
 
 > [!CAUTION]
@@ -34,23 +33,26 @@ This repository contains my **personal dotfiles** for configuring a minimal, bea
 
 Welcome to my dotfiles repo! This setup is focused on providing a minimal and aesthetic **Wayland** desktop using **Hyprland**. Whether you're learning or looking for inspiration for your own dotfiles, feel free to fork, clone, or adapt!
 
--  Window Manager: [Hyprland](https://github.com/vaxerski/Hyprland)
--  Toolkit: Wayland + wlroots
--  Shell & Prompt: Fish + Starship
--  Custom Theming: GTK, Waybar, Rofi, and more
--  Philosophy: Minimal, functional, and beautiful
+- Window Manager: [Hyprland](https://github.com/vaxerski/Hyprland)
+- Toolkit: Wayland + wlroots
+- Shell & Prompt: Fish + Starship
+- Custom Theming: GTK, Waybar, Rofi, and more
+- Philosophy: Minimal, functional, and beautiful
 
 ---
 
 ## Preview
 
 ### Desktop
+
 ![Desktop](https://github.com/EviLuci/dotfiles/blob/main/screenshots/Desktop.png)
 
 ### Neovim
+
 ![Neovim](https://github.com/EviLuci/dotfiles/blob/main/screenshots/neovim.png)
 
 ### Rofi
+
 ![Rofi](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi-final.png)
 
 ### Waybar
@@ -64,16 +66,16 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 ### Sway Notification Center
 
 <p float="left">
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync.png" width="150"/>
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_menu.png" width="150"/>
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_menu2.png" width="150"/>
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_mpris.png" width="150"/>
+  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_new.png" width="150"/>
+  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_noti.png" width="150"/>
 </p>
 
 ### CopyQ
-![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/CopyQ.png)
+
+![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/copyq.png)
 
 ### Hyprlock
+
 ![Hyprlock](https://github.com/EviLuci/dotfiles/blob/main/screenshots/hyprlock.png)
 
 ---
@@ -99,27 +101,27 @@ These are core components needed to replicate the environment:
 | [Pipewire](https://github.com/PipeWire/pipewire)                                  | Multimedia backend             |
 | [Waypaper](https://github.com/anufrievroman/waypaper)                             | GUI wallpaper manager          |
 | [Nemo](https://github.com/linuxmint/nemo)                                         | File Manager                   |
-| [Blueman](https://github.com/blueman-project/blueman)                             | Bluetooth Manager |
-| [Network Manager](https://github.com/NetworkManager/NetworkManager)               | Network Manager |
-| [Polkit Gnome](https://archlinux.org/packages/extra/x86_64/polkit-gnome/) | Authentication Agent |
-| **Themes**: sweet-gtk-theme-dark, Beautyline      |
-| **Fonts**: otf-font-awesome, noto-fonts-emoji |
+| [Blueman](https://github.com/blueman-project/blueman)                             | Bluetooth Manager              |
+| [Network Manager](https://github.com/NetworkManager/NetworkManager)               | Network Manager                |
+| [Polkit Gnome](https://archlinux.org/packages/extra/x86_64/polkit-gnome/)         | Authentication Agent           |
+| **Themes**: sweet-gtk-theme-dark, Beautyline                                      |
+| **Fonts**: otf-font-awesome, noto-fonts-emoji                                     |
 
 ---
 
 ### Optional (But Nice To Have)
 
-| Package                                           | Description              |
-| ------------------------------------------------- | ------------------------ |
-| [CopyQ](https://hluk.github.io/CopyQ/)            | Clipboard manager        |
-| [Ghostty](https://github.com/ghostty-org/ghostty) | GPU-accelerated terminal |
-| [Wezterm](https://wezfurlong.org/wezterm/)        | Cross-platform terminal  |
-| [Fish](https://github.com/fish-shell/fish-shell)  | Friendly shell           |
-| [Starship](https://github.com/starship/starship)  | Cross-shell prompt       |
-| [Hyprshot](https://github.com/Gustash/Hyprshot)   | Screenshot utility       |
-| [Satty](https://github.com/gabm/Satty)            | Modern Screenshot Annotation |
-| [Woomer](https://github.com/coffeeispower/woomer) | Zoomer Application |
-| [Fortune-mod](https://github.com/shlomif/fortune-mod) | Random Quotation |
-| **Fonts**: FiraCode Nerd Font, Font Awesome       |
+| Package                                               | Description                  |
+| ----------------------------------------------------- | ---------------------------- |
+| [CopyQ](https://hluk.github.io/CopyQ/)                | Clipboard manager            |
+| [Ghostty](https://github.com/ghostty-org/ghostty)     | GPU-accelerated terminal     |
+| [Wezterm](https://wezfurlong.org/wezterm/)            | Cross-platform terminal      |
+| [Fish](https://github.com/fish-shell/fish-shell)      | Friendly shell               |
+| [Starship](https://github.com/starship/starship)      | Cross-shell prompt           |
+| [Hyprshot](https://github.com/Gustash/Hyprshot)       | Screenshot utility           |
+| [Satty](https://github.com/gabm/Satty)                | Modern Screenshot Annotation |
+| [Woomer](https://github.com/coffeeispower/woomer)     | Zoomer Application           |
+| [Fortune-mod](https://github.com/shlomif/fortune-mod) | Random Quotation             |
+| **Fonts**: FiraCode Nerd Font, Font Awesome           |
 
 ---
