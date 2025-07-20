@@ -38,7 +38,7 @@ PERSONAL_PACKAGES=(
 
 # AUR Personal packages
 AUR_PERSONAL_PACKAGES=(
-    visual-studio-code-bin waypaper-git microsoft-edge-dev-bin woomer snap-pac-grub evil-helix-bin
+    visual-studio-code-bin waypaper-git microsoft-edge-dev-bin snap-pac-grub evil-helix-bin
 )
 
 # ───────────────────────────────────────────────────────────
