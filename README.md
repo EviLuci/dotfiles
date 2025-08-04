@@ -49,15 +49,15 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 
 ### Rofi
 
-![Rofi](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi-wayland.png)
+![Rofi](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi_wayland.png)
 
 ### Waybar
 
 **Top Bar**
-![Top Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/top-waybar.png)
+![Top Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/top_waybar.png)
 
 **Bottom Bar**
-![Bottom Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/bottom-waybar.png)
+![Bottom Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/bottom_waybar.png)
 
 ### Sway Notification Center
 
