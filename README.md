@@ -33,46 +33,43 @@ This repository contains my **personal dotfiles** for configuring a minimal, bea
 
 Welcome to my dotfiles repo! This setup is focused on providing a minimal and aesthetic **Wayland** desktop using **Hyprland**. Whether you're learning or looking for inspiration for your own dotfiles, feel free to fork, clone, or adapt!
 
-- Window Manager: [Hyprland](https://github.com/vaxerski/Hyprland)
-- Toolkit: Wayland + wlroots
-- Shell & Prompt: Fish + Starship
-- Custom Theming: GTK, Waybar, Rofi, and more
-- Philosophy: Minimal, functional, and beautiful
-
 ---
 
 ## Preview
 
 ### Desktop
 
-![Desktop](https://github.com/EviLuci/dotfiles/blob/main/screenshots/Desktop.png)
+![Desktop](https://github.com/EviLuci/dotfiles/blob/main/screenshots/latest_desktop.png)
+
+![Windows](https://github.com/EviLuci/dotfiles/blob/main/screenshots/windows.png)
 
 ### Neovim
 
-![Neovim](https://github.com/EviLuci/dotfiles/blob/main/screenshots/neovim.png)
+![Neovim](https://github.com/EviLuci/dotfiles/blob/main/screenshots/new_neovim.png)
 
 ### Rofi
 
-![Rofi](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi-final.png)
+![Rofi](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi-wayland.png)
 
 ### Waybar
 
 **Top Bar**
-![Top Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/top-bar.png)
+![Top Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/top-waybar.png)
 
 **Bottom Bar**
-![Bottom Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/bottom-bar.png)
+![Bottom Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/bottom-waybar.png)
 
 ### Sway Notification Center
 
 <p float="left">
   <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_new.png" width="150"/>
   <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_noti.png" width="150"/>
+  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/notification.png" width="150"/>
 </p>
 
 ### CopyQ
 
-![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/copyq.png)
+![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/copyq_color_codes.png)
 
 ### Hyprlock
 
