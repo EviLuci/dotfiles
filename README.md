@@ -3,7 +3,7 @@
 This repository contains my **personal dotfiles** for configuring a minimal, beautiful, and functional **Hyprland** desktop environment on **Arch Linux**.
 
 > [!CAUTION]
-> The install script available in this repo is experimental and intended for personal use only. Use at your own risk.
+> The install script available in this repo is experimental and intended for personal use only. Do not use it.
 
 > [!IMPORTANT]
 > These dotfiles are part of my personal setup journey. Things may break or not work out of the box.
@@ -64,7 +64,7 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 <p float="left">
   <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_new.png" width="150"/>
   <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_noti.png" width="150"/>
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/notification.png" width="150"/>
+  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/notification.png" width="200"/>
 </p>
 
 ### CopyQ
@@ -112,12 +112,10 @@ These are core components needed to replicate the environment:
 | ----------------------------------------------------- | ---------------------------- |
 | [CopyQ](https://hluk.github.io/CopyQ/)                | Clipboard manager            |
 | [Ghostty](https://github.com/ghostty-org/ghostty)     | GPU-accelerated terminal     |
-| [Wezterm](https://wezfurlong.org/wezterm/)            | Cross-platform terminal      |
 | [Fish](https://github.com/fish-shell/fish-shell)      | Friendly shell               |
 | [Starship](https://github.com/starship/starship)      | Cross-shell prompt           |
 | [Hyprshot](https://github.com/Gustash/Hyprshot)       | Screenshot utility           |
 | [Satty](https://github.com/gabm/Satty)                | Modern Screenshot Annotation |
-| [Woomer](https://github.com/coffeeispower/woomer)     | Zoomer Application           |
 | [Fortune-mod](https://github.com/shlomif/fortune-mod) | Random Quotation             |
 | **Fonts**: FiraCode Nerd Font, Font Awesome           |
 
