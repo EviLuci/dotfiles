@@ -64,7 +64,7 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 <p float="left">
   <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_new.png" width="150"/>
   <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_noti.png" width="150"/>
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/notification.png" width="200"/>
+  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/notification.png" width="175"/>
 </p>
 
 ### CopyQ
