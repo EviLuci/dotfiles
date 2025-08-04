@@ -15,7 +15,7 @@ HYPRLAND_ESSENTIALS_PACKAGES=(
     hyprland hypridle hyprlock hyprpicker hyprutils xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
     pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-zeroconf wireplumber qpwgraph pavucontrol
     waybar swaync bluez bluez-utils blueman networkmanager network-manager-applet rofi-wayland brightnessctl polkit-gnome
-    wl-clipboard copyq grim slurp kooha satty
+    wl-clipboard  grim slurp
     ttf-firacode-nerd otf-font-awesome noto-fonts-emoji
 )
 # AUR Essential packages
@@ -25,8 +25,9 @@ AUR_ESSENTIAL_PACKAGES=(
 
 # Personal packages
 PERSONAL_PACKAGES=(
-    firefox-developer-edition tor torbrowser-launcher vivaldi
+    firefox-developer-edition tor torbrowser-launcher
     neovim zed obsidian fortune-mod
+    copyq satty
     ghostty
     fish yazi exa fzf ripgrep fd zoxide starship lazygit zellij btop
     nemo nemo-fileroller nemo-terminal
@@ -38,7 +39,7 @@ PERSONAL_PACKAGES=(
 
 # AUR Personal packages
 AUR_PERSONAL_PACKAGES=(
-    visual-studio-code-bin waypaper-git microsoft-edge-dev-bin snap-pac-grub evil-helix-bin
+    visual-studio-code-bin brave-bin waypaper-git snap-pac-grub evil-helix-bin
 )
 
 # ───────────────────────────────────────────────────────────
