@@ -175,7 +175,8 @@ label:focus {
     font-weight: 900;
 }
 
-#window {
+#window,
+#mpris {
     border-radius: 0.4rem;
 }
 
