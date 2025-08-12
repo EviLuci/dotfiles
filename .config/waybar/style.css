@@ -1,9 +1,9 @@
 /* Global Styles */
 * {
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-family: FiraCode Nerd Font;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 0.8rem;
     min-height: 20px;
     margin: 0px;
@@ -18,12 +18,12 @@
 
 /* Special Case: Left Margin for First Module in Left Section */
 .modules-left>widget:first-child .module {
-    margin-left: 5px;
+    margin-left: 2px;
 }
 
 /* Special Case: Right Margin for Last Module in Right Section */
 .modules-right>widget:last-child .module {
-    margin-right: 5px;
+    margin-right: 2px;
 }
 
 /* Window Styling */
@@ -46,11 +46,11 @@ window#waybar.hidden {
 /* Tooltip styling */
 menu,
 tooltip {
-    background: rgba(0, 0, 0, 0.9);
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 5px;
     /* border: 0px solid; */
     /* border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1; */
-    padding: 5px;
+    padding: 0px 5px;
     box-shadow: 0 0 0 1px;
 }
 
@@ -70,7 +70,7 @@ tooltip label {
 }
 
 #workspaces button.active {
-    color: black;
+    /* color: black; */
     border-bottom: 2px solid transparent;
     /* border-top: 2px solid transparent; */
     border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
@@ -88,19 +88,17 @@ tooltip label {
 #workspaces button.urgent {
     background: red;
     color: black;
-    padding: 0 5px;
 }
 
 #workspaces button:hover {
     background: black;
     border: 1px solid transparent;
     border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
-    padding: 0 5px;
 }
 
 /* Taskbar Button Styling */
 #taskbar button {
-    padding: 0 1px;
+    padding: 0 10px;
 }
 
 #taskbar button.active {
@@ -108,14 +106,12 @@ tooltip label {
     border-bottom: 2px solid transparent;
     /* border-top: 2px solid transparent; */
     border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
-    padding: 0 5px;
 }
 
 #taskbar button:hover {
     background: black;
     border: 1px solid transparent;
     border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
-    padding: 0 5px;
 }
 
 /* Transparent Modules When Empty */
@@ -153,7 +149,7 @@ window#waybar.empty {
 }
 
 #power {
-    margin-right: 5px;
+    margin-right: 2px;
 }
 
 #temperature.critical {
@@ -197,11 +193,6 @@ label:focus {
     background-color: black;
 }
 
-/* Keyboard State Styles */
-#keyboard-state>label {
-    padding: 0 5px;
-}
-
 #keyboard-state>label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
@@ -217,7 +208,6 @@ label:focus {
 
 #tray>.needs-attention {
     -gtk-icon-effect: highlight;
-    padding: 0 5px;
     background-color: red;
 }
 

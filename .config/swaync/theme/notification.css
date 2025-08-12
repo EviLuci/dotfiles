@@ -4,11 +4,7 @@
   background: var(--secondary-color);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
-  border-radius: var(--border-radius);
-}
-
-.notification.critical {
-  color: var(--warning-color);
+  border-radius: var(--inner-border-radius);
 }
 
 /* === Notification Content Text === */
@@ -90,4 +86,18 @@
   background: var(--primary-color);
   color: var(--secondary-color);
   border: 1px solid var(--tertiary-color);
+}
+
+/* Priority-based notification styles */
+
+/* .notification-row .notification-background .notification.normal {
+  border-left: 3px solid var(--tertiary-color);
+} */
+
+.notification-row .notification-background .notification.critical {
+  border-left: 3px solid var(--warning-color);
+}
+
+.notification.critical {
+  color: var(--warning-color);
 }

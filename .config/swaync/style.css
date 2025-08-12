@@ -7,8 +7,8 @@
     --transparent-color: rgba(0, 0, 0, 0.8);
     --warning-color: rgb(255, 0, 0);
     --border-color: rgb(0, 238, 255);
-    --border-radius: 0.8rem;
-    --inner-border-radius: 0.5rem;
+    --border-radius: 0.4rem;
+    --inner-border-radius: 0.4rem;
     --font-size: 1rem;
     --font-weight: bold;
     --font-family: "FiraCode Nerd Font", "Material Icons", FontAwesome;
