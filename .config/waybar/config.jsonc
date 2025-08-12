@@ -3,25 +3,26 @@
     "name": "topbar",
     "layer": "top",
     "position": "top",
+    "height": 30,
     "mode": "dock",
     "exclusive": true,
-    "spacing": 2,
+    "spacing": 0,
     "passthrough": false,
     "gtk-layer-shell": true,
     "reload_style_on_change": true,
     "modules-left": [
       "custom/updates",
-      "keyboard-state",
       "clock",
       "bluetooth",
       "network",
       "privacy",
       "hyprland/submap"
     ],
-    "modules-center": ["hyprland/window"],
+    "modules-center": [
+      "hyprland/window"
+    ],
     "modules-right": [
       "mpris",
-      "mpd",
       "battery",
       "backlight",
       "wireplumber",
@@ -32,13 +33,12 @@
       "systemd-failed-units",
       "group/power"
     ],
-
     // Group Configuration
     "group/power": {
       "orientation": "inherit",
       "drawer": {
         "transition-duration": 500,
-        "children-class": "drawer-child",
+        "children-class": "power-child",
         "transition-left-to-right": false
       },
       "modules": [
@@ -64,7 +64,7 @@
       "format": "󰜉",
       "tooltip": true,
       "tooltip-format": "Reboot",
-      "on-click": "systemctl reboot"
+      "on-click": "reboot"
     },
     "custom/power": {
       "format": "",
@@ -76,10 +76,13 @@
       "orientation": "inherit",
       "drawer": {
         "transition-duration": 500,
-        "children-class": "drawer-child",
+        "children-class": "cpu-load-child",
         "transition-left-to-right": false
       },
-      "modules": ["cpu", "load"]
+      "modules": [
+        "cpu",
+        "load"
+      ]
     },
     "cpu": {
       "interval": 1,
@@ -91,12 +94,21 @@
       "interval": 10,
       "format": "load: {load1} {load5} {load15}"
     },
-
     // Modules configuration
     "backlight": {
       "device": "intel_backlight",
       "format": "{icon} {percent}%",
-      "format-icons": ["", "", "", "", "", "", "", "", ""],
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
       "on-scroll-up": "brightnessctl set 1%+",
       "on-scroll-down": "brightnessctl set 1%-"
     },
@@ -124,7 +136,11 @@
       // "format-critical": "{temperatureC}°C {icon}",
       "format": "{icon} {temperatureC}°C",
       "format-alt": "{temperatureF}°F {icon}",
-      "format-icons": ["", "", ""],
+      "format-icons": [
+        "",
+        "",
+        ""
+      ],
       "tooltip": false
     },
     "hyprland/window": {
@@ -134,15 +150,6 @@
         "(.*) — Mozilla Firefox": "🌎 $1"
       },
       "separate-outputs": true
-    },
-    "keyboard-state": {
-      "numlock": true,
-      "capslock": true,
-      "format": "  {name} {icon}",
-      "format-icons": {
-        "locked": "",
-        "unlocked": ""
-      }
     },
     "privacy": {
       "icon-spacing": 4,
@@ -178,7 +185,13 @@
       "tooltip-format-ethernet": "{ipaddr}/{cidr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
       "tooltip-format-disconnected": "Disconnected ⚠",
       "max-length": 50,
-      "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "]
+      "format-icons": [
+        "󰤯 ",
+        "󰤟 ",
+        "󰤢 ",
+        "󰤢 ",
+        "󰤨 "
+      ]
     },
     "clock": {
       "format": "⏰{:%I:%M %p}",
@@ -252,22 +265,23 @@
     "wireplumber": {
       "format": "{icon} {volume}%",
       "format-muted": " Muted",
-      "format-icons": [" ", " ", " "],
+      // "format-muted": " {format_source}",
+      // "format-source": "{source_volume}% ",
+      // "format-source-muted": " ",
+      "format-icons": [
+        " ",
+        " ",
+        " "
+      ],
       "scroll-step": 0.2,
       "max-volume": 100,
       "on-click": "pavucontrol",
       "on-click-right": "qpwgraph"
     },
-    "jack": {
-      "format": "DSP {}%",
-      "format-xrun": "{xruns} xruns",
-      "format-disconnected": "DSP off",
-      "realtime": true
-    },
     "mpris": {
       "format": "{player_icon} {dynamic}",
       "format-paused": "{status_icon} <i>{dynamic}</i>",
-      "max-length": 50,
+      "max-length": 30,
       "player-icons": {
         "default": "󰎆 ",
         "cmus": "",
@@ -297,7 +311,6 @@
       "system": true, // Monitor failed systemwide units.
       "user": false // Ignore failed user units.
     },
-
     // Custom
     "custom/updates": {
       "format": "{} {icon}",
@@ -314,17 +327,23 @@
     "name": "bottombar",
     "layer": "top",
     "position": "bottom",
-    "height": 30,
     "mode": "dock",
+    "height": 30,
     "exclusive": true,
-    "spacing": 2,
+    "spacing": 0,
     "passthrough": false,
     "gtk-layer-shell": true,
     "reload_style_on_change": true,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["wlr/taskbar"],
-    "modules-right": ["tray","custom/notification"],
-
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-center": [
+      "wlr/taskbar"
+    ],
+    "modules-right": [
+      "tray",
+      "custom/notification"
+    ],
     "hyprland/submap": {
       "format": "✌️ {}",
       "max-length": 8,
@@ -448,6 +467,5 @@
       "on-click-right": "swaync-client -d -sw",
       "escape": true
     }
-
   }
 ]

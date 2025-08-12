@@ -3,14 +3,13 @@
 :root {
     --primary-color: rgb(0, 238, 255);
     --secondary-color: black;
-    --tertiary-color: rgb(248, 115, 237);
+    --tertiary-color: rgb(250, 139, 255);
     --transparent-color: rgba(0, 0, 0, 0.8);
     --warning-color: rgb(255, 0, 0);
     --border-color: rgb(0, 238, 255);
     --border-radius: 0.4rem;
-    --inner-border-radius: 0.4rem;
-    --font-size: 1rem;
-    --font-weight: bold;
+    --font-size: 0.8rem;
+    --font-weight: 600;
     --font-family: "FiraCode Nerd Font", "Material Icons", FontAwesome;
 }
 

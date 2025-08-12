@@ -1,68 +1,68 @@
 /* Global Styles */
 * {
-    border: none;
-    border-radius: 5px;
     font-family: FiraCode Nerd Font;
     font-weight: 600;
     font-size: 0.8rem;
-    min-height: 20px;
-    margin: 0px;
     padding: 0.5px;
 }
 
 /* Module Styles */
 .module {
-    padding: 0px 10px;
-    margin: 1px 1px;
+    padding: 0 0.8rem;
+    color: rgb(0, 238, 255);
 }
 
-/* Special Case: Left Margin for First Module in Left Section */
-.modules-left>widget:first-child .module {
-    margin-left: 2px;
+.modules-left,
+.modules-right,
+.modules-center {
+    border-radius: 0.4rem;
+    background: black;
 }
 
-/* Special Case: Right Margin for Last Module in Right Section */
-.modules-right>widget:last-child .module {
-    margin-right: 2px;
+window#waybar.top .modules-center {
+    background: transparent;
+}
+
+.modules-left {
+    margin-left: 3px;
+}
+
+.modules-right {
+    margin-right: 4px;
 }
 
 /* Window Styling */
 window#waybar {
-    background-color: transparent;
-    color: black;
-    transition: background-color 0.5s;
+    background: transparent;
+    transition: background 0.5s;
 }
 
 /* Make window module transparent when no windows present */
 window#waybar.empty #window {
-    background-color: transparent;
     background: transparent;
+    background-color: transparent;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-/* Tooltip styling */
-menu,
-tooltip {
-    background: rgba(0, 0, 0, 1);
-    border-radius: 5px;
-    /* border: 0px solid; */
-    /* border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1; */
-    padding: 0px 5px;
-    box-shadow: 0 0 0 1px;
+/* Button Styling */
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    background: transparent;
 }
 
-menu label,
-tooltip label {
-    color: rgb(0, 238, 255);
+button:hover {
+    color: rgb(250, 139, 255);
 }
 
 /* Workspaces Button Styling */
 #workspaces button {
     color: rgb(0, 238, 255);
-    background: transparent;
     font-weight: bolder;
     box-shadow: inset 0 -3px transparent;
     transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -70,30 +70,31 @@ tooltip label {
 }
 
 #workspaces button.active {
-    /* color: black; */
     border-bottom: 2px solid transparent;
-    /* border-top: 2px solid transparent; */
-    border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
+    border-image: linear-gradient(45deg, rgb(250, 139, 255), rgb(0, 238, 255)) 1;
     padding: 0 10px;
 }
 
 #workspaces button.focused {
-    background: black;
-}
-
-#workspaces button.visible {
-    color: rgb(0, 238, 255);
+    background-color: #64727D;
 }
 
 #workspaces button.urgent {
-    background: red;
-    color: black;
+    color: red;
 }
 
 #workspaces button:hover {
-    background: black;
-    border: 1px solid transparent;
-    border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
+    color: rgb(250, 139, 255);
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
 }
 
 /* Taskbar Button Styling */
@@ -102,69 +103,41 @@ tooltip label {
 }
 
 #taskbar button.active {
-    background: black;
+    color: rgb(0, 238, 255);
     border-bottom: 2px solid transparent;
-    /* border-top: 2px solid transparent; */
-    border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
-}
-
-#taskbar button:hover {
-    background: black;
-    border: 1px solid transparent;
-    border-image: linear-gradient(45deg, #FA8BFF, #2BD2FF) 1;
+    border-image: linear-gradient(45deg, rgb(250, 139, 255), rgb(0, 238, 255)) 1;
 }
 
 /* Transparent Modules When Empty */
-#taskbar.empty,
-window#waybar.empty {
+#taskbar.empty {
     background-color: transparent;
 }
 
-/* Specific Module Styles */
-#backlight,
-#cpu,
-#idle_inhibitor,
-#bluetooth,
-#memory,
-#battery,
-#temperature,
-#custom-updates,
-#clock,
-#privacy,
-#network,
-#wireplumber,
-#keyboard-state,
-#custom-notification,
-#taskbar,
-#user,
-#systemd-failed-units,
-#power,
-#load,
-#jack,
-#cpu-load,
-#image,
-#workspaces {
-    background-color: black;
-    color: rgb(0, 238, 255);
+/* Tooltip styling */
+menu,
+tooltip {
+    border-radius: 0.4rem;
+    padding: 0.2rem;
 }
 
-#power {
-    margin-right: 2px;
+menu label,
+tooltip label {
+    color: white;
+    padding: 0.4rem;
 }
 
-#temperature.critical {
-    background-color: red;
-}
-
+/* Module State Styles */
 #network.disconnected,
-#wireplumber.muted {
+#wireplumber.muted,
+#temperature.critical {
     color: red;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: black;
-    background: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    color: rgb(250, 139, 255);
+    font-weight: 900;
+    background: black;
 }
 
 @keyframes blink {
@@ -176,16 +149,7 @@ window#waybar.empty {
 
 #battery.warning:not(.charging),
 #battery.critical:not(.charging) {
-    background-color: red;
-    color: black;
-}
-
-#battery.warning:not(.charging) {
     animation: blink 1s linear infinite alternate;
-}
-
-#battery.critical:not(.charging) {
-    animation: blink 0.5s linear infinite alternate;
 }
 
 /* Focused Label Background */
@@ -193,15 +157,7 @@ label:focus {
     background-color: black;
 }
 
-#keyboard-state>label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
 /* Tray Styles */
-#tray {
-    background-color: black;
-}
-
 #tray>.passive {
     -gtk-icon-effect: dim;
 }
@@ -214,5 +170,38 @@ label:focus {
 /* Gradient Module Styles */
 #mpris,
 #window {
-    background: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #FA8BFF 90%);
+    background: linear-gradient(45deg, rgb(250, 139, 255) 0%, rgb(0, 238, 255) 52%, rgb(250, 139, 255) 90%);
+    color: black;
+    font-weight: 900;
+}
+
+#window {
+    border-radius: 0.4rem;
+}
+
+/* Idle Inhibitor Module Styles */
+#idle_inhibitor.activated {
+    color: rgb(250, 139, 255);
+}
+
+/* Privacy Module Styles */
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: rgb(250, 139, 255);
+}
+
+#privacy-item.screenshare {
+    color: #cf5700;
+}
+
+#privacy-item.audio-in {
+    color: #1ca000;
+}
+
+#privacy-item.audio-out {
+    color: #0069d4;
 }

@@ -4,7 +4,7 @@
   background: var(--secondary-color);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
-  border-radius: var(--inner-border-radius);
+  border-radius: var(--border-radius);
 }
 
 /* === Notification Content Text === */
@@ -34,7 +34,7 @@
 .notification-default-action {
   background: var(--secondary-color);
   color: var(--primary-color);
-  border-radius: var(--inner-border-radius);
+  border-radius: var(--border-radius);
   border: 1px solid var(--primary-color);
 }
 
@@ -45,14 +45,14 @@
 
 .notification-row .notification-background .notification .notification-alt-actions {
   background: var(--secondary-color);
-  border-bottom-left-radius: var(--inner-border-radius);
-  border-bottom-right-radius: var(--inner-border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
   border: 1px solid var(--primary-color);
   border-top: 0px;
 }
 
 .notification-row .notification-background .notification .notification-action>button {
-  border-radius: var(--inner-border-radius);
+  border-radius: var(--border-radius);
   background: var(--secondary-color);
   color: var(--primary-color);
   /* border: 1px solid var(--primary-color); */
@@ -72,14 +72,14 @@
   color: var(--primary-color);
   caret-color: var(--tertiary-color);
   border: 1px solid var(--primary-color);
-  border-radius: var(--inner-border-radius);
+  border-radius: var(--border-radius);
 }
 
 .inline-reply-button {
   background: var(--secondary-color);
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
-  border-radius: var(--inner-border-radius);
+  border-radius: var(--border-radius);
 }
 
 .inline-reply-button:hover {
