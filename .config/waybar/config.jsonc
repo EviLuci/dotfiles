@@ -24,13 +24,11 @@
     "modules-right": [
       "mpris",
       "battery",
-      "backlight",
       "wireplumber",
       "temperature",
+      "backlight",
       "group/cpu-load",
       "memory",
-      "idle_inhibitor",
-      "systemd-failed-units",
       "group/power"
     ],
     // Group Configuration
@@ -88,11 +86,11 @@
       "interval": 1,
       "format": "󰍛 {usage}%",
       "on-click": "",
-      "tooltip": false
+      "tooltip": "{avg_frequency}"
     },
     "load": {
       "interval": 10,
-      "format": "load: {load1} {load5} {load15}"
+      "format": "{load1} {load5} (5) {load15} (15)"
     },
     // Modules configuration
     "backlight": {
@@ -234,21 +232,10 @@
       "format-warning": "{icon} {capacity}%",
       "format-critical": "{icon} {capacity}%",
       "format-charging": " {capacity}%",
-      "format-plugged": " {capacity}%",
-      "format-alt": "{time} {icon}",
+      "tooltip": "{time} {icon}",
+      "format-alt": "{timeTo} / {health}",
       "format-full": "⚡ {capacity}%",
       "format-icons": [
-        // "",
-        // "",
-        // "",
-        // "",
-        // "",
-        // "",
-        // "",
-        // "",
-        // "",
-        // "",
-        // ""
         "󰂎",
         "󰁺",
         "󰁻",
@@ -293,23 +280,10 @@
         "paused": "⏸"
       },
       "on-click": "playerctl play-pause",
-      "on-click-right": "playerctl stop",
+      "on-click-right": "playerctl next",
       "smooth-scrolling-threshold": 10,
       "on-scroll-down": "playerctl previous"
       // "ignored-players": ["cmus", "spotify"]
-    },
-    "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-        "activated": " ",
-        "deactivated": " "
-      }
-    },
-    "systemd-failed-units": {
-      "format": "✗ {nr_failed}",
-      "format-ok": "✓",
-      "system": true, // Monitor failed systemwide units.
-      "user": false // Ignore failed user units.
     },
     // Custom
     "custom/updates": {

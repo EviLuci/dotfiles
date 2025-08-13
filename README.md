@@ -39,9 +39,9 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 
 ### Desktop
 
-![Desktop](https://github.com/EviLuci/dotfiles/blob/main/screenshots/latest_desktop.png)
+![Desktop](https://github.com/EviLuci/dotfiles/blob/main/screenshots/desktop-final.png)
 
-![Windows](https://github.com/EviLuci/dotfiles/blob/main/screenshots/windows.png)
+![Windows](https://github.com/EviLuci/dotfiles/blob/main/screenshots/window-noti.png)
 
 ### Neovim
 
@@ -54,10 +54,10 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 ### Waybar
 
 **Top Bar**
-![Top Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/top_waybar.png)
+![Top Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/topbar.png)
 
 **Bottom Bar**
-![Bottom Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/bottom_waybar.png)
+![Bottom Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/bottombar.png)
 
 ### Sway Notification Center
 

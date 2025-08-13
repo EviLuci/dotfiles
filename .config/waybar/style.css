@@ -180,12 +180,6 @@ label:focus {
     border-radius: 0.4rem;
 }
 
-/* Idle Inhibitor Module Styles */
-#idle_inhibitor.activated {
-    color: rgb(250, 139, 255);
-}
-
-/* Privacy Module Styles */
 #privacy {
     padding: 0;
 }
@@ -196,13 +190,75 @@ label:focus {
 }
 
 #privacy-item.screenshare {
-    color: #cf5700;
+    color: #ff9e64;
 }
 
 #privacy-item.audio-in {
-    color: #1ca000;
+    color: #73daca;
 }
 
 #privacy-item.audio-out {
-    color: #0069d4;
+    color: #bb9af7;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: red;
+}
+
+#bluetooth.on,
+#bluetooth.connected {
+    color: #9ece6a;
+}
+
+#cpu {
+    color: #f7768e;
+}
+
+#battery {
+    color: #73daca;
+}
+
+#wireplumber {
+    color: #b4f9f8;
+}
+
+#temperature {
+    color: #e0af68;
+}
+
+#memory {
+    color: #bb9af7
+}
+
+#backlight {
+    color: #7aa2f7;
+}
+
+#network {
+    color: #ff9e64;
+}
+
+#clock {
+    color: #b4f9f8;
+}
+
+#custom-updates {
+    color: #cfc9c2;
+}
+
+#custom-power {
+    color: red;
+}
+
+#custom-quit {
+    color: #7dcfff;
+}
+
+#custom-lock {
+    color: #ff9e64;
+}
+
+#custom-reboot {
+    color: #c0caf5;
 }
