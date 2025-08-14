@@ -2,7 +2,8 @@
 /* ===CSS Variables=== */
 :root {
     --primary-color: rgb(0, 238, 255);
-    --secondary-color: black;
+    --secondary-color: #181B28;
+    /* Use the theme base color */
     --tertiary-color: rgb(250, 139, 255);
     --transparent-color: rgba(0, 0, 0, 0.8);
     --warning-color: rgb(255, 0, 0);

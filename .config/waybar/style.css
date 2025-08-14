@@ -16,7 +16,7 @@
 .modules-right,
 .modules-center {
     border-radius: 0.4rem;
-    background: black;
+    background: @theme_base_color;
 }
 
 window#waybar.top .modules-center {
