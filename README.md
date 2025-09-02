@@ -69,7 +69,7 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 
 ### CopyQ
 
-![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/copyq_color_codes.png)
+![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/copyq-tokyonight.png)
 
 ### Hyprlock
 
