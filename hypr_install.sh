@@ -12,10 +12,10 @@ DOTFILES_DIR="$HOME/dotfiles"
 
 # Essential Hyprland & system packages
 HYPRLAND_ESSENTIALS_PACKAGES=(
-    hyprland hypridle hyprlock hyprpicker hyprutils xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+    hyprland hypridle hyprlock hyprpicker hyprutils xdg-desktop-portal-hyprland xdg-desktop-portal-gtk xdg-desktop-portal-wlr
     pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-zeroconf wireplumber qpwgraph pavucontrol
     waybar swaync bluez bluez-utils blueman networkmanager network-manager-applet rofi-wayland brightnessctl polkit-gnome
-    wl-clipboard  grim slurp
+    wl-clipboard grim slurp
     ttf-firacode-nerd otf-font-awesome noto-fonts-emoji
 )
 # AUR Essential packages
@@ -27,7 +27,7 @@ AUR_ESSENTIAL_PACKAGES=(
 PERSONAL_PACKAGES=(
     firefox-developer-edition tor torbrowser-launcher
     neovim zed obsidian fortune-mod
-    copyq satty
+    copyq satty kooha
     ghostty
     fish yazi exa fzf ripgrep fd zoxide starship lazygit zellij btop
     nemo nemo-fileroller nemo-terminal

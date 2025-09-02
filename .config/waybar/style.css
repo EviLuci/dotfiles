@@ -23,6 +23,10 @@ window#waybar.top .modules-center {
     background: transparent;
 }
 
+window#waybar.bottom .modules-center {
+    background: transparent;
+}
+
 .modules-left {
     margin-left: 3px;
 }
@@ -98,8 +102,14 @@ button:hover {
 }
 
 /* Taskbar Button Styling */
+#taskbar {
+    background: @theme_base_color;
+    border-radius: 0.4rem;
+    padding: 0 0.8rem;
+}
+
 #taskbar button {
-    padding: 0 10px;
+    padding: 0 0.8rem;
 }
 
 #taskbar button.active {
@@ -110,7 +120,7 @@ button:hover {
 
 /* Transparent Modules When Empty */
 #taskbar.empty {
-    background-color: transparent;
+    background: transparent;
 }
 
 /* Tooltip styling */
@@ -137,12 +147,12 @@ tooltip label {
 #battery.plugged {
     color: rgb(250, 139, 255);
     font-weight: 900;
-    background: black;
+    background: @theme_base_color;
 }
 
 @keyframes blink {
     to {
-        background-color: black;
+        background-color: @theme_base_color;
         color: red;
     }
 }
@@ -150,11 +160,13 @@ tooltip label {
 #battery.warning:not(.charging),
 #battery.critical:not(.charging) {
     animation: blink 1s linear infinite alternate;
+    border-radius: 0.4rem;
+    margin-left: 0.5rem;
 }
 
 /* Focused Label Background */
 label:focus {
-    background-color: black;
+    background-color: @theme_base_color;
 }
 
 /* Tray Styles */
@@ -203,12 +215,12 @@ label:focus {
 
 #bluetooth.disabled,
 #bluetooth.off {
-    color: red;
+    color: @warning_color;
 }
 
 #bluetooth.on,
 #bluetooth.connected {
-    color: #9ece6a;
+    color: @success_color;
 }
 
 #cpu {
