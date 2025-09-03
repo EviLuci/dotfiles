@@ -13,20 +13,20 @@ return {
 ███████╗ ╚████╔╝ ██║███████╗╚██████╔╝╚██████╗██║
 ╚══════╝  ╚═══╝  ╚═╝╚══════╝ ╚═════╝  ╚═════╝╚═╝
 
-   ]],
+   ]]
         },
         sections = {
           {
-            section = "header",
+            section = "header"
           },
           {
             section = "keys",
             gap = 1,
-            padding = 1,
+            padding = 1
           },
           {
             section = "startup",
-            padding = 1,
+            padding = 1
           },
           {
             pane = 2,
@@ -35,7 +35,7 @@ return {
             title = "Today's Quote",
             cmd = "fortune",
             padding = 1,
-            height = 9,
+            height = 9
           },
           {
             pane = 2,
@@ -45,7 +45,7 @@ return {
             section = "recent_files",
             cwd = true,
             indent = 2,
-            padding = 1,
+            padding = 1
           },
           {
             pane = 2,
@@ -53,10 +53,10 @@ return {
             title = "Projects",
             section = "projects",
             indent = 2,
-            padding = 1,
-          },
-        },
-      },
-    },
-  },
+            padding = 1
+          }
+        }
+      }
+    }
+  }
 }

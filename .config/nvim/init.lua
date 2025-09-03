@@ -1,6 +1,8 @@
-require("core.options")
+if vim.env.VSCODE then vim.g.vscode = true end
+
 require("core.autocmds")
 require("core.keymaps")
+require("core.options")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -16,13 +18,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
-
+-- Setup Lazy.nvim
 require("lazy").setup({
   spec = {
     {
       import = "plugins"
+    },
+    {
+      import = "plugins.UI"
     }
   },
   defaults = {
@@ -79,3 +82,6 @@ require("lazy").setup({
   }
   -- debug = true,
 })
+
+vim.cmd.colorscheme("tokyonight-night")
+vim.keymap.set("n", "<leader>l", ":Lazy<CR>")

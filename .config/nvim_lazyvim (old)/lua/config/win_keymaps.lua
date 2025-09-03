@@ -24,6 +24,7 @@ map("n", "<C-l>", "<C-w>l", {
   desc = "Go to Right Window",
   remap = true
 })
+local map = require("core.utils").map
 
 map("n", "<S-Left>", "<C-w><S-h>", {
   desc = "Move window to the left"
