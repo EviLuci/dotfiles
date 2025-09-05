@@ -1,6 +1,7 @@
--- Core keymap loader. Sets leader and sources modular keymap files.
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+-- Core keymap loader. define <leader> and <localleader> keys
+-- you should use `vim.keycode` to translate keycodes or pass raw keycode values like `" "` instead of just `"<space>"`
+vim.g.mapleader = vim.keycode("<space>")
+vim.g.maplocalleader = vim.keycode(",")
 
 -- Load keymap modules
 require("core.keymaps.general")

@@ -7,6 +7,7 @@ if vim.env.VSCODE then vim.g.vscode = true end
 require("core.options")
 require("core.autocmds")
 require("core.keymaps")
+require("core.netrw")
 
 -- Setup lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -65,10 +66,6 @@ require("lazy").setup({
         "getscriptPlugin",
         "gzip",
         "logipat",
-        "netrw",
-        "netrwPlugin",
-        "netrwSettings",
-        "netrwFileHandlers",
         "matchit",
         "matchparen",
         "tar",

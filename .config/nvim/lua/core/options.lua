@@ -86,13 +86,16 @@ opt.sessionoptions = {
 }
 
 -- -----------------------------------------------------------------------------
--- Input and command-line
+-- Input, Behavior and command-line
 -- -----------------------------------------------------------------------------
 
 -- Timeout for keymap sequences (longer in VSCode to avoid conflicts)
 opt.timeoutlen = vim.g.vscode and 1000 or 300
 
 opt.mouse = "a" -- Enable mouse in all modes
+opt.backspace = "indent,eol,start" -- Backspace works in insert mode
+opt.iskeyword:append("-") -- Treat dash as part of a word
+opt.path:append("**") -- Search in subdirectories with commands like :find
 
 -- Fix common command-line typos
 vim.cmd([[
@@ -147,13 +150,18 @@ opt.cursorline = true -- Highlight current line
 opt.signcolumn = "yes:2" -- Always show sign column (2 char width)
 opt.pumheight = 10 -- Limit height of completion menu
 opt.laststatus = 3 -- Global statusline (single at bottom)
-opt.showtabline = 2 -- Always show tab line
+opt.background = "dark" -- Use dark background for themes
+opt.cmdheight = 2 -- Command line height
+
+opt.showtabline = 1 -- Show tabline (0=never, 1=when multiple tabs, 2=always)
 
 opt.conceallevel = 2 -- Hide markup in files like Markdown
 opt.concealcursor = "" -- Show concealed text outside insert mode
 
 opt.virtualedit = "block" -- Allow cursor beyond end of line in block mode
 opt.smoothscroll = true -- Smooth scrolling (if terminal supports it)
+
+opt.lazyredraw = true -- Don't redraw while executing macros. Faster scrolling
 
 -- Characters used to draw UI elements
 opt.fillchars = {
@@ -193,6 +201,7 @@ opt.grepformat = "%f:%l:%c:%m"
 -- Code folding
 -- -----------------------------------------------------------------------------
 
+opt.foldenable = true -- Enable code folding
 opt.foldlevel = 99 -- Default fold level
 opt.foldlevelstart = 99 -- Fold level when opening a file
 opt.foldmethod = "expr" -- Use expression to determine folds
