@@ -95,7 +95,7 @@
 } */
 
 .notification-row .notification-background .notification.critical {
-  border-left: 3px solid var(--warning-color);
+  border: 1px solid var(--warning-color);
 }
 
 .notification.critical {

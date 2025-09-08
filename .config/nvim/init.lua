@@ -3,11 +3,9 @@
 -- Detect if running inside VSCode
 if vim.env.VSCODE then vim.g.vscode = true end
 
--- Bootstrap: Load core settings before plugins
-require("core.options")
-require("core.autocmds")
-require("core.keymaps")
-require("core.netrw")
+-- Core keymap loader. define <leader> and <localleader> keys
+vim.g.mapleader = vim.keycode("<space>")
+vim.g.maplocalleader = vim.keycode(",")
 
 -- Setup lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
