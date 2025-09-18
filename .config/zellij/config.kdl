@@ -4,6 +4,13 @@ load_plugins {
   // "https://example.com/my-plugin.wasm"
 }
 
+ui {
+    pane_frames {
+        hide_session_name false
+        rounded_corners true
+    }
+}
+
 theme "tokyo-night-dark"
 
 simplified_ui true
@@ -19,13 +26,13 @@ copy_command "wl-copy"
 copy_on_select false
 scrollback_editor "/usr/bin/nvim"
 serialization_interval 60
+pane_frames false
 
 // on_force_close "quit"
 // default_cwd ""
 // default_layout "compact"
 // scroll_buffer_size 10000
 // copy_clipboard "primary"
-// pane_frames true
 // mirror_session true
 // layout_dir "$HOME/.config/zellij/layout"
 // styled_underlines false
