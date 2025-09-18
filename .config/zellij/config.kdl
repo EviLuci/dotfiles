@@ -1,31 +1,3 @@
-// If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
-keybinds {
-    normal {
-        // uncomment this and adjust key if using copy_on_select=false
-        bind "Alt c" { Copy; }
-    }
-    locked {
-        bind "Ctrl g" { SwitchToMode "Normal"; }
-    }
-}
-
-plugins {
-    tab-bar location="zellij:tab-bar"
-    status-bar location="zellij:status-bar"
-    strider location="zellij:strider"
-    compact-bar location="zellij:compact-bar"
-    session-manager location="zellij:session-manager"
-    welcome-screen location="zellij:session-manager" {
-        welcome_screen true
-    }
-    filepicker location="zellij:strider" {
-        cwd "/"
-    }
-    configuration location="zellij:configuration"
-    plugin-manager location="zellij:plugin-manager"
-    about location="zellij:about"
-}
-
 // Plugins to load in the background when a new session starts
 load_plugins {
   // "file:/path/to/my-plugin.wasm"
@@ -34,31 +6,28 @@ load_plugins {
 
 theme "tokyo-night-dark"
 
-on_force_close "quit"
-// simplified_ui true
+simplified_ui true
 show_startup_tips false
-show_release_notes false
+show_release_notes true
 auto_layout true
-
 default_shell "fish"
-// default_cwd ""
 session_serialization true
-// serialize_pane_viewport true
-// scrollback_lines_to_serialize 10000
-
-// default_layout "compact"
+pane_viewport_serialization true
 default_mode "locked"
 mouse_mode true
-// scroll_buffer_size 10000
-
 copy_command "wl-copy"
-// copy_clipboard "primary"
 copy_on_select false
-
 scrollback_editor "/usr/bin/nvim"
+serialization_interval 60
+
+// on_force_close "quit"
+// default_cwd ""
+// default_layout "compact"
+// scroll_buffer_size 10000
+// copy_clipboard "primary"
+// pane_frames true
 // mirror_session true
-// layout_dir "/path/to/my/layout_dir"
-// theme_dir "/path/to/my/theme_dir"
+// layout_dir "$HOME/.config/zellij/layout"
 // styled_underlines false
 // disable_session_metadata true
 // support_kitty_keyboard_protocol false
