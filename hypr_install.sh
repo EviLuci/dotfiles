@@ -29,7 +29,7 @@ PERSONAL_PACKAGES=(
     neovim zed obsidian fortune-mod
     copyq satty kooha
     ghostty
-    fish yazi exa fzf ripgrep fd zoxide starship lazygit zellij btop
+    fish yazi 7zip exa fzf ripgrep fd zoxide starship lazygit zellij btop jq resvg imagemagick poppler
     nemo nemo-fileroller nemo-terminal
     vlc
     snapper
