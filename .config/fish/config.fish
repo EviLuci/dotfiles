@@ -85,6 +85,7 @@ function __history_previous_command_arguments
     commandline -i '$'
   end
 end
+
 # The bindings for !! and !$
 if [ $fish_key_bindings = "fish_vi_key_bindings" ];
   bind -Minsert ! __history_previous_command
@@ -143,6 +144,15 @@ end
 # results: prints only the first 5 lines
 function take --argument number
     head -$number
+end
+
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
 end
 
 ### END OF FUNCTIONS ###
