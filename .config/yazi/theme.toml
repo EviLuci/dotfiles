@@ -1,4 +1,3 @@
-
 [flavor]
-# For Yazi 0.4 and above
+use = "tokyo-night"
 dark = "tokyo-night"

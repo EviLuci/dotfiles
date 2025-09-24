@@ -1,0 +1,24 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:vcs-files"
+rev = "d1c8baa"
+hash = "4ee57085277d616acfa0ef1fef37dc00"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "d1c8baa"
+hash = "63b6c222bf2103b3023389dde5e2ecfe"
+
+[[plugin.deps]]
+use = "atareao/convert"
+rev = "ce060d9"
+hash = "1c0465351f2a344e842f065ab316f265"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "d1c8baa"
+hash = "a20327710c3a8d37ee0972128dcb6a31"
+
+[[flavor.deps]]
+use = "BennyOe/tokyo-night"
+rev = "5f56364"
+hash = "c0bf69ad2c44005892d586e9693993c6"

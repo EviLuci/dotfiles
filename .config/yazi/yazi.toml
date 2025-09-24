@@ -1,0 +1,16 @@
+[mgr]
+ratio = [1,2,5]
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"
+
+[[plugin.prepend_previewers]]
+name = "*"
+run  = 'piper -- echo "$1"'
