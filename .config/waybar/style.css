@@ -80,7 +80,7 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: #64727d;
 }
 
 #workspaces button.urgent {
@@ -92,12 +92,12 @@ button:hover {
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
+.modules-left > widget:first-child > #workspaces {
     margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
+.modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
 
@@ -170,11 +170,11 @@ label:focus {
 }
 
 /* Tray Styles */
-#tray>.passive {
+#tray > .passive {
     -gtk-icon-effect: dim;
 }
 
-#tray>.needs-attention {
+#tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: red;
 }
@@ -182,7 +182,12 @@ label:focus {
 /* Gradient Module Styles */
 #mpris,
 #window {
-    background: linear-gradient(45deg, rgb(250, 139, 255) 0%, rgb(0, 238, 255) 52%, rgb(250, 139, 255) 90%);
+    background: linear-gradient(
+        45deg,
+        rgb(250, 139, 255) 0%,
+        rgb(0, 238, 255) 52%,
+        rgb(250, 139, 255) 90%
+    );
     color: black;
     font-weight: 900;
 }
@@ -235,15 +240,15 @@ label:focus {
     color: #b4f9f8;
 }
 
-#temperature {
+#backlight {
     color: #e0af68;
 }
 
 #memory {
-    color: #bb9af7
+    color: #bb9af7;
 }
 
-#backlight {
+#temperature {
     color: #7aa2f7;
 }
 
