@@ -143,9 +143,13 @@ tooltip label {
     color: red;
 }
 
+#battery {
+    color: rgb(250, 139, 255);
+}
+
 #battery.charging,
 #battery.plugged {
-    color: rgb(250, 139, 255);
+    color: rgb(0, 238, 255);
     font-weight: 900;
     background: @theme_base_color;
 }
