@@ -1,5 +1,13 @@
 # My Dotfiles (Arch Linux)
 
+This repository contains my **personal dotfiles** for configuring a minimal, beautiful, and functional desktop environment on **Arch Linux**.
+
+> [!CAUTION]
+> The install script available in this repo is experimental and intended for personal use only. Do not use it.
+
+> [!IMPORTANT]
+> These dotfiles are part of my personal setup journey. Things may break or not work out of the box.
+
 <!--toc:start-->
 
 - [My Dotfiles (Arch Linux)](#my-dotfiles-arch-linux)
@@ -15,14 +23,6 @@
     - [Hyprlock](#hyprlock)
   - [Packages Used](#packages-used) - [Required Packages](#required-packages) - [Optional (But Nice To Have)](#optional-but-nice-to-have)
   <!--toc:end-->
-
-This repository contains my **personal dotfiles** for configuring a minimal, beautiful, and functional desktop environment on **Arch Linux**.
-
-> [!CAUTION]
-> The install script available in this repo is experimental and intended for personal use only. Do not use it.
-
-> [!IMPORTANT]
-> These dotfiles are part of my personal setup journey. Things may break or not work out of the box.
 
 ---
 
@@ -41,8 +41,6 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 ![Zed](https://github.com/EviLuci/dotfiles/blob/main/screenshots/zed.png)
 
 ![Overview](https://github.com/EviLuci/dotfiles/blob/main/screenshots/overview.png)
-
-![Windows](https://github.com/EviLuci/dotfiles/blob/main/screenshots/window-noti.png)
 
 ### Fuzzel
 
