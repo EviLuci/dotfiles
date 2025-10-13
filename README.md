@@ -10,12 +10,6 @@ This repository contains my **personal dotfiles** for configuring a minimal, bea
 
 ---
 
-## Introduction
-
-Welcome to my dotfiles repo! This setup is focused on providing a minimal and aesthetic **Wayland** desktop using **Hyprland**. Whether you're learning or looking for inspiration for your own dotfiles, feel free to fork, clone, or adapt!
-
----
-
 ## Preview
 
 ### Desktop
