@@ -1,7 +1,7 @@
 /*****----- Configuration -----*****/
 configuration {
     /*****----- General -----*****/
-    modes:                     [combi,drun,recursivebrowser,filebrowser,window,run,ssh,keys];
+    modes:                     [combi,drun,recursivebrowser,filebrowser,window];
     combi-modes:               [drun,filebrowser];
     show-icons:                 true;
 	case-sensitive:             false;

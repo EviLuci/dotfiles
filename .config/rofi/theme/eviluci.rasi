@@ -96,7 +96,7 @@ textbox-num-sep {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     8;
+    columns:                     5;
     lines:                       4;
     cycle:                       true;
     dynamic:                     true;
@@ -174,7 +174,7 @@ element selected.selected {
 }
 
 element-icon {
-    size:                        6%;
+    size:                        5%;
 }
 element-icon,
 element-text {
