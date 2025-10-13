@@ -8,22 +8,6 @@ This repository contains my **personal dotfiles** for configuring a minimal, bea
 > [!IMPORTANT]
 > These dotfiles are part of my personal setup journey. Things may break or not work out of the box.
 
-<!--toc:start-->
-
-- [My Dotfiles (Arch Linux)](#my-dotfiles-arch-linux)
-  - [Contents](#contents)
-  - [Introduction](#introduction)
-  - [Preview](#preview)
-    - [Desktop](#desktop)
-    - [Fuzzel](#fuzzel)
-    - [Rofi (not used anymore, switched to fuzzel)](#rofi-not-used-anymore-switched-to-fuzzel)
-    - [Waybar](#waybar)
-    - [Sway Notification Center](#sway-notification-center)
-    - [CopyQ](#copyq)
-    - [Hyprlock](#hyprlock)
-  - [Packages Used](#packages-used) - [Required Packages](#required-packages) - [Optional (But Nice To Have)](#optional-but-nice-to-have)
-  <!--toc:end-->
-
 ---
 
 ## Introduction
