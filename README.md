@@ -64,18 +64,16 @@ Welcome to my dotfiles repo! This setup is focused on providing a minimal and ae
 
 <p float="left">
   <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync.png" width="150"/>
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_new.png" width="150"/>
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync_noti.png" width="150"/>
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/notification.png" width="170"/>
+  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync2.png" width="150"/>
+  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/notification-with-swaync.png" width="150"/>
 </p>
 
 ### CopyQ
 
-![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/Copyq.png)
+![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/CopyQ.png)
 
 ### Hyprlock
 
 ![Hyprlock With Screenshot Background](https://github.com/EviLuci/dotfiles/blob/main/screenshots/hyprlock_screenshot.png)
-![Hyprlock](https://github.com/EviLuci/dotfiles/blob/main/screenshots/hyprlock.png)
 
 ---
