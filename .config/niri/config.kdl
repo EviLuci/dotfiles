@@ -285,13 +285,9 @@ layer-rule {
     place-within-backdrop true
 }
 
-spawn-at-startup "hypridle"
-spawn-at-startup "udiskie"
 spawn-at-startup "blueman-applet"
-spawn-at-startup "walker" "--gapplication-service"
 spawn-at-startup "nm-applet" "--indicator"
 spawn-at-startup "copyq" "--start-server"
-spawn-at-startup "swww-daemon"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "swaync"
 
