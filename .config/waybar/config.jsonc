@@ -272,7 +272,9 @@
 			"format-icons": {
 				// Named workspaces
 				"dev": "󰚗",
-				"browser": "",
+				"web": "",
+				"entertainment": "",
+				"ai": "󰱯",
 				"1": "1",
 				"2": "2",
 				"3": "3",

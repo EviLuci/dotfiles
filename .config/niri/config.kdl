@@ -137,6 +137,16 @@ layout {
     }
 }
 
+gestures {
+    hot-corners {
+        off
+        // top-left
+        // top-right
+        // bottom-left
+        // bottom-right
+    }
+}
+
 output "eDP-1" {
     mode "1920x1080@60.05"
     scale 1
@@ -156,7 +166,15 @@ workspace "dev" {
   open-on-output "eDP-1"
 }
 
-workspace "browser" {
+workspace "web" {
+  open-on-output "HDMI-A-1"
+}
+
+workspace "entertainment" {
+  open-on-output "HDMI-A-1"
+}
+
+workspace "ai" {
   open-on-output "HDMI-A-1"
 }
 
@@ -166,13 +184,13 @@ window-rule {
     match app-id="firefox-developer-edition"
     match app-id="^vivaldi-stable$"
 
-    open-on-workspace "browser"
+    open-on-workspace "web"
     open-maximized true
 }
 
 window-rule {
     match app-id="^Code$"
-    match app-id="^dev.zed.Zed"
+    match app-id="^dev.zed.Zed$"
 
     open-on-workspace "dev"
     open-maximized true
@@ -207,7 +225,6 @@ window-rule {
     match title="^(File Operation Progress)$"
     match title="^(DevTools)$"
     match title="^(Open File)$"
-    match title="^(branchdialog)$"
     match title="^(Media viewer)$"
     match title="^(Open)$"
     match title="^(xdg-desktop-portal-gtk)(.*)$"
@@ -285,12 +302,6 @@ layer-rule {
     place-within-backdrop true
 }
 
-spawn-at-startup "blueman-applet"
-spawn-at-startup "nm-applet" "--indicator"
-spawn-at-startup "copyq" "--start-server"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-at-startup "swaync"
-
 prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -364,11 +375,13 @@ binds {
     // Primary Applications
     Mod+Return  {spawn "ghostty"; }
     Mod+Z  {spawn "zeditor"; }
+    Mod+B { spawn "firefox-developer-edition"; }
+    Mod+Alt+B { spawn "brave"; }
     Mod+Semicolon { spawn "fuzzel"; }
     Mod+Alt+E { spawn "nemo"; }
-    Mod+Alt+B { spawn "firefox-developer-edition"; }
     Mod+Alt+C { spawn "copyq" "toggle"; }
     Mod+Alt+P { spawn "hyprpicker" "-a"; }
+    Mod+Alt+Y { spawn "fish" "-c" "brave --new-window https://www.youtube.com"; }
 
     Mod+Shift+Ctrl+L allow-when-locked=true { spawn "hyprlock"; }
 
@@ -408,13 +421,9 @@ binds {
     Mod+Right    { focus-monitor-right; }
 
     Mod+Shift+Left  { move-window-to-monitor-left; }
-    Mod+Shift+Down  { move-window-to-monitor-down; }
-    Mod+Shift+Up    { move-window-to-monitor-up; }
     Mod+Shift+Right { move-window-to-monitor-right; }
 
     Mod+Ctrl+Left  { move-column-to-monitor-left; }
-    Mod+Ctrl+Down  { move-column-to-monitor-down; }
-    Mod+Ctrl+Up    { move-column-to-monitor-up; }
     Mod+Ctrl+Right { move-column-to-monitor-right; }
 
     // Alternatively, there are commands to move just a single window:
@@ -475,7 +484,8 @@ binds {
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
     Mod+C { focus-workspace "dev"; }
-    Mod+B { focus-workspace "browser"; }
+    Mod+W { focus-workspace "web"; }
+    Mod+E { focus-workspace "entertainment"; }
 
     Mod+Shift+1 { move-window-to-workspace 1; }
     Mod+Shift+2 { move-window-to-workspace 2; }
@@ -487,7 +497,8 @@ binds {
     Mod+Shift+8 { move-window-to-workspace 8; }
     Mod+Shift+9 { move-window-to-workspace 9; }
     Mod+Shift+C { move-window-to-workspace "dev"; }
-    Mod+Shift+B { move-window-to-workspace "browser"; }
+    Mod+Shift+W { move-window-to-workspace "web"; }
+    Mod+Shift+E { move-window-to-workspace "entertainment"; }
 
     Mod+Ctrl+1 { move-column-to-workspace 1; }
     Mod+Ctrl+2 { move-column-to-workspace 2; }
@@ -499,7 +510,8 @@ binds {
     Mod+Ctrl+8 { move-column-to-workspace 8; }
     Mod+Ctrl+9 { move-column-to-workspace 9; }
     Mod+Ctrl+C { move-column-to-workspace "dev"; }
-    Mod+Ctrl+B { move-column-to-workspace "browser"; }
+    Mod+Ctrl+W { move-column-to-workspace "web"; }
+    Mod+Ctrl+E { move-column-to-workspace "entertainment"; }
 
     Mod+Tab { focus-workspace-previous; }
 
@@ -522,10 +534,10 @@ binds {
     Mod+Alt+M { toggle-windowed-fullscreen; }
     Mod+Ctrl+F { expand-column-to-available-width; }
 
-    Mod+E { center-column; }
+    // Mod+E { center-column; }
 
     // Center all fully visible columns on screen.
-    Mod+Ctrl+E { center-visible-columns; }
+    // Mod+Ctrl+E { center-visible-columns; }
 
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
