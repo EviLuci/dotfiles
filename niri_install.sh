@@ -12,26 +12,25 @@ DOTFILES_DIR="$HOME/dotfiles"
 
 # Essential Niri & system packages
 Niri_ESSENTIALS_PACKAGES=(
-    niri hypridle hyprlock hyprpicker xdg-desktop-portal-gtk xdg-desktop-portal-wlr gnome-keyring
+    niri hypridle hyprlock hyprpicker xdg-desktop-portal-gtk xdg-desktop-portal-gnome polkit-gnome gnome-keyring
     pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-zeroconf wireplumber qpwgraph pavucontrol
-    waybar swaync bluez bluez-utils blueman networkmanager network-manager-applet brightnessctl polkit-gnome fuzzel
+    waybar swaync bluez bluez-utils blueman networkmanager network-manager-applet brightnessctl  fuzzel
     wl-clipboard grim slurp
     ttf-firacode-nerd otf-font-awesome noto-fonts-emoji
 )
 # AUR Essential packages
 AUR_ESSENTIAL_PACKAGES=(
-    waybar-module-pacman-updates-git beautyline sweet-gtk-theme
+    waybar-module-pacman-updates-git beautyline
 )
 
 # Personal packages
 PERSONAL_PACKAGES=(
     firefox-developer-edition
-    neovim zed obsidian fortune-mod helix
-    nemo nemo-fileroller nemo-terminal swayimg
+    neovim zed obsidian helix
     copyq satty kooha
     ghostty
-    fish 7zip exa fzf ripgrep fd zoxide starship lazygit zellij btop
-    yazi jq resvg imagemagick poppler
+    fish exa fzf ripgrep zoxide starship lazygit zellij btop
+    yazi 7zip jq resvg fd imagemagick poppler
     vlc
     snapper
     virtualbox
@@ -40,7 +39,7 @@ PERSONAL_PACKAGES=(
 
 # AUR Personal packages
 AUR_PERSONAL_PACKAGES=(
-    brave-bin waypaper-git snap-pac-grub
+    brave-bin waypaper-git
 )
 
 # ───────────────────────────────────────────────────────────
