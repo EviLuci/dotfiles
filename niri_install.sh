@@ -28,7 +28,7 @@ AUR_ESSENTIAL_PACKAGES=(
 PERSONAL_PACKAGES=(
     firefox-developer-edition
     neovim zed obsidian helix
-    copyq satty kooha
+    copyq satty kooha swww
     ghostty
     fish exa fzf ripgrep zoxide starship lazygit zellij btop
     yazi 7zip jq resvg fd imagemagick poppler
@@ -89,28 +89,28 @@ confirm() {
 # Install essential Niri packages
 install_essential_Niri_packages() {
     echo "Installing essential Niri packages..."
-    sudo pacman -Sy --needed --noconfirm "${Niri_ESSENTIALS_PACKAGES[@]}"
+    sudo pacman -Sy "${Niri_ESSENTIALS_PACKAGES[@]}"
     echo
 }
 
 # Install personal packages
 install_personal_packages() {
     echo "Installing personal packages..."
-    sudo pacman -Sy --needed --noconfirm "${PERSONAL_PACKAGES[@]}"
+    sudo pacman -Sy "${PERSONAL_PACKAGES[@]}"
     echo
 }
 
 # Install AUR essential packages
 install_aur_essential_packages() {
     echo "Installing AUR essential packages..."
-    paru -S --needed --noconfirm "${AUR_ESSENTIAL_PACKAGES[@]}"
+    paru -S "${AUR_ESSENTIAL_PACKAGES[@]}"
     echo
 }
 
 # Install AUR personal packages
 install_aur_personal_packages() {
     echo "Installing AUR personal packages..."
-    paru -S --needed --noconfirm "${AUR_PERSONAL_PACKAGES[@]}"
+    paru -S "${AUR_PERSONAL_PACKAGES[@]}"
     echo
 }
 
