@@ -12,7 +12,7 @@ DOTFILES_DIR="$HOME/dotfiles"
 
 # Essential Niri & system packages
 Niri_ESSENTIALS_PACKAGES=(
-    niri hypridle hyprlock hyprpicker xdg-desktop-portal-gtk xdg-desktop-portal-gnome polkit-gnome gnome-keyring gvfs-mtp
+    niri hypridle hyprlock hyprpicker xdg-desktop-portal-gtk xdg-desktop-portal-gnome polkit-gnome gnome-keyring gvfs-mtp xwayland-satellite
     pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-zeroconf wireplumber qpwgraph pavucontrol sof-firmware
     waybar swaync bluez bluez-utils blueman networkmanager network-manager-applet brightnessctl fuzzel
     wl-clipboard grim slurp
@@ -27,13 +27,14 @@ AUR_ESSENTIAL_PACKAGES=(
 # Personal packages
 PERSONAL_PACKAGES=(
     firefox-developer-edition vivaldi
+    cosmic-files cosmic-settings swayimg
     neovim zed obsidian helix
     copyq satty kooha swww
     ghostty
     fish exa fzf ripgrep zoxide starship lazygit zellij btop
     yazi 7zip jq resvg fd imagemagick poppler
-    vlc
-    snapper
+    mpv
+    snapper btrfs-assistant snap-pac
     npm
 )
 
@@ -160,7 +161,7 @@ setup_dotfiles() {
     for dir in "${CONFIG_DIRS[@]}"; do
         backup_and_link "$DOTFILES_DIR/.config/$dir" "$HOME/.config/$dir"
     done
-    for file in "${HOME_DIRS[@]}"; do
+    for dir in "${HOME_DIRS[@]}"; do
         backup_and_link "$DOTFILES_DIR/$dir" "$HOME/$dir"
     done
     echo
