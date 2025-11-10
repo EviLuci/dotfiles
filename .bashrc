@@ -1,12 +1,8 @@
 ### EXPORT ###
 export EDITOR='nvim'
 export VISUAL='nvim'
-export HISTCONTROL=ignoreboth:erasedups
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-export CHROME_EXECUTABLE=/usr/bin/microsoft-edge-dev
-export PATH="$PATH":"$HOME/.local/bin"
 # Don't put duplicate lines in the history and do not add lines that start with a space
-export HISTCONTROL=erasedups:ignoredups:ignorespace
+export HISTCONTROL=erasedups:ignoredups:ignorespace:ignoreboth
 
 
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
@@ -113,18 +109,6 @@ alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 #add new fonts
 alias update-fc='sudo fc-cache -fv'
 
-#switch between bash and zsh
-alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
-alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
-
-#switch between lightdm and sddm
-alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
-alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
-alias toly="sudo pacman -S ly --noconfirm --needed ; sudo systemctl enable ly.service -f ; echo 'Ly is active - reboot now'"
-alias togdm="sudo pacman -S gdm --noconfirm --needed ; sudo systemctl enable gdm.service -f ; echo 'Gdm is active - reboot now'"
-alias tolxdm="sudo pacman -S lxdm --noconfirm --needed ; sudo systemctl enable lxdm.service -f ; echo 'Lxdm is active - reboot now'"
-
 #hardware info --short
 alias hw="hwinfo --short"
 
@@ -173,15 +157,12 @@ alias jctl="journalctl -p 3 -xb"
 
 #vim for important configuration files
 #know what you do in these files
-alias elightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
 alias epacman="sudo $EDITOR /etc/pacman.conf"
 alias egrub="sudo $EDITOR /etc/default/grub"
 alias econfgrub="sudo $EDITOR /boot/grub/grub.cfg"
 alias emkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
 alias emirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
 alias earcomirrorlist='sudo vim /etc/pacman.d/arcolinux-mirrorlist'
-alias esddm="sudo $EDITOR /etc/sddm.conf"
-alias esddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
 alias efstab="sudo $EDITOR /etc/fstab"
 alias ensswitch="sudo $EDITOR /etc/nsswitch.conf"
 alias esamba="sudo $EDITOR /etc/samba/smb.conf"
@@ -266,6 +247,3 @@ alias rmgitcache="rm -r ~/.cache/git"
 
 # Start Starship
 eval "$(starship init bash)"
-# BEGIN_KITTY_SHELL_INTEGRATION
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
-# END_KITTY_SHELL_INTEGRATION

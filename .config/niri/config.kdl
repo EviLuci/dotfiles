@@ -377,12 +377,12 @@ binds {
     Mod+Return  {spawn "ghostty"; }
     Mod+Z  {spawn "zeditor"; }
     Mod+B { spawn "firefox-developer-edition"; }
-    Mod+Alt+B { spawn "brave"; }
+    Mod+Alt+B { spawn "vivaldi"; }
     Mod+Semicolon { spawn "fuzzel"; }
     Mod+Alt+E { spawn "cosmic-files"; }
     Mod+Alt+C { spawn "copyq" "toggle"; }
     Mod+Alt+P { spawn "hyprpicker" "-a"; }
-    Mod+Alt+Y { spawn "fish" "-c" "brave --new-window https://www.youtube.com"; }
+    Mod+Alt+Y { spawn "fish" "-c" "vivaldi --new-window https://www.youtube.com"; }
 
     Mod+Shift+Ctrl+L allow-when-locked=true { spawn "hyprlock"; }
 

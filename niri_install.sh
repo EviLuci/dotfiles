@@ -12,8 +12,8 @@ DOTFILES_DIR="$HOME/dotfiles"
 
 # Essential Niri & system packages
 Niri_ESSENTIALS_PACKAGES=(
-    niri hypridle hyprlock hyprpicker xdg-desktop-portal-gtk xdg-desktop-portal-gnome polkit-gnome gnome-keyring
-    pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-zeroconf wireplumber qpwgraph pavucontrol
+    niri hypridle hyprlock hyprpicker xdg-desktop-portal-gtk xdg-desktop-portal-gnome polkit-gnome gnome-keyring gvfs-mtp
+    pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-zeroconf wireplumber qpwgraph pavucontrol sof-firmware
     waybar swaync bluez bluez-utils blueman networkmanager network-manager-applet brightnessctl fuzzel
     wl-clipboard grim slurp
     ttf-firacode-nerd otf-font-awesome noto-fonts-emoji
@@ -26,7 +26,7 @@ AUR_ESSENTIAL_PACKAGES=(
 
 # Personal packages
 PERSONAL_PACKAGES=(
-    firefox-developer-edition
+    firefox-developer-edition vivaldi
     neovim zed obsidian helix
     copyq satty kooha swww
     ghostty
@@ -34,13 +34,12 @@ PERSONAL_PACKAGES=(
     yazi 7zip jq resvg fd imagemagick poppler
     vlc
     snapper
-    virtualbox
     npm
 )
 
 # AUR Personal packages
 AUR_PERSONAL_PACKAGES=(
-    brave-bin waypaper-git
+    waypaper-git
 )
 
 # ───────────────────────────────────────────────────────────
@@ -122,6 +121,7 @@ CONFIG_DIRS=(
     "fuzzel"
     "ghostty"
     "helix"
+    "hypr"
     "niri"
     "nvim"
     "swaync"
@@ -134,9 +134,10 @@ CONFIG_DIRS=(
     "electron-flags.conf"
 )
 
-CONFIG_FILES=(
+HOME_DIRS=(
     ".vimrc"
     ".bashrc"
+    ".themes"
 )
 
 backup_and_link() {
@@ -159,8 +160,8 @@ setup_dotfiles() {
     for dir in "${CONFIG_DIRS[@]}"; do
         backup_and_link "$DOTFILES_DIR/.config/$dir" "$HOME/.config/$dir"
     done
-    for file in "${CONFIG_FILES[@]}"; do
-        backup_and_link "$DOTFILES_DIR/$file" "$HOME/$file"
+    for file in "${HOME_DIRS[@]}"; do
+        backup_and_link "$DOTFILES_DIR/$dir" "$HOME/$dir"
     done
     echo
 }
@@ -197,6 +198,13 @@ main() {
         mkdir -p "$BACKUP_DIR"
         setup_dotfiles
     fi
+
+    # setup services
+    systemctl enable --now bluetooth.service
+    systemctl enable --now systemd-boot-update.service
+    systemctl enable --now paccache.service
+    systemctl enable --now reflector.timer
+    systemctl enable --now fstrim.timer
 
     echo
     echo "Niri reconfiguration script completed."
