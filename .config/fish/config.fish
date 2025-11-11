@@ -9,11 +9,17 @@ set -Ux fish_user_paths $fish_user_paths $HOME/.local/bin
 set fish_greeting                                    # Supresses fish's intro message
 set TERM "xterm-256color"                            # Sets the terminal type
 set -x EDITOR "nvim"                                  # $EDITOR use vim in terminal
-set -x VISUAL "zeditor"                                 # $VISUAL use code in GUI mode
+if command -q zeditor
+    set -x VISUAL zeditor
+else
+    set -x VISUAL nvim
+end
+set -gx GPG_TTY (tty)
 
 # Prevent directories names from being shortened
 set fish_prompt_pwd_dir_length 0
 set -x FZF_DEFAULT_OPTS "--color=16,header:13,info:5,pointer:3,marker:9,spinner:1,prompt:5,fg:7,hl:14,fg+:3,hl+:9 --inline-info --tiebreak=end,length --bind=shift-tab:toggle-down,tab:toggle-up"
+set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git'
 
 ### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
 function fish_user_key_bindings
@@ -52,11 +58,17 @@ set fish_cursor_visual block
 ### ALIASES ###
 
 alias ls='eza -la'
-alias sudo='sudo-rs '
+if command -q sudo-rs
+    alias sudo='sudo-rs '
+end
+
 
 #pacman
+function cleanup --description 'Remove orphaned packages'
+    sudo pacman -Rns (pacman -Qtdq)
+end
+
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
-alias cleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'

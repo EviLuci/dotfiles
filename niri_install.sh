@@ -62,7 +62,7 @@ install_paru() {
     tmp_dir=$(mktemp -d)
     git clone "https://aur.archlinux.org/paru.git" "$tmp_dir/paru"
     pushd "$tmp_dir/paru" > /dev/null
-        makepkg -si --noconfirm
+        makepkg -si
     popd > /dev/null
     rm -rf "$tmp_dir"
     echo "paru installed successfully."

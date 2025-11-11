@@ -17,5 +17,15 @@ if [ -d "$HOME/.local/bin" ] ;
 then PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Colored `ls` and `grep`
+if command -v dircolors >/dev/null 2>&1; then
+    eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+fi
+
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
+
+# === Prompt (minimal but informative) ===
+PS1='\u@\h:\w\$
