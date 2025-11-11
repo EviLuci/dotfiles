@@ -14,7 +14,7 @@ DOTFILES_DIR="$HOME/dotfiles"
 Niri_ESSENTIALS_PACKAGES=(
     niri hypridle hyprlock hyprpicker xdg-desktop-portal-gtk xdg-desktop-portal-gnome polkit-gnome gnome-keyring gvfs-mtp xwayland-satellite
     pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-zeroconf wireplumber qpwgraph pavucontrol sof-firmware
-    waybar swaync bluez bluez-utils blueman networkmanager network-manager-applet brightnessctl fuzzel
+    waybar swaync bluez bluez-utils blueman networkmanager network-manager-applet brightnessctl fuzzel reflector
     wl-clipboard grim slurp
     ttf-firacode-nerd otf-font-awesome noto-fonts-emoji
 )
@@ -31,7 +31,8 @@ PERSONAL_PACKAGES=(
     neovim zed obsidian helix
     copyq satty kooha swww
     ghostty
-    fish exa fzf ripgrep zoxide starship lazygit zellij btop
+    sudo-rs
+    fish exa fzf ripgrep zoxide starship lazygit zellij btop bat
     yazi 7zip jq resvg fd imagemagick poppler
     mpv
     snapper btrfs-assistant snap-pac
@@ -136,7 +137,6 @@ CONFIG_DIRS=(
 )
 
 HOME_DIRS=(
-    ".vimrc"
     ".bashrc"
     ".themes"
 )
@@ -201,11 +201,7 @@ main() {
     fi
 
     # setup services
-    systemctl enable --now bluetooth.service
-    systemctl enable --now systemd-boot-update.service
-    systemctl enable --now paccache.service
-    systemctl enable --now reflector.timer
-    systemctl enable --now fstrim.timer
+    systemctl enable --now bluetooth.service systemd-boot-update.service paccache.timer reflector.timer fstrim.timer snapper-cleaup.timer snapper-timeline.timer
 
     echo
     echo "Niri reconfiguration script completed."
