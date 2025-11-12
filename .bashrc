@@ -28,4 +28,4 @@ fi
 bind "set completion-ignore-case on"
 
 # === Prompt (minimal but informative) ===
-PS1='\u@\h:\w\$
+PS1='\u@\h:\w\$'
