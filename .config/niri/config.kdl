@@ -427,6 +427,30 @@ binds {
     Mod+Ctrl+Left  { move-column-to-monitor-left; }
     Mod+Ctrl+Right { move-column-to-monitor-right; }
 
+    // The following binds move the focused window in and out of a column.
+    // If the window is alone, they will consume it into the nearby column to the side.
+    // If the window is already in a column, they will expel it out.
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+    // Consume one window from the right to the bottom of the focused column.
+    Mod+Comma  { consume-window-into-column; }
+    // Expel the bottom window from the focused column to the right.
+    Mod+Period { expel-window-from-column; }
+
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R { reset-window-height; }
+    Mod+M { maximize-column; }
+    Mod+Shift+M { fullscreen-window; }
+    Mod+Alt+M { toggle-windowed-fullscreen; }
+    Mod+Ctrl+F { expand-column-to-available-width; }
+
+    // Mod+E { center-column; }
+
+    // Center all fully visible columns on screen.
+    // Mod+Ctrl+E { center-visible-columns; }
+
     // Alternatively, there are commands to move just a single window:
     // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
     // ...
@@ -448,6 +472,14 @@ binds {
 
     Mod+Down        { move-workspace-down; }
     Mod+Up          { move-workspace-up; }
+
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    // Finer height adjustments when in column with other windows.
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
 
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
@@ -515,37 +547,6 @@ binds {
     Mod+Ctrl+E { move-column-to-workspace "entertainment"; }
 
     Mod+Tab { focus-workspace-previous; }
-
-    // The following binds move the focused window in and out of a column.
-    // If the window is alone, they will consume it into the nearby column to the side.
-    // If the window is already in a column, they will expel it out.
-    Mod+BracketLeft  { consume-or-expel-window-left; }
-    Mod+BracketRight { consume-or-expel-window-right; }
-
-    // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
-    // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
-
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
-    Mod+M { maximize-column; }
-    Mod+Shift+M { fullscreen-window; }
-    Mod+Alt+M { toggle-windowed-fullscreen; }
-    Mod+Ctrl+F { expand-column-to-available-width; }
-
-    // Mod+E { center-column; }
-
-    // Center all fully visible columns on screen.
-    // Mod+Ctrl+E { center-visible-columns; }
-
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
-
-    // Finer height adjustments when in column with other windows.
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
     Mod+F       { toggle-window-floating; }

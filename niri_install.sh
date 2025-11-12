@@ -37,6 +37,7 @@ PERSONAL_PACKAGES=(
     mpv
     snapper btrfs-assistant snap-pac
     npm
+    iptables-nft ufw
 )
 
 # AUR Personal packages

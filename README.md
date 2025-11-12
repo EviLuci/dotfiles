@@ -46,7 +46,7 @@ This repository contains my **personal dotfiles** for configuring a minimal, bea
 
 ### CopyQ
 
-![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/CopyQ.png)
+![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/copyq.png)
 
 ### Hyprlock
 

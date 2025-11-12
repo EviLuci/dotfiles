@@ -1,0 +1,9 @@
+[
+    Home,
+    Documents,
+    Downloads,
+    Music,
+    Pictures,
+    Videos,
+    Path("/home/sujan/dotfiles"),
+]
