@@ -6,4 +6,5 @@
     Pictures,
     Videos,
     Path("/home/sujan/dotfiles"),
+    Path("/home/sujan/git"),
 ]
