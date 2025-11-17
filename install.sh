@@ -16,11 +16,11 @@ PACMAN_PACKAGES=(
     pipewire pipewire-alsa pipewire-jack pipewire-pulse pipewire-zeroconf wireplumber qpwgraph pavucontrol sof-firmware
     waybar swaync bluez bluez-utils blueman networkmanager network-manager-applet brightnessctl fuzzel reflector
     wl-clipboard grim slurp
-    ttf-firacode-nerd otf-font-awesome noto-fonts-emoji
+    ttf-firacode-nerd woff2-font-awesome noto-fonts-emoji
 
     # Personal packages
     firefox-developer-edition vivaldi
-    cosmic-files cosmic-settings swayimg
+    cosmic-files cosmic-settings
     neovim zed obsidian helix
     copyq satty kooha swww
     ghostty
@@ -197,8 +197,8 @@ enable_services() {
 # Run selected tasks
 # ----------------------------------------------------------
 
-$RUN_PACKAGES && install_pacman_pkgs
-$RUN_AUR && install_paru && install_aur_pkgs
+$RUN_PACKAGES && install_pacman_packages
+$RUN_AUR && install_paru && install_aur_packages
 $RUN_DOTFILES && setup_dotfiles
 $RUN_SERVICES && enable_services
 
