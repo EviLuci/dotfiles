@@ -15,7 +15,7 @@ This repository contains my **personal dotfiles** for configuring a minimal, bea
 
 Example:
 ```bash
-./setup.sh --all
+./install.sh --all
 ```
 
 Use only together with `--all`
@@ -41,42 +41,42 @@ Example:
 
 ### Desktop
 
-![Desktop](https://github.com/EviLuci/dotfiles/blob/main/screenshots/desktop.png)
+![Desktop](https://github.com/auralisx/dotfiles/blob/main/screenshots/desktop.png)
 
-![Zed](https://github.com/EviLuci/dotfiles/blob/main/screenshots/zed.png)
+![Zed](https://github.com/auralisx/dotfiles/blob/main/screenshots/zed.png)
 
-![Overview](https://github.com/EviLuci/dotfiles/blob/main/screenshots/overview.png)
+![Overview](https://github.com/auralisx/dotfiles/blob/main/screenshots/overview.png)
 
 ### Fuzzel
 
-![Fuzzel](https://github.com/EviLuci/dotfiles/blob/main/screenshots/fuzzel.png)
+![Fuzzel](https://github.com/auralisx/dotfiles/blob/main/screenshots/fuzzel.png)
 
 ### Rofi (not used anymore, switched to fuzzel)
 
-![Rofi](https://github.com/EviLuci/dotfiles/blob/main/screenshots/rofi_wayland.png)
+![Rofi](https://github.com/auralisx/dotfiles/blob/main/screenshots/rofi_wayland.png)
 
 ### Waybar
 
 **Top Bar**
-![Top Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/topbar.png)
+![Top Bar](https://github.com/auralisx/dotfiles/blob/main/screenshots/topbar.png)
 
 **Bottom Bar**
-![Bottom Bar](https://github.com/EviLuci/dotfiles/blob/main/screenshots/bottombar.png)
+![Bottom Bar](https://github.com/auralisx/dotfiles/blob/main/screenshots/bottom_waybar.png)
 
 ### Sway Notification Center
 
 <p float="left">
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync.png" width="150"/>
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/swaync2.png" width="150"/>
-  <img src="https://github.com/EviLuci/dotfiles/blob/main/screenshots/notification-with-swaync.png" width="150"/>
+  <img src="https://github.com/auralisx/dotfiles/blob/main/screenshots/swaync.png" width="150"/>
+  <img src="https://github.com/auralisx/dotfiles/blob/main/screenshots/swaync2.png" width="150"/>
+  <img src="https://github.com/auralisx/dotfiles/blob/main/screenshots/notification-with-swaync.png" width="150"/>
 </p>
 
 ### CopyQ
 
-![CopyQ](https://github.com/EviLuci/dotfiles/blob/main/screenshots/copyq_new.png)
+![CopyQ](https://github.com/auralisx/dotfiles/blob/main/screenshots/copyq_new.png)
 
 ### Hyprlock
 
-![Hyprlock With Screenshot Background](https://github.com/EviLuci/dotfiles/blob/main/screenshots/hyprlock_screenshot.png)
+![Hyprlock With Screenshot Background](https://github.com/auralisx/dotfiles/blob/main/screenshots/hyprlock_screenshot.png)
 
 ---
