@@ -57,10 +57,10 @@ Example:
 
 ### Waybar
 
-**Top Bar**
+**Top Bar**: widgets without useful interaction, just shows useful informations.
 ![Top Bar](https://github.com/auralisx/dotfiles/blob/main/screenshots/topbar.png)
 
-**Bottom Bar**
+**Bottom Bar**: widgets with interaction. windows, network, bluetooth, notification center etc
 ![Bottom Bar](https://github.com/auralisx/dotfiles/blob/main/screenshots/bottom_waybar.png)
 
 ### Sway Notification Center
