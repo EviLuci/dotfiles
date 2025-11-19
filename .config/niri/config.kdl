@@ -189,6 +189,13 @@ window-rule {
 }
 
 window-rule {
+    match app-id="^chromium$"
+
+    open-on-workspace "entertainment"
+    open-maximized true
+}
+
+window-rule {
     match app-id="^code$"
     match app-id="^dev.zed.Zed$"
 
@@ -382,7 +389,7 @@ binds {
     Mod+Alt+E { spawn "cosmic-files"; }
     Mod+Alt+C { spawn "copyq" "toggle"; }
     Mod+Alt+P { spawn "hyprpicker" "-a"; }
-    Mod+Alt+Y { spawn "fish" "-c" "vivaldi --new-window https://www.youtube.com"; }
+    Mod+Alt+Y { spawn "chromium"; }
 
     Mod+Shift+Ctrl+L allow-when-locked=true { spawn "hyprlock"; }
 
@@ -459,12 +466,12 @@ binds {
     // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
     // ...
 
-    Mod+U              { focus-workspace-down; }
-    Mod+D              { focus-workspace-up; }
-    Mod+Shift+U        { move-window-to-workspace-down; }
-    Mod+Shift+D        { move-window-to-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+D         { move-column-to-workspace-up; }
+    Mod+U              { focus-workspace-up; }
+    Mod+D              { focus-workspace-down; }
+    Mod+Shift+U        { move-window-to-workspace-up; }
+    Mod+Shift+D        { move-window-to-workspace-down; }
+    Mod+Ctrl+U         { move-column-to-workspace-up; }
+    Mod+Ctrl+D         { move-column-to-workspace-down; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
